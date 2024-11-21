@@ -21,8 +21,10 @@ from .analyze_pronunciation_accuracy import analyze_pronunciation_accuracy
 from .count_words import count_words
 import os
 import librosa
+import traceback
 import soundfile as sf
-from tempfile import NamedTemporaryFile
+from tempfile import mkdtemp
+import shutil  # 디렉토리 삭제용
 
 def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
     """
@@ -38,6 +40,8 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
     """
     accuracies = []  # 정확도 정보를 저장할 리스트
     wpms = []  # (시간, WPM) 정보를 저장할 리스트
+    temp_dir = mkdtemp()  # 임시 디렉토리 생성
+    print(f"임시 디렉토리 생성: {temp_dir}")
 
     try:
         y, sr = librosa.load(audio_file_path, sr=None)  # 오디오 파일 로드
@@ -47,25 +51,23 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
             # chunk_size 초 단위로 오디오 분할
             segment = y[i * sr:(i + chunk_size) * sr]
 
-            temp_audio_path = None
             try:
-                # 임시 파일로 저장 후 STT 처리
-                with NamedTemporaryFile(delete=True, suffix=".wav") as temp_audio:
-                    temp_audio_path = temp_audio.name
-                    sf.write(temp_audio_path, segment, sr)
-                    segment_text = STT(temp_audio_path)
+                # 임시 디렉토리에 파일 저장
+                temp_audio_path = os.path.join(temp_dir, f"segment_{i}.mp3")  # MP3 파일 형식으로 저장
+                sf.write(temp_audio_path, segment, sr)
+                print(f"임시 파일 생성: {temp_audio_path}")
 
-                    if not segment_text:
-                        print(f"Segment {i} STT 변환에 실패했습니다.")
-                        continue
+                # STT 처리
+                segment_text = STT(temp_audio_path)
+                
+                if not segment_text:
+                    print(f"Segment {i} STT 변환에 실패했습니다.")
+                    continue
             
-            finally:
-                # 임시 파일 명시적 삭제
-                if temp_audio_path and os.path.exists(temp_audio_path):
-                    try:
-                        os.unlink(temp_audio_path)
-                    except Exception as delete_error:
-                        print(f"임시 파일 삭제 중 오류 발생: {delete_error}")
+            except Exception as file_error:
+                print(f"임시 파일 처리 중 오류 발생: {file_error}")
+                print(traceback.format_exc())
+                continue
 
             # 구간별 정확도 계산
             accuracy = analyze_pronunciation_accuracy(segment_text, script_text)
@@ -85,6 +87,22 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
             accuracies.append((time_str, accuracy))
             wpms.append((time_str, wpm))
 
+    except Exception as e:
+        print(f"정확도 및 WPM 분석 오류: {e}")
+        print(traceback.format_exc())
+        return [], [], 0.0
+
+    finally:
+        # 임시 디렉토리 및 모든 파일 삭제
+        try:
+            if os.path.exists(temp_dir):
+                shutil.rmtree(temp_dir)  # 디렉토리와 내부 파일 모두 삭제
+                print(f"임시 디렉토리 삭제 성공: {temp_dir}")
+        except Exception as delete_error:
+            print(f"임시 디렉토리 삭제 실패: {temp_dir}")
+            print(f"삭제 오류: {delete_error}")
+            print(traceback.format_exc())
+
         # 평균 발음 정확도 계산
         if accuracies:
             average_accuracy = sum(accuracy for _, accuracy in accuracies) / len(accuracies)
@@ -92,7 +110,3 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
             average_accuracy = 0.0
 
         return accuracies, wpms, average_accuracy
-
-    except Exception as e:
-        print(f"정확도 및 WPM 분석 오류: {e}")
-        return [], [], 0.0
