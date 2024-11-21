@@ -15,6 +15,7 @@ from .analyze_pronunciation_accuracy import analyze_pronunciation_accuracy
 from .correct_text_with_llm import correct_text_with_llm
 from .analyze_low_accuracy import analyze_low_accuracy
 from .calculate_presentation_score import calculate_presentation_score
+from pronun_model.config import ensure_directories  # config.py에서 불러옴
 
 __all__ = [
     "convert_to_mp3",
@@ -29,5 +30,6 @@ __all__ = [
     "analyze_pronunciation_accuracy",
     "correct_text_with_llm",
     "analyze_low_accuracy",
-    "calculate_presentation_score"
+    "calculate_presentation_score",
+    "ensure_directories",
 ]

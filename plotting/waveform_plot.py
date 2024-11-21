@@ -1,31 +1,37 @@
-# plotting/waveform_plot.py
+# pronun_model/plotting/plot_waveform.py
 
 import matplotlib.pyplot as plt
 import librosa
 import librosa.display
 import os
+from pronun_model.config import CONVERT_TTS_DIR, ENABLE_PLOTTING
+import logging
 
-def plot_waveform(audio_path, title, output_dir="plots"):
+def plot_waveform(audio_path, plot_name):
     """
-    오디오 파일의 파형을 플롯하고 저장합니다.
+    오디오 파일의 파형을 플롯하여 plots 디렉토리에 저장합니다.
 
     Args:
         audio_path (str): 오디오 파일 경로.
-        title (str): 플롯 제목.
-        output_dir (str): 플롯을 저장할 디렉토리.
+        plot_name (str): 플롯 이름 (파일명으로 사용).
     """
     try:
-        data, sample_rate = librosa.load(audio_path, sr=16000)
-        plt.figure(figsize=(16, 6))
-        librosa.display.waveshow(y=data, sr=sample_rate)
-        plt.title(title)
-        
-        # plots 디렉토리가 없으면 생성
-        if not os.path.exists(output_dir):
-            os.makedirs(output_dir)
-        
-        plt.savefig(os.path.join(output_dir, f"{title}.png"))
+        # 오디오 파일 로드
+        y, sr = librosa.load(audio_path, sr=None)
+
+        plt.figure(figsize=(14, 5))
+        librosa.display.waveshow(y, sr=sr)
+        plt.title(plot_name)
+        plt.xlabel("Time (s)")
+        plt.ylabel("Amplitude")
+
+        # plots 디렉토리에 저장
+        plot_filename = f"{plot_name}.png"
+        plot_dir = "plots"
+        os.makedirs(plot_dir, exist_ok=True)
+        plot_path = os.path.join(plot_dir, plot_filename)
+        plt.savefig(plot_path)
         plt.close()
-        print(f"{title} 플롯이 {output_dir} 디렉토리에 저장되었습니다.")
+        logging.info(f"파형 플롯 저장 완료: {plot_path}")
     except Exception as e:
-        print(f"파형 플롯 오류: {e}")
+        logging.error(f"파형 플롯 생성 오류 ({audio_path}): {e}")

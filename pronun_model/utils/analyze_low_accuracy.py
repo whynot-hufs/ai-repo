@@ -1,8 +1,25 @@
 # utils/analyze_low_accuracy.py
 
+import warnings
+
+# PySoundFile 관련 UserWarning 무시
+warnings.filterwarnings(
+    "ignore",
+    category=UserWarning,
+    message=".*PySoundFile failed.*"
+)
+
+# librosa.core.audio.__audioread_load 관련 FutureWarning 무시
+warnings.filterwarnings(
+    "ignore",
+    category=FutureWarning,
+    message=".*librosa.core.audio.__audioread_load.*"
+)
+
 from .stt import STT
 from .analyze_pronunciation_accuracy import analyze_pronunciation_accuracy
 from .count_words import count_words
+import os
 import librosa
 import soundfile as sf
 from tempfile import NamedTemporaryFile
@@ -30,13 +47,25 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
             # chunk_size 초 단위로 오디오 분할
             segment = y[i * sr:(i + chunk_size) * sr]
 
-            # 임시 파일로 저장 후 STT 처리
-            with NamedTemporaryFile(delete=True, suffix=".wav") as temp_audio:
-                sf.write(temp_audio.name, segment, sr)
-                segment_text = STT(temp_audio.name)
-                if not segment_text:
-                    print(f"Segment {i} STT 변환에 실패했습니다.")
-                    continue
+            temp_audio_path = None
+            try:
+                # 임시 파일로 저장 후 STT 처리
+                with NamedTemporaryFile(delete=True, suffix=".wav") as temp_audio:
+                    temp_audio_path = temp_audio.name
+                    sf.write(temp_audio_path, segment, sr)
+                    segment_text = STT(temp_audio_path)
+
+                    if not segment_text:
+                        print(f"Segment {i} STT 변환에 실패했습니다.")
+                        continue
+            
+            finally:
+                # 임시 파일 명시적 삭제
+                if temp_audio_path and os.path.exists(temp_audio_path):
+                    try:
+                        os.unlink(temp_audio_path)
+                    except Exception as delete_error:
+                        print(f"임시 파일 삭제 중 오류 발생: {delete_error}")
 
             # 구간별 정확도 계산
             accuracy = analyze_pronunciation_accuracy(segment_text, script_text)

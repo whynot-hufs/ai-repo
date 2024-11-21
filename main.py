@@ -1,15 +1,19 @@
 # main.py
 
-from pronun_model.utils import calculate_presentation_score
+import logging
+from pronun_model.utils import calculate_presentation_score, ensure_directories
 from pronun_model.config import ENABLE_PLOTTING
 import os
 
 if ENABLE_PLOTTING:
-    from plotting import plot_waveform
+    from pronun_model.plotting.plot_waveform import plot_waveform  # 정확한 경로로 수정
 
 def main():
+    # 디렉토리 생성 확인
+    ensure_directories()
+    
     # 예시 오디오 파일 경로
-    audio_file = "/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-LLM/storage/002ece7f4ec7acb1.mp4"
+    audio_file = "/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-LLM/storage/input_video/002ece7f4ec7acb1.mp4"
 
     # 스크립트가 제공된 경우
     user_script = None  # 실제 스크립트로 교체하거나 None으로 설정
@@ -28,7 +32,13 @@ def main():
         if ENABLE_PLOTTING:
             # 플롯 기능 활성화
             plot_waveform(audio_file, "Original_Audio_Waveform")
-            plot_waveform("TTS.mp3", "TTS_Audio_Waveform")
+            tts_file_path = results.get('tts_file_path')
+            if tts_file_path:
+                plot_waveform(tts_file_path, "TTS_Audio_Waveform")
+            else:
+                print("TTS 파일 경로가 존재하지 않습니다.")
+    else:
+        print("발표 점수 계산에 실패했습니다.")
 
 if __name__ == "__main__":
     # plots 디렉토리가 없으면 생성

@@ -1,5 +1,21 @@
 # pronun_model/utils/compare_audio_similarity.py
 
+import warnings
+
+# PySoundFile 관련 UserWarning 무시
+warnings.filterwarnings(
+    "ignore",
+    category=UserWarning,
+    message=".*PySoundFile failed.*"
+)
+
+# librosa.core.audio.__audioread_load 관련 FutureWarning 무시
+warnings.filterwarnings(
+    "ignore",
+    category=FutureWarning,
+    message=".*librosa.core.audio.__audioread_load.*"
+)
+
 import librosa
 from sklearn.metrics.pairwise import cosine_similarity
 
