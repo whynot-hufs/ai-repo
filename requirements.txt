@@ -1,0 +1,9 @@
+python-dotenv
+pydub
+jiwer
+fuzzywuzzy[speedup]
+openai
+librosa
+soundfile
+scikit-learn
+matplotlib
