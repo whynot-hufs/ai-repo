@@ -41,7 +41,7 @@ async def send_feedback(video_id: str, response: Response):
             logger.info("스크립트가 없으므로 STT 및 LLM을 사용하여 스크립트를 생성합니다.")
 
         # 발표 점수 계산 (핵심 유틸리티 호출)
-        results = calculate_presentation_score(mp3_path, script_text=script_text)
+        results = calculate_presentation_score(mp3_path, script_text=None)
 
         if not results:
             logger.error(f"비디오 ID {video_id}에 대한 분석이 실패했습니다.")

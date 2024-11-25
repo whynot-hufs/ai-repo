@@ -13,7 +13,7 @@ def main():
     ensure_directories()
     
     # 예시 오디오 파일 경로
-    audio_file = "/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video/002ece7f4ec7acb1.mp4"
+    audio_file = "/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video/25ba260c5a5f4ceebdbdcdcc14eaf49c.mp4"
 
     # 스크립트가 제공된 경우
     user_script = None  # 실제 스크립트로 교체하거나 None으로 설정
