@@ -1,47 +1,74 @@
-# main.py
+from fastapi import FastAPI, Request
+from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from fastapi import Response
 
-import logging
-from pronun_model.utils import calculate_presentation_score, ensure_directories
+from pronun_model.routers.upload_video import router as upload_video_router
+from pronun_model.routers.send_feedback import router as send_feedback_router
 from pronun_model.config import ENABLE_PLOTTING
-import os
+from pronun_model.utils import ensure_directories 
 
 if ENABLE_PLOTTING:
-    from pronun_model.plotting.plot_waveform import plot_waveform  # 정확한 경로로 수정
+    from pronun_model.plotting.plot_waveform import plot_waveform
 
-def main():
-    # 디렉토리 생성 확인
-    ensure_directories()
-    
-    # 예시 오디오 파일 경로
-    audio_file = "/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-LLM/storage/input_video/002ece7f4ec7acb1.mp4"
+import uvicorn
+import logging
 
-    # 스크립트가 제공된 경우
-    user_script = None  # 실제 스크립트로 교체하거나 None으로 설정
+# 로깅 설정
+logger = logging.getLogger("uvicorn")
 
-    # 음성 평가 처리
-    results = calculate_presentation_score(audio_file, script_text=user_script)
+app = FastAPI()
 
-    if results:
-        print("\n- 평가 결과 -")
-        print(f"오디오 유사도: {results['audio_similarity']:.2f}")
-        print(f"평균 사용자 말하기 속도 (WPM): {results['original_speed']:.2f}")
-        print(f"TTS 속도 (WPM): {results['tts_speed']:.2f}")
-        print(f"평균 사용자 발음 정확도: {results['average_accuracy']:.2f}")  # 평균 발음 정확도
-        print(f"대본 텍스트와 일치도 (대본 미 제공 시 문법 일치도): {results['pronunciation_accuracy']:.2f}")  # 대본 텍스트와 일치도
+# 모든 출처를 허용하는 CORS 설정 (자격 증명 포함 불가)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 모든 출처 허용
+    allow_methods=["*"],
+    allow_headers=["*"],
+    allow_credentials=False,  # credentials를 반드시 False로 설정
+)
 
-        if ENABLE_PLOTTING:
-            # 플롯 기능 활성화
-            plot_waveform(audio_file, "Original_Audio_Waveform")
-            tts_file_path = results.get('tts_file_path')
-            if tts_file_path:
-                plot_waveform(tts_file_path, "TTS_Audio_Waveform")
-            else:
-                print("TTS 파일 경로가 존재하지 않습니다.")
-    else:
-        print("발표 점수 계산에 실패했습니다.")
+# 라우터 포함
+app.include_router(upload_video_router, prefix="/api/pronun", tags=["Video Upload & Script"])
+app.include_router(send_feedback_router, prefix="/api/pronun", tags=["Feedback Retrieval"])
 
+@app.on_event("startup")
+async def startup_event():
+    """
+    FastAPI 서버 시작 시 초기화 작업 수행.
+    """
+    logger.info("FastAPI pronun API Router Start")
+    ensure_directories()  # 디렉토리 확인 및 생성
+
+# 루트 엔드포인트 (선택 사항)
+@app.get("/")
+def read_root():
+    logger = logging.getLogger(__name__)
+    logger.info("Root endpoint accessed")
+    return {"message": "Hello, Selina!"}
+
+# 요청 로깅 미들웨어
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    logger.info(f"Request: {request.method} {request.url}")
+    try:
+        response = await call_next(request)
+        logger.info(f"Response status: {response.status_code}")
+        return response
+    except Exception as e:
+        logger.error(f"Error processing request: {e}")
+        raise e
+
+# 서버 실행 (uvicorn.run()에서 log_config 지정)
 if __name__ == "__main__":
-    # plots 디렉토리가 없으면 생성
-    if ENABLE_PLOTTING and not os.path.exists("plots"):
-        os.makedirs("plots")
-    main()
+    # 현재 작업 디렉터리를 스크립트의 디렉터리로 설정
+    # os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+    uvicorn.run(
+        "main:app",
+        host="0.0.0.0",
+        port=8000,
+        reload=True,
+        log_config="logging_config.json"  # 로깅 설정 파일 지정
+    )

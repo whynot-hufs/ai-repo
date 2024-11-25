@@ -10,9 +10,10 @@ from .adjust_audio_length import adjust_audio_length
 from .analyze_low_accuracy import analyze_low_accuracy
 from .compare_audio_similarity import compare_audio_similarity
 from .analyze_pronunciation_accuracy import analyze_pronunciation_accuracy
+from typing import Optional, Dict, Any
 import logging
 
-def calculate_presentation_score(audio_file_path, script_text=None):
+def calculate_presentation_score(audio_file_path: str, script_text: Optional[str] = None) -> Optional[Dict[str, Any]]:
     """
     프레젠테이션 음성을 분석하여 점수를 계산합니다.
 
@@ -95,6 +96,16 @@ def calculate_presentation_score(audio_file_path, script_text=None):
             logging.error("대본 텍스트와 일치도 분석에 실패했습니다.")
             return None
 
+        # --- pronunciation_scores 및 wpm_scores 추가 ---
+        pronunciation_scores = [
+            {"time_segment": time_str, "accuracy": accuracy}
+            for time_str, accuracy in low_accuracies
+        ]
+        wpm_scores = [
+            {"time_segment": time_str, "wpm": wpm}
+            for time_str, wpm in wpms
+        ]
+
         # 최종 결과 반환
         return {
             "audio_similarity": audio_similarity,
@@ -102,7 +113,9 @@ def calculate_presentation_score(audio_file_path, script_text=None):
             "tts_speed": tts_wpm,  # 실제 WPM으로 환산
             "average_accuracy": average_accuracy,
             "pronunciation_accuracy": pronunciation_accuracy,
-            "tts_file_path": tts_file_path  # TTS 파일 경로 추가
+            "tts_file_path": tts_file_path,  # TTS 파일 경로 추가
+            "pronunciation_scores": pronunciation_scores,  # 추가
+            "wpm_scores": wpm_scores  # 추가
         }
     
     except Exception as e:
