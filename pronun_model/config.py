@@ -26,6 +26,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # config.py의 절대 경
 UPLOAD_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", os.getenv("UPLOAD_DIR", "storage/input_video")))
 CONVERT_MP3_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", os.getenv("CONVERT_MP3_DIR", "storage/convert_mp3")))
 CONVERT_TTS_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", os.getenv("CONVERT_TTS_DIR", "storage/convert_tts")))
+SCRIPTS_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", os.getenv("SCRIPTS_DIR", "storage/scripts")))
 
 # 디렉토리 존재 여부 확인 및 생성
 def ensure_directories():
@@ -33,7 +34,7 @@ def ensure_directories():
     필요한 저장 디렉토리를 생성합니다.
     """
     try:
-        for directory in [UPLOAD_DIR, CONVERT_MP3_DIR, CONVERT_TTS_DIR]:
+        for directory in [UPLOAD_DIR, CONVERT_MP3_DIR, CONVERT_TTS_DIR, SCRIPTS_DIR]:
             os.makedirs(directory, exist_ok=True)
         logging.info("All necessary directories are ensured.")
     except Exception as e:

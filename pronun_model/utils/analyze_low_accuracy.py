@@ -41,7 +41,6 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
     accuracies = []  # 정확도 정보를 저장할 리스트
     wpms = []  # (시간, WPM) 정보를 저장할 리스트
     temp_dir = mkdtemp()  # 임시 디렉토리 생성
-    print(f"임시 디렉토리 생성: {temp_dir}")
 
     try:
         y, sr = librosa.load(audio_file_path, sr=None)  # 오디오 파일 로드
@@ -55,7 +54,6 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
                 # 임시 디렉토리에 파일 저장
                 temp_audio_path = os.path.join(temp_dir, f"segment_{i}.mp3")  # MP3 파일 형식으로 저장
                 sf.write(temp_audio_path, segment, sr)
-                print(f"임시 파일 생성: {temp_audio_path}")
 
                 # STT 처리
                 segment_text = STT(temp_audio_path)
@@ -97,7 +95,6 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
         try:
             if os.path.exists(temp_dir):
                 shutil.rmtree(temp_dir)  # 디렉토리와 내부 파일 모두 삭제
-                print(f"임시 디렉토리 삭제 성공: {temp_dir}")
         except Exception as delete_error:
             print(f"임시 디렉토리 삭제 실패: {temp_dir}")
             print(f"삭제 오류: {delete_error}")
