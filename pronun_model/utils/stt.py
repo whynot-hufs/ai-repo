@@ -12,7 +12,7 @@ def STT(audio_file_path: str) -> Optional[str]:
     주어진 오디오 파일을 텍스트로 변환(STT).
 
     Args:
-        file_path (str): 입력 오디오 파일 경로.
+        audio_file_path (str): 입력 오디오 파일 경로.
 
     Returns:
         str: 변환된 텍스트.

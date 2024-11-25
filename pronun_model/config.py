@@ -34,7 +34,7 @@ def ensure_directories():
     필요한 저장 디렉토리를 생성합니다.
     """
     try:
-        for directory in [UPLOAD_DIR, CONVERT_MP3_DIR, CONVERT_TTS_DIR]:
+        for directory in [UPLOAD_DIR, CONVERT_MP3_DIR, CONVERT_TTS_DIR, SCRIPTS_DIR]:
             os.makedirs(directory, exist_ok=True)
         logging.info("All necessary directories are ensured.")
     except Exception as e:

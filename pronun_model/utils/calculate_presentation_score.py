@@ -32,7 +32,7 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
         if not stt_text:
             logging.error("STT 변환에 실패했습니다.")
             return None
-        # logging.debug("STT 변환된 텍스트:\n%s", stt_text)  # 필요 시 주석 해제
+        logging.debug("STT 변환된 텍스트:\n%s", stt_text)  # 필요 시 주석 해제
 
         # Step 2: 기준 텍스트 확인
         if script_text:
@@ -42,7 +42,7 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
             # 기준 스크립트가 없는 경우, LLM을 통해 STT 결과를 보정하여 사용
             logging.info("스크립트가 제공되지 않았습니다. LLM으로 텍스트를 보정합니다.")
             script_text = correct_text_with_llm(stt_text)
-            # logging.debug("LLM으로 보정된 텍스트:\n%s", script_text)
+            logging.debug("LLM으로 보정된 텍스트:\n%s", script_text)
 
         print("— 음성 정보 —")
 
