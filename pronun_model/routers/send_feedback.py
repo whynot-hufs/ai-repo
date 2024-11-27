@@ -1,14 +1,18 @@
 # pronun_model/routers/send_feedback.py
 
 from fastapi import APIRouter, HTTPException, BackgroundTasks, Response
-from pronun_model.utils import calculate_presentation_score
+from pronun_model.utils import calculate_presentation_score, extract_text
 from pronun_model.schemas.feedback import AnalysisResponse, AudioAnalysisResult, PronunciationScore, WPMScore
 from pronun_model.config import UPLOAD_DIR, CONVERT_MP3_DIR, SCRIPTS_DIR
 import os
 import logging
 
 router = APIRouter()
+
+# 전역 로깅 설정을 사용하기 위해 로깅 설정 제거
 logger = logging.getLogger(__name__)
+
+ALLOWED_SCRIPT_EXTENSIONS = {"docx", "txt", "pdf", "hwp", "hwpx"}
 
 @router.post("/send-feedback/{video_id}", response_model=AnalysisResponse)
 async def send_feedback(video_id: str, response: Response):
@@ -30,24 +34,25 @@ async def send_feedback(video_id: str, response: Response):
         raise HTTPException(status_code=404, detail="MP3 파일을 찾을 수 없습니다.")
 
     try:
-        # 스크립트 파일 경로 설정
-        script_path = os.path.join(SCRIPTS_DIR, f"{video_id}.txt")
-        script_text = None  # 기본값 설정
+        # 스크립트 파일 찾기
+        script_text = None
+        script_found = False
 
-        if os.path.exists(script_path):
-            with open(script_path, "r", encoding="utf-8") as f:
-                script_content = f.read().strip()
-            
-            if script_content:
-                script_text = script_content
-                logger.info(f"스크립트를 사용하여 분석을 수행합니다: {script_path}")
-                logger.debug(f"스크립트 내용:\n{script_text}")
-            else:
-                logger.info("스크립트 파일이 비어있으므로 STT 및 LLM을 사용하여 스크립트를 생성합니다.")
-                logger.debug("스크립트 내용이 비어있습니다.")
-        else:
-            logger.info("스크립트가 없으므로 STT 및 LLM을 사용하여 스크립트를 생성합니다.")
-            logger.debug("스크립트 파일이 존재하지 않습니다.")
+        for ext in ALLOWED_SCRIPT_EXTENSIONS:
+            script_path = os.path.join(SCRIPTS_DIR, f"{video_id}.{ext}")
+            if os.path.exists(script_path):
+                logger.info(f"스크립트 파일을 발견했습니다: {script_path}")
+                extracted_text = extract_text(script_path)
+                if extracted_text:
+                    script_text = extracted_text
+                    logger.info("스크립트 텍스트 추출 성공")
+                    script_found = True
+                else:
+                    logger.warning("스크립트 텍스트 추출 실패")
+                break
+
+        if not script_found:
+            logger.info("스크립트 파일이 없거나 텍스트 추출에 실패했습니다. STT 및 LLM을 사용합니다.")
 
         # 발표 점수 계산 (script_text가 존재하면 전달, 아니면 None 전달)
         results = calculate_presentation_score(mp3_path, script_text=script_text)

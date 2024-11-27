@@ -15,7 +15,16 @@ from .analyze_pronunciation_accuracy import analyze_pronunciation_accuracy
 from .correct_text_with_llm import correct_text_with_llm
 from .analyze_low_accuracy import analyze_low_accuracy
 from .calculate_presentation_score import calculate_presentation_score
-from .file_handler import ensure_directories  # config.py에서 불러옴
+from .file_handler import ensure_directories 
+from .text_cleaning import clean_extracted_text
+from .text_extraction import (
+    get_hwp_text,
+    get_hwpx_text,
+    get_docx_text,
+    get_pdf_text,
+    get_txt_text,
+    extract_text
+)
 
 __all__ = [
     "convert_to_mp3",
@@ -32,4 +41,11 @@ __all__ = [
     "analyze_low_accuracy",
     "calculate_presentation_score",
     "ensure_directories",
+    "get_hwp_text",
+    "get_hwpx_text",
+    "get_docx_text",
+    "get_pdf_text",
+    "get_txt_text",
+    "extract_text",
+    "clean_extracted_text"
 ]
