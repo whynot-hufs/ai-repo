@@ -28,7 +28,6 @@ async def upload_video_with_optional_script(
     video: UploadFile = File(...),
     script: Optional[str] = Form(None)
 ):
-
     """
     비디오 파일을 업로드하고, MP3로 변환하여 저장한 후 video_id를 반환합니다.
     """
