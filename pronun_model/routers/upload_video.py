@@ -2,6 +2,7 @@
 
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException, Response, Request
 from pronun_model.utils.convert_to_mp3 import convert_to_mp3
+from pronun_model.utils.text_cleaning import clean_extracted_text
 from pronun_model.schemas.feedback import UploadResponse
 from pronun_model.config import UPLOAD_DIR, CONVERT_MP3_DIR, SCRIPTS_DIR
 from typing import Optional
@@ -9,26 +10,20 @@ import os
 import uuid
 import logging
 import shutil
+import tempfile  # tempfile 모듈 임포트 추가
 
 router = APIRouter()
 
-# 로깅 설정
+# 전역 로깅 설정을 사용하기 위해 로깅 설정 제거
 logger = logging.getLogger(__name__)
-if not logger.hasHandlers():
-    logger.setLevel(logging.INFO)
-    handler = logging.StreamHandler()
-    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-    handler.setFormatter(formatter)
-    logger.addHandler(handler)
 
 @router.post("/upload-video-with-script/", response_model=UploadResponse)
 async def upload_video_with_optional_script(
     request: Request,
     response: Response,
     video: UploadFile = File(...),
-    script: Optional[str] = Form(None)
+    script: Optional[UploadFile] = File(None)
 ):
-
     """
     비디오 파일을 업로드하고, MP3로 변환하여 저장한 후 video_id를 반환합니다.
     """
@@ -39,16 +34,23 @@ async def upload_video_with_optional_script(
     logger.info("upload_video_with_optional_script 엔드포인트 호출됨")
     logger.info(f"수신된 비디오 파일: {video.filename}")
     if script:
-        logger.info(f"수신된 스크립트 길이: {len(script)} 문자")
+        logger.info(f"스크립트가 수신 되었습니다.")
     else:
-        logger.info("스크립트가 제공되지 않았습니다. STT 및 LLM을 사용하여 스크립트를 생성합니다.")
+        logger.info("스크립트가 제공되지 않았습니다.")
 
-    # 지원하는 파일 형식 확인
+    # 지원하는 영상 파일 형식 확인
     ALLOWED_EXTENSIONS = {"webm", "mov", "avi", "mkv", "flac", "m4a", "mp3", "mp4", "mpeg", "mpga", "oga", "ogg", "wav"}
     file_extension = video.filename.split(".")[-1].lower()
     if file_extension not in ALLOWED_EXTENSIONS:
         logger.warning(f"지원하지 않는 파일 형식: {file_extension}")
-        raise HTTPException(status_code=400, detail="지원하지 않는 파일 형식입니다.")
+        raise HTTPException(status_code=400, detail="지원하지 않는 영상 파일 형식입니다.")
+
+    # 지원하는 스크립트 파일 형식 확인
+    ALLOWED_SCRIPT_EXTENSIONS: Set[str] = {"docx", "txt", "pdf", "hwp", "hwpx"}
+    script_extension = script.filename.split(".")[-1].lower()
+    if script_extension not in ALLOWED_SCRIPT_EXTENSIONS:
+        logger.warning(f"지원하지 않는 파일 형식: {script_extension}")
+        raise HTTPException(status_code=400, detail="지원하지 않는 script 파일 형식입니다.")
 
     # 고유한 video_id 생성
     video_id = uuid.uuid4().hex
@@ -74,12 +76,19 @@ async def upload_video_with_optional_script(
             raise HTTPException(status_code=500, detail="MP3 변환이 실패했습니다.")
         logger.info(f"MP3 변환이 성공했습니다: {mp3_path}")
 
-        # 스크립트 저장 (선택적)
+        # 스크립트 저장 (선택적, File 형태로만 처리)
         if script:
-            script_path = os.path.join(SCRIPTS_DIR, f"{video_id}.txt")
-            with open(script_path, "w", encoding="utf-8") as f:
-                f.write(script)
-            logger.info(f"스크립트가 성공적으로 저장되었습니다: {script_path}")
+            script_extension = script.filename.split(".")[-1].lower()
+            if script_extension not in ALLOWED_SCRIPT_EXTENSIONS:
+                raise HTTPException(status_code=400, detail="지원하지 않는 스크립트 파일 형식입니다.")
+
+            script_path = os.path.join(SCRIPTS_DIR, f"{video_id}.{script_extension}")
+            with open(script_path, "wb") as buffer:
+                shutil.copyfileobj(script.file, buffer)
+            logger.info(f"스크립트 파일이 저장되었습니다: {script_path}")
+
+        else:
+            logger.info("스크립트 파일이 제공되지 않았습니다. STT 및 LLM을 사용하여 스크립트를 생성합니다.")
 
         # 성공 응답
         return UploadResponse(

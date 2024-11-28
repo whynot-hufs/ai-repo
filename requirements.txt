@@ -9,3 +9,7 @@ scikit-learn
 matplotlib
 fastapi
 uvicorn
+olefile
+python-docx
+PyPDF2
+gethwp
