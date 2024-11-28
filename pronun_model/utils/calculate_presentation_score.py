@@ -145,7 +145,7 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
 
         print("\n- 최종 분석 결과 WPM -")
         print(f"오디오 유사도: {audio_similarity:.2f}")
-        print(f"음성 평균 wpm: {original_speed:.2f}")
+        print(f"음성 평균 wpm: {average_wpm:.2f}")
         print(f"TTS 속도: {tts_wpm:.2f}")
         print(f"평균 발음 정확도: {average_accuracy:.2f}")
         print(f"음성 & Script(문법) 일치도: {pronunciation_accuracy:.2f}")

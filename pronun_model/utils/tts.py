@@ -5,8 +5,16 @@ import math
 import os
 import uuid
 from openai import OpenAI
-from ..config import OPENAI_API_KEY, CONVERT_TTS_DIR
+from pronun_model.config import OPENAI_API_KEY, CONVERT_TTS_DIR # config에서 가져오기
 import logging
+
+# 로깅 설정
+logger = logging.getLogger(__name__)
+if not logger.hasHandlers():
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
@@ -27,11 +35,11 @@ def TTS(script, output_path=None, speed=1.0):
         if output_path is None:
             # 고유한 파일 이름 생성
             filename = f"TTS_{uuid.uuid4()}.mp3"
-            output_path = os.path.join(CONVERT_TTS_DIR, filename)
+            output_path = CONVERT_TTS_DIR / filename
         else:
-            # output_path가 디렉토리를 포함하지 않으면 CONVERT_TTS_DIR을 포함하도록 수정
-            if not os.path.isabs(output_path):
-                output_path = os.path.join(CONVERT_TTS_DIR, output_path)
+            output_path = Path(output_path)
+            if not output_path.is_absolute():
+                output_path = CONVERT_TTS_DIR / output_path
 
         num = math.ceil(len(script) / 4000)
         if num == 1:
@@ -47,7 +55,9 @@ def TTS(script, output_path=None, speed=1.0):
             tts_files = []
             for i in range(num):
                 segment = script[4000 * i : 4000 * (i + 1)]
-                tts_segment_path = os.path.join(CONVERT_TTS_DIR, f"TTS_{i}_{uuid.uuid4()}.mp3")
+                segment_filename = f"TTS_{i}_{uuid.uuid4()}.mp3"
+                tts_segment_path = CONVERT_TTS_DIR / segment_filename
+
                 response = client.audio.speech.create(
                     model="tts-1",
                     voice="alloy",
@@ -65,10 +75,13 @@ def TTS(script, output_path=None, speed=1.0):
                 combined_audio += audio_segment
                 os.remove(tts_file)  # 임시 파일 삭제
 
+            # 결합된 오디오 저장
             combined_audio.export(output_path, format="mp3")
 
         logging.info(f"TTS 생성 완료: {output_path}")
-        return output_path
+        return str(output_path.resolve())
+
     except Exception as e:
-        logging.error(f"TTS 변환 오류: {e}")
+        logger.error(f"TTS 변환 오류: {e}")
+        logger.debug("트레이스백:", exc_info=True)
         return None

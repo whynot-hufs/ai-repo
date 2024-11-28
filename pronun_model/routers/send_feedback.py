@@ -3,7 +3,7 @@
 from fastapi import APIRouter, HTTPException, BackgroundTasks, Response
 from pronun_model.utils import calculate_presentation_score, extract_text
 from pronun_model.schemas.feedback import AnalysisResponse, AudioAnalysisResult, PronunciationScore, WPMScore
-from pronun_model.config import UPLOAD_DIR, CONVERT_MP3_DIR, SCRIPTS_DIR
+from pronun_model.config import CONVERT_MP3_DIR, SCRIPTS_DIR
 import os
 import logging
 
@@ -26,10 +26,10 @@ async def send_feedback(video_id: str, response: Response):
     logger.info(f"send_feedback 엔드포인트 호출됨 for video_id: {video_id}")
 
     # MP3 파일 경로 설정
-    mp3_path = os.path.join(CONVERT_MP3_DIR, f"{video_id}.mp3")
+    mp3_path = CONVERT_MP3_DIR / f"{video_id}.mp3"
 
     # MP3 파일 존재 여부 확인
-    if not os.path.exists(mp3_path):
+    if not mp3_path.exists():
         logger.error(f"MP3 파일을 찾을 수 없습니다: {mp3_path}")
         raise HTTPException(status_code=404, detail="MP3 파일을 찾을 수 없습니다.")
 
