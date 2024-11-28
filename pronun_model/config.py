@@ -53,9 +53,9 @@ except Exception as e:
 UPLOAD_DIR = BASE_DIR / os.getenv("UPLOAD_DIR", "storage/input_video")
 CONVERT_MP3_DIR = BASE_DIR / os.getenv("CONVERT_MP3_DIR", "storage/convert_mp3")
 CONVERT_TTS_DIR = BASE_DIR / os.getenv("CONVERT_TTS_DIR", "storage/convert_tts")
-SCRIPTS_DIR = BASE_DIR / os.getenv("SCRIPTS_DIR", "storage/scripts")
+SCRIPTS_DIR = BASE_DIR / os.getenv("SCRIPTS_DIR", "cstorage/scripts")
 
-# 디렉토리 존재 여부 확인 및 생성
+# 디렉토리 존재 여부 확인 및 생성c
 try:
     for directory in [UPLOAD_DIR, CONVERT_MP3_DIR, CONVERT_TTS_DIR, SCRIPTS_DIR]:
         directory.mkdir(parents=True, exist_ok=True)

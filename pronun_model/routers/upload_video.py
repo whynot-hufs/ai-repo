@@ -5,7 +5,7 @@ from pronun_model.utils.convert_to_mp3 import convert_to_mp3
 from pronun_model.utils.text_cleaning import clean_extracted_text
 from pronun_model.schemas.feedback import UploadResponse
 from pronun_model.config import UPLOAD_DIR, CONVERT_MP3_DIR, SCRIPTS_DIR
-from typing import Optional
+from typing import Optional, Union, Set
 import os
 import uuid
 import logging
@@ -22,7 +22,7 @@ async def upload_video_with_optional_script(
     request: Request,
     response: Response,
     video: UploadFile = File(...),
-    script: Optional[UploadFile] = File(None)
+    script: Optional[UploadFile] = None  # Change from File(None) to None
 ):
     """
     비디오 파일을 업로드하고, MP3로 변환하여 저장한 후 video_id를 반환합니다.
@@ -33,13 +33,15 @@ async def upload_video_with_optional_script(
 
     logger.info("upload_video_with_optional_script 엔드포인트 호출됨")
     logger.info(f"수신된 비디오 파일: {video.filename}")
+
     if script:
         logger.info(f"스크립트가 수신 되었습니다.")
     else:
         logger.info("스크립트가 제공되지 않았습니다.")
+        script = None  # 빈 문자열인 경우 None으로 설정
 
-    # 지원하는 영상 파일 형식 확인
-    ALLOWED_EXTENSIONS = {"webm", "mov", "avi", "mkv", "flac", "m4a", "mp3", "mp4", "mpeg", "mpga", "oga", "ogg", "wav"}
+   # 지원하는 영상 파일 형식 확인
+    ALLOWED_EXTENSIONS: Set[str] = {"webm", "mov", "avi", "mkv", "flac", "m4a", "mp3", "mp4", "mpeg", "mpga", "oga", "ogg", "wav"}
     file_extension = video.filename.split(".")[-1].lower()
     if file_extension not in ALLOWED_EXTENSIONS:
         logger.warning(f"지원하지 않는 파일 형식: {file_extension}")
@@ -47,16 +49,17 @@ async def upload_video_with_optional_script(
 
     # 지원하는 스크립트 파일 형식 확인
     ALLOWED_SCRIPT_EXTENSIONS: Set[str] = {"docx", "txt", "pdf", "hwp", "hwpx"}
-    script_extension = script.filename.split(".")[-1].lower()
-    if script_extension not in ALLOWED_SCRIPT_EXTENSIONS:
-        logger.warning(f"지원하지 않는 파일 형식: {script_extension}")
-        raise HTTPException(status_code=400, detail="지원하지 않는 script 파일 형식입니다.")
+    if script:
+        script_extension = script.filename.split(".")[-1].lower()
+        if script_extension not in ALLOWED_SCRIPT_EXTENSIONS:
+            logger.warning(f"지원하지 않는 파일 형식: {script_extension}")
+            raise HTTPException(status_code=400, detail="지원하지 않는 script 파일 형식입니다.")
 
     # 고유한 video_id 생성
     video_id = uuid.uuid4().hex
 
     # 비디오 파일 저장 경로 설정
-    video_path = os.path.join(UPLOAD_DIR, f"{video_id}.{file_extension}")
+    video_path = UPLOAD_DIR / f"{video_id}.{file_extension}"
 
     # 비디오 파일 저장
     try:
@@ -78,15 +81,10 @@ async def upload_video_with_optional_script(
 
         # 스크립트 저장 (선택적, File 형태로만 처리)
         if script:
-            script_extension = script.filename.split(".")[-1].lower()
-            if script_extension not in ALLOWED_SCRIPT_EXTENSIONS:
-                raise HTTPException(status_code=400, detail="지원하지 않는 스크립트 파일 형식입니다.")
-
-            script_path = os.path.join(SCRIPTS_DIR, f"{video_id}.{script_extension}")
+            script_path = SCRIPTS_DIR / f"{video_id}.{script_extension}"
             with open(script_path, "wb") as buffer:
                 shutil.copyfileobj(script.file, buffer)
             logger.info(f"스크립트 파일이 저장되었습니다: {script_path}")
-
         else:
             logger.info("스크립트 파일이 제공되지 않았습니다. STT 및 LLM을 사용하여 스크립트를 생성합니다.")
 
