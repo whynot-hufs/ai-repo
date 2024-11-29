@@ -44,5 +44,9 @@
             "level": "DEBUG",
             "propagate": false
         }
+    },
+    "root": {
+        "level": "INFO",
+        "handlers": ["default", "file"]
     }
 }

@@ -24,3 +24,191 @@
 2024-11-29 14:46:32,991 - INFO - uvicorn.error - Application shutdown complete.
 2024-11-29 14:46:32,991 - INFO - uvicorn.error - Finished server process [79219]
 2024-11-29 14:46:33,491 - INFO - uvicorn.error - Stopping reloader process [79217]
+2024-11-29 15:32:08,270 - INFO - uvicorn.error - Will watch for changes in these directories: ['/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun']
+2024-11-29 15:32:08,270 - INFO - uvicorn.error - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-29 15:32:08,270 - INFO - uvicorn.error - Started reloader process [420] using WatchFiles
+2024-11-29 15:33:03,425 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/upload_video.py'. Reloading...
+2024-11-29 15:33:05,807 - INFO - uvicorn.error - Started server process [953]
+2024-11-29 15:33:05,807 - INFO - uvicorn.error - Waiting for application startup.
+2024-11-29 15:33:05,807 - INFO - uvicorn - FastAPI pronun API Router Start
+2024-11-29 15:33:05,807 - INFO - uvicorn.error - Application startup complete.
+2024-11-29 15:33:15,408 - INFO - uvicorn.error - Shutting down
+2024-11-29 15:33:15,510 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-11-29 15:33:15,511 - INFO - uvicorn.error - Application shutdown complete.
+2024-11-29 15:33:15,511 - INFO - uvicorn.error - Finished server process [953]
+2024-11-29 15:33:15,839 - INFO - uvicorn.error - Stopping reloader process [420]
+2024-11-29 15:33:23,015 - INFO - uvicorn.error - Will watch for changes in these directories: ['/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun']
+2024-11-29 15:33:23,015 - INFO - uvicorn.error - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-29 15:33:23,015 - INFO - uvicorn.error - Started reloader process [1177] using WatchFiles
+2024-11-29 15:33:24,705 - INFO - uvicorn.error - Started server process [1182]
+2024-11-29 15:33:24,705 - INFO - uvicorn.error - Waiting for application startup.
+2024-11-29 15:33:24,705 - INFO - uvicorn - FastAPI pronun API Router Start
+2024-11-29 15:33:24,705 - INFO - uvicorn.error - Application startup complete.
+2024-11-29 15:33:41,850 - INFO - uvicorn - Request: GET http://0.0.0.0:8000/
+2024-11-29 15:33:41,857 - INFO - uvicorn - Response status: 200
+2024-11-29 15:33:45,459 - INFO - uvicorn - Request: GET http://0.0.0.0:8000/docs
+2024-11-29 15:33:45,459 - INFO - uvicorn - Response status: 200
+2024-11-29 15:33:45,649 - INFO - uvicorn - Request: GET http://0.0.0.0:8000/openapi.json
+2024-11-29 15:33:45,656 - INFO - uvicorn - Response status: 200
+2024-11-29 15:34:00,081 - INFO - uvicorn - Request: POST http://0.0.0.0:8000/api/pronun/upload-video-with-script/
+2024-11-29 15:34:05,404 - INFO - uvicorn - Response status: 200
+2024-11-29 15:34:19,577 - INFO - uvicorn - Request: POST http://0.0.0.0:8000/api/pronun/send-feedback/6fb7b7cdb74a43939d27f79ead1cab7f
+2024-11-29 15:37:10,775 - INFO - uvicorn - Response status: 200
+2024-11-29 15:42:40,891 - INFO - uvicorn - Request: POST http://0.0.0.0:8000/api/pronun/upload-video-with-script/
+2024-11-29 15:42:45,910 - INFO - uvicorn - Response status: 200
+2024-11-29 15:42:53,122 - INFO - uvicorn - Request: POST http://0.0.0.0:8000/api/pronun/send-feedback/f87730685de4408891e3fe5cf8c60614
+2024-11-29 15:45:43,096 - INFO - uvicorn - Response status: 200
+2024-11-29 15:51:15,919 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/calculate_presentation_score.py'. Reloading...
+2024-11-29 15:51:16,008 - INFO - uvicorn.error - Shutting down
+2024-11-29 15:51:16,111 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-11-29 15:51:16,112 - INFO - uvicorn.error - Application shutdown complete.
+2024-11-29 15:51:16,112 - INFO - uvicorn.error - Finished server process [1182]
+2024-11-29 15:51:18,804 - INFO - uvicorn.error - Started server process [8273]
+2024-11-29 15:51:18,804 - INFO - uvicorn.error - Waiting for application startup.
+2024-11-29 15:51:18,804 - INFO - uvicorn - FastAPI pronun API Router Start
+2024-11-29 15:51:18,804 - INFO - uvicorn.error - Application startup complete.
+2024-11-29 15:51:54,916 - INFO - uvicorn - Request: POST http://0.0.0.0:8000/api/pronun/send-feedback/f87730685de4408891e3fe5cf8c60614
+2024-11-29 15:51:54,918 - INFO - uvicorn - Response status: 404
+2024-11-29 15:52:01,274 - INFO - uvicorn - Request: POST http://0.0.0.0:8000/api/pronun/upload-video-with-script/
+2024-11-29 15:52:06,138 - INFO - uvicorn - Response status: 200
+2024-11-29 15:52:11,290 - INFO - uvicorn - Request: POST http://0.0.0.0:8000/api/pronun/send-feedback/d2e91e197a724d57b4500047e4ff92d4
+2024-11-29 15:55:04,718 - INFO - uvicorn - Response status: 200
+2024-11-29 15:55:31,912 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/calculate_presentation_score.py'. Reloading...
+2024-11-29 15:55:31,917 - INFO - uvicorn.error - Shutting down
+2024-11-29 15:55:32,019 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-11-29 15:55:32,020 - INFO - uvicorn.error - Application shutdown complete.
+2024-11-29 15:55:32,020 - INFO - uvicorn.error - Finished server process [8273]
+2024-11-29 15:55:34,780 - INFO - uvicorn.error - Started server process [10001]
+2024-11-29 15:55:34,780 - INFO - uvicorn.error - Waiting for application startup.
+2024-11-29 15:55:34,781 - INFO - uvicorn - FastAPI pronun API Router Start
+2024-11-29 15:55:34,782 - INFO - uvicorn.error - Application startup complete.
+2024-11-29 15:55:50,951 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/calculate_presentation_score.py'. Reloading...
+2024-11-29 15:55:50,971 - INFO - uvicorn.error - Shutting down
+2024-11-29 15:55:51,073 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-11-29 15:55:51,073 - INFO - uvicorn.error - Application shutdown complete.
+2024-11-29 15:55:51,073 - INFO - uvicorn.error - Finished server process [10001]
+2024-11-29 15:55:53,046 - INFO - uvicorn.error - Started server process [10165]
+2024-11-29 15:55:53,047 - INFO - uvicorn.error - Waiting for application startup.
+2024-11-29 15:55:53,047 - INFO - uvicorn - FastAPI pronun API Router Start
+2024-11-29 15:55:53,047 - INFO - uvicorn.error - Application startup complete.
+2024-11-29 15:56:41,228 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/tts.py', 'pronun_model/routers/send_feedback.py', 'main.py', 'pronun_model/utils/convert_to_mp3.py', 'pronun_model/utils/calculate_presentation_score.py'. Reloading...
+2024-11-29 15:56:41,293 - INFO - uvicorn.error - Shutting down
+2024-11-29 15:56:41,394 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-11-29 15:56:41,395 - INFO - uvicorn.error - Application shutdown complete.
+2024-11-29 15:56:41,395 - INFO - uvicorn.error - Finished server process [10165]
+2024-11-29 15:56:54,500 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/calculate_presentation_score.py'. Reloading...
+2024-11-29 15:57:27,599 - WARNING - uvicorn.error - WatchFiles detected changes in 'main.py'. Reloading...
+2024-11-29 15:57:37,758 - WARNING - uvicorn.error - WatchFiles detected changes in 'main.py'. Reloading...
+2024-11-29 15:57:39,519 - INFO - uvicorn.error - Started server process [10936]
+2024-11-29 15:57:39,520 - INFO - uvicorn.error - Waiting for application startup.
+2024-11-29 15:57:39,523 - ERROR - uvicorn.error - Traceback (most recent call last):
+  File "/Users/daehyunkim_kakao/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 693, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/daehyunkim_kakao/miniconda3/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/daehyunkim_kakao/miniconda3/lib/python3.12/site-packages/fastapi/routing.py", line 133, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/daehyunkim_kakao/miniconda3/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/daehyunkim_kakao/miniconda3/lib/python3.12/site-packages/fastapi/routing.py", line 133, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/daehyunkim_kakao/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 569, in __aenter__
+    await self._router.startup()
+  File "/Users/daehyunkim_kakao/miniconda3/lib/python3.12/site-packages/starlette/routing.py", line 670, in startup
+    await handler()
+  File "/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/main.py", line 50, in startup_event
+    logger.info("FastAPI pronun API Router Start")
+    ^^^^^^
+NameError: name 'logger' is not defined
+
+2024-11-29 15:57:39,523 - ERROR - uvicorn.error - Application startup failed. Exiting.
+2024-11-29 15:59:36,910 - WARNING - uvicorn.error - WatchFiles detected changes in 'main.py'. Reloading...
+2024-11-29 15:59:39,046 - INFO - uvicorn.error - Started server process [11724]
+2024-11-29 15:59:39,047 - INFO - uvicorn.error - Waiting for application startup.
+2024-11-29 15:59:39,047 - INFO - uvicorn.error - Application startup complete.
+2024-11-29 16:01:26,740 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/upload_video.py'. Reloading...
+2024-11-29 16:01:26,837 - INFO - uvicorn.error - Shutting down
+2024-11-29 16:01:26,940 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-11-29 16:01:26,941 - INFO - uvicorn.error - Application shutdown complete.
+2024-11-29 16:01:26,941 - INFO - uvicorn.error - Finished server process [11724]
+2024-11-29 16:01:40,632 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/upload_video.py'. Reloading...
+2024-11-29 16:04:32,194 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/upload_video.py'. Reloading...
+2024-11-29 16:04:32,802 - INFO - root - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-11-29 16:04:32,803 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-11-29 16:04:32,803 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-11-29 16:04:32,803 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-11-29 16:04:32,803 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-11-29 16:04:41,930 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/upload_video.py'. Reloading...
+2024-11-29 16:04:42,396 - INFO - root - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-11-29 16:04:42,397 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-11-29 16:04:42,397 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-11-29 16:04:42,397 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-11-29 16:04:42,397 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-11-29 16:05:23,558 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/upload_video.py'. Reloading...
+2024-11-29 16:05:24,136 - INFO - root - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-11-29 16:05:24,136 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-11-29 16:05:24,136 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-11-29 16:05:24,136 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-11-29 16:05:24,137 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-11-29 16:05:51,501 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/upload_video.py'. Reloading...
+2024-11-29 16:05:52,012 - INFO - root - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-11-29 16:05:52,013 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-11-29 16:05:52,013 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-11-29 16:05:52,013 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-11-29 16:05:52,013 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-11-29 16:06:13,552 - WARNING - uvicorn.error - WatchFiles detected changes in 'main.py'. Reloading...
+2024-11-29 16:06:14,137 - INFO - root - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-11-29 16:06:14,137 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-11-29 16:06:14,138 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-11-29 16:06:14,138 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-11-29 16:06:14,138 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-11-29 16:07:07,105 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/upload_video.py'. Reloading...
+2024-11-29 16:07:07,719 - INFO - root - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-11-29 16:07:07,719 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-11-29 16:07:07,719 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-11-29 16:07:07,720 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-11-29 16:07:07,720 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-11-29 16:07:09,157 - INFO - uvicorn.error - Started server process [14731]
+2024-11-29 16:07:09,157 - INFO - uvicorn.error - Waiting for application startup.
+2024-11-29 16:07:09,158 - INFO - main_logger - FastAPI pronun API Router Start
+2024-11-29 16:07:09,158 - INFO - root - All necessary directories are ensured.
+2024-11-29 16:07:09,158 - INFO - uvicorn.error - Application startup complete.
+2024-11-29 16:07:16,058 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/send_feedback.py'. Reloading...
+2024-11-29 16:07:16,141 - INFO - uvicorn.error - Shutting down
+2024-11-29 16:07:16,243 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-11-29 16:07:16,244 - INFO - uvicorn.error - Application shutdown complete.
+2024-11-29 16:07:16,244 - INFO - uvicorn.error - Finished server process [14731]
+2024-11-29 16:07:17,013 - INFO - root - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-11-29 16:07:17,013 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-11-29 16:07:17,013 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-11-29 16:07:17,013 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-11-29 16:07:17,013 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-11-29 16:07:27,615 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/send_feedback.py'. Reloading...
+2024-11-29 16:07:28,132 - INFO - root - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-11-29 16:07:28,132 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-11-29 16:07:28,132 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-11-29 16:07:28,133 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-11-29 16:07:28,133 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-11-29 16:07:29,476 - INFO - uvicorn.error - Started server process [14913]
+2024-11-29 16:07:29,476 - INFO - uvicorn.error - Waiting for application startup.
+2024-11-29 16:07:29,476 - INFO - main_logger - FastAPI pronun API Router Start
+2024-11-29 16:07:29,476 - INFO - root - All necessary directories are ensured.
+2024-11-29 16:07:29,476 - INFO - uvicorn.error - Application startup complete.
+2024-11-29 16:07:40,015 - INFO - main_logger - Request: POST http://0.0.0.0:8000/api/pronun/upload-video-with-script/
+2024-11-29 16:07:40,049 - INFO - main_logger - upload_video_with_optional_script 엔드포인트 호출됨
+2024-11-29 16:07:40,049 - INFO - main_logger - 수신된 비디오 파일: 002ece7f4ec7acb1 (3).mp4
+2024-11-29 16:07:40,049 - INFO - main_logger - 스크립트가 제공되지 않았습니다.
+2024-11-29 16:07:40,055 - INFO - main_logger - 비디오 파일이 성공적으로 저장되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video/a33bc3e315de43c7beb7504e5399d53f.mp4
+2024-11-29 16:07:45,121 - ERROR - main_logger - MP3 변환 중 오류 발생: name 'logger' is not defined. video_path=/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video/a33bc3e315de43c7beb7504e5399d53f.mp4, video_id=a33bc3e315de43c7beb7504e5399d53f
+2024-11-29 16:07:45,122 - ERROR - main_logger - 알 수 없는 오류 발생: 500: MP3 변환 중 알 수 없는 오류가 발생했습니다.
+2024-11-29 16:07:45,124 - INFO - main_logger - Response status: 500
+2024-11-29 16:08:17,105 - INFO - uvicorn.error - Shutting down
+2024-11-29 16:08:17,208 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-11-29 16:08:17,211 - INFO - uvicorn.error - Application shutdown complete.
+2024-11-29 16:08:17,212 - INFO - uvicorn.error - Finished server process [14913]
+2024-11-29 16:08:17,522 - INFO - uvicorn.error - Stopping reloader process [1177]

@@ -8,14 +8,6 @@ from openai import OpenAI
 from pronun_model.config import OPENAI_API_KEY, CONVERT_TTS_DIR # config에서 가져오기
 import logging
 
-# 로깅 설정
-logger = logging.getLogger(__name__)
-if not logger.hasHandlers():
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s'
-    )
-
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 def TTS(script, output_path=None, speed=1.0):

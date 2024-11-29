@@ -12,11 +12,19 @@ from pronun_model.utils import ensure_directories
 if ENABLE_PLOTTING:
     from pronun_model.plotting.plot_waveform import plot_waveform
 
+from pathlib import Path
+import json
 import uvicorn
 import logging
+import logging.config
 
-# 로깅 설정
-logger = logging.getLogger("uvicorn")
+# JSON 기반 로깅 설정 적용
+logging_config_path = Path(__file__).resolve().parent / "logging_config.json"  # 프로젝트 루트에 위치한 파일 경로
+with open(logging_config_path, "r") as f:
+    logging_config = json.load(f)
+
+logging.config.dictConfig(logging_config)
+logger = logging.getLogger("main_logger")
 
 app = FastAPI()
 
@@ -72,3 +80,5 @@ if __name__ == "__main__":
         reload=True,
         log_config="logging_config.json"  # 로깅 설정 파일 지정
     )
+
+# uvicorn main:app --host 0.0.0.0 --port 8000 --reload --log-config logging_config.json

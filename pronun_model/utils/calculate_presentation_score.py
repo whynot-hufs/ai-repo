@@ -47,21 +47,15 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
             script_text = correct_text_with_llm(stt_text)
             logging.debug("LLM으로 보정된 텍스트:\n%s", script_text)
 
-        print("— 음성 정보 —")
-
         # Step 3: 음성 WPM 계산
         audio_duration = calculate_audio_duration(audio_file_path)
         word_count = count_words(stt_text)
         user_speed = calculate_speed(audio_file_path, stt_text)
-        print(f"오디오 길이 (초): {audio_duration:.2f}")
-        print(f"텍스트 단어 수: {word_count}")
-        print(f"사용자 발표 WPM: {user_speed:.2f}")
 
         # Step 4: TTS 속도 설정
         average_wpm = 100  # 평균 말하기 속도
         tts_speed_ratio = user_speed / average_wpm  # TTS 속도 비율 계산
         tts_speed_ratio = max(0.5, min(tts_speed_ratio, 4.0))  # 속도 제한 적용
-        print(f"TTS 속도 설정: {tts_speed_ratio:.2f}")
 
         # Step 5: TTS 생성 및 오디오 유사도 계산
         if script_source == "Script":
@@ -77,10 +71,6 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
 
         # TTS 속도 (WPM) 계산
         tts_wpm = tts_speed_ratio * average_wpm
-        if script_source == "Script":
-            print(f"TTS WPM (Script): {tts_wpm:.2f} WPM")
-        else:
-            print(f"TTS WPM (LLM): {tts_wpm:.2f} WPM")
 
         # Step 6: TTS와 사용자 음성 길이 동기화
         adjust_audio_length(tts_file_path, audio_duration)
@@ -90,7 +80,18 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
         if audio_similarity is None:
             logging.error("오디오 유사도 비교에 실패했습니다.")
             return None
-        logging.info(f"오디오 유사도: {audio_similarity:.2f}")
+
+        # --- 음성 정보 출력  ---
+        print("— 음성 정보 —")
+        print(f"오디오 길이 (초): {audio_duration:.2f}")
+        print(f"텍스트 단어 수: {word_count}")
+        print(f"사용자 발표 WPM: {user_speed:.2f}")
+        print(f"TTS 속도 설정: {tts_speed_ratio:.2f}")
+        
+        if script_source == "Script":
+            print(f"TTS WPM (Script): {tts_wpm:.2f} WPM")
+        else:
+            print(f"TTS WPM (LLM): {tts_wpm:.2f} WPM")
 
         # --- 발음 정확도 계산  ---
         print("\n— 구간별 발음 정확도 계산 —")

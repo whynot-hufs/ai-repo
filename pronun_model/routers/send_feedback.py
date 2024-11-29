@@ -6,11 +6,19 @@ from pronun_model.schemas.feedback import AnalysisResponse, AudioAnalysisResult,
 from pronun_model.config import CONVERT_MP3_DIR, SCRIPTS_DIR
 import os
 import logging
+import logging.config
+import json
+from pathlib import Path
 
 router = APIRouter()
 
-# 전역 로깅 설정을 사용하기 위해 로깅 설정 제거
-logger = logging.getLogger(__name__)
+# JSON 기반 로깅 설정 적용
+logging_config_path = Path(__file__).resolve().parent.parent.parent / "logging_config.json"  # 최상단 경로
+with open(logging_config_path, "r") as f:
+    logging_config = json.load(f)
+
+logging.config.dictConfig(logging_config)
+logger = logging.getLogger("main_logger")
 
 ALLOWED_SCRIPT_EXTENSIONS = {"docx", "txt", "pdf", "hwp", "hwpx"}
 
@@ -98,6 +106,12 @@ async def send_feedback(video_id: str, response: Response):
             analysis_result=analysis_result
         )
 
+    except FileNotFoundError as e:
+        logger.error(f"파일 관련 오류: {e}")
+        raise HTTPException(status_code=404, detail="파일 관련 오류 발생")
+    except KeyError as e:
+        logger.error(f"결과 데이터 키 누락: {e}")
+        raise HTTPException(status_code=500, detail="결과 데이터 키가 누락되었습니다.")
     except Exception as e:
-        logger.error(f"Error during feedback processing for video_id {video_id}: {e}")
-        raise HTTPException(status_code=500, detail="An error occurred during feedback processing")
+        logger.error(f"알 수 없는 오류 발생: {e}")
+        raise HTTPException(status_code=500, detail="예기치 않은 오류 발생")
