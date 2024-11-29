@@ -14,4 +14,3 @@ python-docx
 PyPDF2
 gethwp
 python-multipart
-starlette
