@@ -37,10 +37,12 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
         # Step 2: 기준 텍스트 확인
         if script_text:
             # 사용자가 제공한 스크립트를 기준으로 사용
+            script_source = "Script"
             logging.info("사용자가 제공한 스크립트를 사용합니다.")
             logging.info("TTS 생성을 생략합니다.")
         else:
             # 기준 스크립트가 없는 경우, LLM을 통해 STT 결과를 보정하여 사용
+            script_source = "LLM"
             logging.info("스크립트가 제공되지 않았습니다. LLM으로 텍스트를 보정합니다.")
             script_text = correct_text_with_llm(stt_text)
             logging.debug("LLM으로 보정된 텍스트:\n%s", script_text)
@@ -61,53 +63,34 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
         tts_speed_ratio = max(0.5, min(tts_speed_ratio, 4.0))  # 속도 제한 적용
         print(f"TTS 속도 설정: {tts_speed_ratio:.2f}")
 
-        # Step 4: TTS 생성 및 오디오 유사도 계산
-        if script_text:
-            # 스크립트가 제공된 경우
+        # Step 5: TTS 생성 및 오디오 유사도 계산
+        if script_source == "Script":
             logging.info("스크립트를 사용하여 TTS를 생성합니다.")
-            logging.info("TTS를 생성하고 오디오 유사도를 비교합니다.")
-            tts_file_path = TTS(script_text, speed=tts_speed_ratio)  # 기본 속도로 TTS 생성
-            if not tts_file_path:
-                logging.error("TTS 변환에 실패했습니다.")
-                return None
-            
-            # TTS 속도 (WPM) 계산
-            tts_wpm = tts_speed_ratio * average_wpm
-            print(f"TTS WPM (Script): {tts_wpm:.2f} WPM")
-
-            # Step 5: TTS와 사용자 음성 길이 동기화
-            adjust_audio_length(tts_file_path, audio_duration)
-
-            # Step 6: 오디오 유사도 계산
-            audio_similarity = compare_audio_similarity(audio_file_path, tts_file_path)
-            if audio_similarity is None:
-                logging.error("오디오 유사도 비교에 실패했습니다.")
-                return None
-            logging.info(f"오디오 유사도: {audio_similarity:.2f}")
-
         else:
-            # 스크립트가 제공되지 않은 경우
-            logging.info("TTS를 생성하고 오디오 유사도를 비교합니다.")
+            logging.info("LLM을 사용하여 TTS를 생성합니다.")
+        
+        logging.info("TTS를 생성하고 오디오 유사도를 비교합니다.")
+        tts_file_path = TTS(script_text, speed=tts_speed_ratio)  # TTS 생성
+        if not tts_file_path:
+            logging.error("TTS 변환에 실패했습니다.")
+            return None
 
-            # TTS 생성
-            tts_file_path = TTS(script_text, speed=tts_speed_ratio)
-            if not tts_file_path:
-                logging.error("TTS 변환에 실패했습니다.")
-                return None
-
-            # TTS 속도 (WPM) 계산
-            tts_wpm = tts_speed_ratio * average_wpm
+        # TTS 속도 (WPM) 계산
+        tts_wpm = tts_speed_ratio * average_wpm
+        if script_source == "Script":
+            print(f"TTS WPM (Script): {tts_wpm:.2f} WPM")
+        else:
             print(f"TTS WPM (LLM): {tts_wpm:.2f} WPM")
 
-            # Step 5: TTS와 사용자 음성 길이 동기화
-            adjust_audio_length(tts_file_path, audio_duration)
+        # Step 6: TTS와 사용자 음성 길이 동기화
+        adjust_audio_length(tts_file_path, audio_duration)
 
-            # Step 6: 오디오 유사도 계산
-            audio_similarity = compare_audio_similarity(audio_file_path, tts_file_path)
-            if audio_similarity is None:
-                logging.error("오디오 유사도 비교에 실패했습니다.")
-                return None
-            logging.info(f"오디오 유사도: {audio_similarity:.2f}")
+        # Step 7: 오디오 유사도 계산
+        audio_similarity = compare_audio_similarity(audio_file_path, tts_file_path)
+        if audio_similarity is None:
+            logging.error("오디오 유사도 비교에 실패했습니다.")
+            return None
+        logging.info(f"오디오 유사도: {audio_similarity:.2f}")
 
         # --- 발음 정확도 계산  ---
         print("\n— 구간별 발음 정확도 계산 —")
@@ -145,7 +128,7 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
 
         print("\n- 최종 분석 결과 WPM -")
         print(f"오디오 유사도: {audio_similarity:.2f}")
-        print(f"음성 평균 wpm: {original_speed:.2f}")
+        print(f"음성 평균 wpm: {average_wpm:.2f}")
         print(f"TTS 속도: {tts_wpm:.2f}")
         print(f"평균 발음 정확도: {average_accuracy:.2f}")
         print(f"음성 & Script(문법) 일치도: {pronunciation_accuracy:.2f}")

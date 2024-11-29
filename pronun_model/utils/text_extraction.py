@@ -8,6 +8,7 @@ from docx import Document
 from PyPDF2 import PdfReader
 import gethwp
 import re
+from .text_cleaning import clean_extracted_text
 
 def get_hwp_text(filename):
     """
@@ -82,8 +83,8 @@ def get_hwpx_text(filename):
         str: 추출된 텍스트.
     """
     try:
-        hwp = gethwp.read_hwpx(filename)
-        cleaned_text = clean_extracted_text(hwp)
+        hwpx = gethwp.read_hwpx(filename)
+        cleaned_text = clean_extracted_text(hwpx)
         return cleaned_text
     except Exception as e:
         print(f"HWPX 파일 읽기 오류: {e}")
