@@ -1,0 +1,7 @@
+2024-11-29 14:40:42,732 - INFO - 127.0.0.1:55478 - "GET / HTTP/1.1" 200
+2024-11-29 14:40:44,805 - INFO - 127.0.0.1:55482 - "GET /docs HTTP/1.1" 200
+2024-11-29 14:40:45,099 - INFO - 127.0.0.1:55482 - "GET /openapi.json HTTP/1.1" 200
+2024-11-29 14:41:06,887 - INFO - 127.0.0.1:55489 - "POST /api/pronun/upload-video-with-script/ HTTP/1.1" 200
+2024-11-29 14:43:36,197 - INFO - 127.0.0.1:55492 - "POST /api/pronun/send-feedback/6b73c39c18ec4cbd93b1ab1161591926 HTTP/1.1" 200
+2024-11-29 14:43:52,520 - INFO - 127.0.0.1:55532 - "POST /api/pronun/upload-video-with-script/ HTTP/1.1" 200
+2024-11-29 14:46:18,934 - INFO - 127.0.0.1:55538 - "POST /api/pronun/send-feedback/bf6c3dc7319747cab0f04378b24de979 HTTP/1.1" 200

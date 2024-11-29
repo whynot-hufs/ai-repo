@@ -1,0 +1,26 @@
+2024-11-29 14:40:23,083 - INFO - uvicorn.error - Will watch for changes in these directories: ['/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun']
+2024-11-29 14:40:23,083 - INFO - uvicorn.error - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-29 14:40:23,084 - INFO - uvicorn.error - Started reloader process [79217] using WatchFiles
+2024-11-29 14:40:25,714 - INFO - uvicorn.error - Started server process [79219]
+2024-11-29 14:40:25,715 - INFO - uvicorn.error - Waiting for application startup.
+2024-11-29 14:40:25,715 - INFO - uvicorn - FastAPI pronun API Router Start
+2024-11-29 14:40:25,715 - INFO - uvicorn.error - Application startup complete.
+2024-11-29 14:40:42,723 - INFO - uvicorn - Request: GET http://0.0.0.0:8000/
+2024-11-29 14:40:42,732 - INFO - uvicorn - Response status: 200
+2024-11-29 14:40:44,804 - INFO - uvicorn - Request: GET http://0.0.0.0:8000/docs
+2024-11-29 14:40:44,805 - INFO - uvicorn - Response status: 200
+2024-11-29 14:40:45,078 - INFO - uvicorn - Request: GET http://0.0.0.0:8000/openapi.json
+2024-11-29 14:40:45,099 - INFO - uvicorn - Response status: 200
+2024-11-29 14:41:01,430 - INFO - uvicorn - Request: POST http://0.0.0.0:8000/api/pronun/upload-video-with-script/
+2024-11-29 14:41:06,887 - INFO - uvicorn - Response status: 200
+2024-11-29 14:41:19,386 - INFO - uvicorn - Request: POST http://0.0.0.0:8000/api/pronun/send-feedback/6b73c39c18ec4cbd93b1ab1161591926
+2024-11-29 14:43:36,197 - INFO - uvicorn - Response status: 200
+2024-11-29 14:43:47,400 - INFO - uvicorn - Request: POST http://0.0.0.0:8000/api/pronun/upload-video-with-script/
+2024-11-29 14:43:52,520 - INFO - uvicorn - Response status: 200
+2024-11-29 14:44:02,395 - INFO - uvicorn - Request: POST http://0.0.0.0:8000/api/pronun/send-feedback/bf6c3dc7319747cab0f04378b24de979
+2024-11-29 14:46:18,933 - INFO - uvicorn - Response status: 200
+2024-11-29 14:46:32,889 - INFO - uvicorn.error - Shutting down
+2024-11-29 14:46:32,990 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-11-29 14:46:32,991 - INFO - uvicorn.error - Application shutdown complete.
+2024-11-29 14:46:32,991 - INFO - uvicorn.error - Finished server process [79219]
+2024-11-29 14:46:33,491 - INFO - uvicorn.error - Stopping reloader process [79217]
