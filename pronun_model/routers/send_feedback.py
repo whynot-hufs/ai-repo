@@ -22,7 +22,7 @@ logger = logging.getLogger("main_logger")
 
 ALLOWED_SCRIPT_EXTENSIONS = {"docx", "txt", "pdf", "hwp", "hwpx"}
 
-@router.post("/send-feedback/{video_id}", response_model=AnalysisResponse)
+@router.get("/send-feedback/{video_id}", response_model=AnalysisResponse)
 async def send_feedback(video_id: str, response: Response):
     """
     주어진 video_id에 대해 오디오 분석 결과를 반환합니다 (3분 정도 소요).

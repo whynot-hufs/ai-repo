@@ -212,3 +212,73 @@ NameError: name 'logger' is not defined
 2024-11-29 16:08:17,211 - INFO - uvicorn.error - Application shutdown complete.
 2024-11-29 16:08:17,212 - INFO - uvicorn.error - Finished server process [14913]
 2024-11-29 16:08:17,522 - INFO - uvicorn.error - Stopping reloader process [1177]
+2024-11-29 17:50:50,735 - INFO - uvicorn.error - Will watch for changes in these directories: ['/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun']
+2024-11-29 17:50:50,736 - INFO - uvicorn.error - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-11-29 17:50:50,736 - INFO - uvicorn.error - Started reloader process [38011] using WatchFiles
+2024-11-29 17:50:51,227 - INFO - root - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-11-29 17:50:51,227 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-11-29 17:50:51,227 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-11-29 17:50:51,227 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-11-29 17:50:51,227 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-11-29 17:50:51,327 - INFO - watchfiles.main - 21 changes detected
+2024-11-29 17:50:51,689 - INFO - watchfiles.main - 6 changes detected
+2024-11-29 17:50:52,760 - INFO - watchfiles.main - 36 changes detected
+2024-11-29 17:50:52,779 - INFO - uvicorn.error - Started server process [38013]
+2024-11-29 17:50:52,779 - INFO - uvicorn.error - Waiting for application startup.
+2024-11-29 17:50:52,780 - INFO - main_logger - FastAPI pronun API Router Start
+2024-11-29 17:50:52,780 - INFO - root - All necessary directories are ensured.
+2024-11-29 17:50:52,780 - INFO - uvicorn.error - Application startup complete.
+2024-11-29 17:50:53,123 - INFO - watchfiles.main - 4 changes detected
+2024-11-29 17:50:54,555 - INFO - main_logger - Request: GET http://0.0.0.0:8000/
+2024-11-29 17:50:54,559 - INFO - main - Root endpoint accessed
+2024-11-29 17:50:54,565 - INFO - main_logger - Response status: 200
+2024-11-29 17:50:57,603 - INFO - main_logger - Request: GET http://0.0.0.0:8000/docs
+2024-11-29 17:50:57,606 - INFO - main_logger - Response status: 200
+2024-11-29 17:50:57,778 - INFO - main_logger - Request: GET http://0.0.0.0:8000/openapi.json
+2024-11-29 17:50:57,853 - INFO - main_logger - Response status: 200
+2024-11-29 17:51:11,614 - INFO - watchfiles.main - 1 change detected
+2024-11-29 17:51:11,616 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/upload_video.py'. Reloading...
+2024-11-29 17:51:11,620 - INFO - uvicorn.error - Shutting down
+2024-11-29 17:51:11,721 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-11-29 17:51:11,722 - INFO - uvicorn.error - Application shutdown complete.
+2024-11-29 17:51:11,722 - INFO - uvicorn.error - Finished server process [38013]
+2024-11-29 17:51:12,454 - INFO - watchfiles.main - 2 changes detected
+2024-11-29 17:51:12,645 - INFO - root - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-11-29 17:51:12,645 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-11-29 17:51:12,645 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-11-29 17:51:12,645 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-11-29 17:51:12,645 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-11-29 17:51:12,818 - INFO - watchfiles.main - 3 changes detected
+2024-11-29 17:51:14,006 - INFO - uvicorn.error - Started server process [38115]
+2024-11-29 17:51:14,006 - INFO - uvicorn.error - Waiting for application startup.
+2024-11-29 17:51:14,006 - INFO - main_logger - FastAPI pronun API Router Start
+2024-11-29 17:51:14,006 - INFO - root - All necessary directories are ensured.
+2024-11-29 17:51:14,006 - INFO - uvicorn.error - Application startup complete.
+2024-11-29 17:51:14,103 - INFO - watchfiles.main - 1 change detected
+2024-11-29 17:51:14,783 - INFO - watchfiles.main - 1 change detected
+2024-11-29 17:51:14,783 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/send_feedback.py'. Reloading...
+2024-11-29 17:51:14,817 - INFO - uvicorn.error - Shutting down
+2024-11-29 17:51:14,918 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-11-29 17:51:14,918 - INFO - uvicorn.error - Application shutdown complete.
+2024-11-29 17:51:14,918 - INFO - uvicorn.error - Finished server process [38115]
+2024-11-29 17:51:15,605 - INFO - watchfiles.main - 1 change detected
+2024-11-29 17:51:15,664 - INFO - root - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-11-29 17:51:15,664 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-11-29 17:51:15,664 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-11-29 17:51:15,665 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-11-29 17:51:15,665 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-11-29 17:51:16,723 - INFO - uvicorn.error - Started server process [38140]
+2024-11-29 17:51:16,723 - INFO - uvicorn.error - Waiting for application startup.
+2024-11-29 17:51:16,723 - INFO - main_logger - FastAPI pronun API Router Start
+2024-11-29 17:51:16,723 - INFO - root - All necessary directories are ensured.
+2024-11-29 17:51:16,723 - INFO - uvicorn.error - Application startup complete.
+2024-11-29 17:51:16,833 - INFO - watchfiles.main - 4 changes detected
+2024-11-29 17:51:18,934 - INFO - main_logger - Request: GET http://0.0.0.0:8000/docs
+2024-11-29 17:51:18,934 - INFO - main_logger - Response status: 200
+2024-11-29 17:51:19,047 - INFO - main_logger - Request: GET http://0.0.0.0:8000/openapi.json
+2024-11-29 17:51:19,058 - INFO - main_logger - Response status: 200
+2024-11-29 17:51:29,782 - INFO - uvicorn.error - Shutting down
+2024-11-29 17:51:29,884 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-11-29 17:51:29,884 - INFO - uvicorn.error - Application shutdown complete.
+2024-11-29 17:51:29,884 - INFO - uvicorn.error - Finished server process [38140]
+2024-11-29 17:51:30,269 - INFO - uvicorn.error - Stopping reloader process [38011]
