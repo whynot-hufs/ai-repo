@@ -8,14 +8,6 @@ import subprocess
 import uuid
 from pronun_model.config import CONVERT_MP3_DIR  # config에서 가져오기
 
-# 로깅 설정
-logger = logging.getLogger(__name__)
-if not logger.hasHandlers():
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s'
-    )
-
 def convert_to_mp3(file_path: str, video_id: str) -> str:
     """
     주어진 오디오 파일을 MP3 형식으로 변환합니다.

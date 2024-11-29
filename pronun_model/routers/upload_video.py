@@ -1,5 +1,9 @@
 # pronun_model/routers/upload_video.py
 
+import logging
+import logging.config
+import json
+from pathlib import Path
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException, Response, Request
 from pronun_model.utils.convert_to_mp3 import convert_to_mp3
 from pronun_model.utils.text_cleaning import clean_extracted_text
@@ -13,8 +17,13 @@ import shutil
 
 router = APIRouter()
 
-# 전역 로깅 설정을 사용하기 위해 로깅 설정 제거
-logger = logging.getLogger(__name__)
+# JSON 기반 로깅 설정 적용
+logging_config_path = Path(__file__).resolve().parent.parent.parent / "logging_config.json"  # 최상단 경로
+with open(logging_config_path, "r") as f:
+    logging_config = json.load(f)
+
+logging.config.dictConfig(logging_config)
+logger = logging.getLogger("main_logger")
 
 @router.post("/upload-video-with-script/", response_model=UploadResponse)
 async def upload_video_with_optional_script(
@@ -55,9 +64,10 @@ async def upload_video_with_optional_script(
         file_extension = video.filename.rsplit(".", 1)[-1].lower()
     else:
         file_extension = ""
+    
     if file_extension not in ALLOWED_EXTENSIONS:
-        logger.warning(f"지원하지 않는 파일 형식: {file_extension}")
-        raise HTTPException(status_code=400, detail="지원하지 않는 영상 파일 형식입니다.")
+        logger.error(f"지원하지 않는 비디오 파일 형식: {file_extension}. 파일명: {video.filename}")
+        raise HTTPException(status_code=400, detail="지원하지 않는 영상 파일 형식입니다. 허용된 형식: " + ", ".join(ALLOWED_EXTENSIONS))
 
     # 지원하는 스크립트 파일 형식 확인
     ALLOWED_SCRIPT_EXTENSIONS: Set[str] = {"docx", "txt", "pdf", "hwp", "hwpx"}
@@ -67,8 +77,8 @@ async def upload_video_with_optional_script(
         else:
             script_extension = ""
         if script_extension not in ALLOWED_SCRIPT_EXTENSIONS:
-            logger.warning(f"지원하지 않는 파일 형식: {script_extension}")
-            raise HTTPException(status_code=400, detail="지원하지 않는 script 파일 형식입니다.")
+            logger.error(f"지원하지 않는 스크립트 파일 형식: {script_extension}. 파일명: {script.filename}")
+            raise HTTPException(status_code=400, detail="지원하지 않는 스크립트 파일 형식입니다. 허용된 형식: " + ", ".join(ALLOWED_SCRIPT_EXTENSIONS))
 
     # 고유한 video_id 생성
     video_id = uuid.uuid4().hex
@@ -84,22 +94,30 @@ async def upload_video_with_optional_script(
 
         # 파일 저장 여부 확인
         if not os.path.exists(video_path):
-            logger.error(f"파일이 저장되지 않았습니다: {video_path}")
-            raise HTTPException(status_code=500, detail="파일이 저장되지 않았습니다.")
+            logger.error(f"비디오 파일이 저장되지 않았습니다: {video_path}")
+            raise HTTPException(status_code=500, detail="비디오 파일 저장 실패")
 
         # MP3 변환
-        mp3_path = convert_to_mp3(str(video_path), video_id)
-        if not mp3_path:
-            logger.error("MP3 변환이 실패했습니다. failed.")
-            raise HTTPException(status_code=500, detail="MP3 변환이 실패했습니다.")
-        logger.info(f"MP3 변환이 성공했습니다: {mp3_path}")
+        try:
+            mp3_path = convert_to_mp3(str(video_path), video_id)
+            if not mp3_path or not os.path.exists(mp3_path):
+                logger.error(f"MP3 변환 실패: video_path={video_path}, video_id={video_id}")
+                raise HTTPException(status_code=500, detail="MP3 변환 실패: 파일 생성에 실패했습니다.")
+            logger.info(f"MP3 변환이 성공했습니다: {mp3_path}")
+        except Exception as e:
+            logger.error(f"MP3 변환 중 오류 발생: {e}. video_path={video_path}, video_id={video_id}")
+            raise HTTPException(status_code=500, detail="MP3 변환 중 알 수 없는 오류가 발생했습니다.")
 
         # 스크립트 저장 (선택적, File 형태로만 처리)
         if script:
-            script_path = SCRIPTS_DIR / f"{video_id}.{script_extension}"
-            with open(script_path, "wb") as buffer:
-                shutil.copyfileobj(script.file, buffer)
-            logger.info(f"스크립트 파일이 저장되었습니다: {script_path}")
+            try:
+                script_path = SCRIPTS_DIR / f"{video_id}.{script_extension}"
+                with open(script_path, "wb") as buffer:
+                    shutil.copyfileobj(script.file, buffer)
+                logger.info(f"스크립트 파일이 성공적으로 저장되었습니다: {script_path}")
+            except Exception as e:
+                logger.error(f"스크립트 파일 저장 중 오류 발생. 경로: {script_path}, 오류: {e}")
+                raise HTTPException(status_code=500, detail="스크립트 파일 저장 실패")
         else:
             logger.info("스크립트 파일이 제공되지 않았습니다. STT 및 LLM을 사용하여 스크립트를 생성합니다.")
 

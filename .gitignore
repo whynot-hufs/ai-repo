@@ -1,3 +1,16 @@
 .env
 storage/
 plots/
+*.pyc
+
+# Ignore all __pycache__ directories
+__pycache__/
+**/__pycache__/
+
+# Ignore specific __pycache__ directories
+pronun_model/__pycache__/
+pronun_model/routers/__pycache__/
+pronun_model/utils/__pycache__/
+
+# Ignore logs directory
+logs/
