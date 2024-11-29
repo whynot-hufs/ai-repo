@@ -76,6 +76,12 @@ async def send_feedback(video_id: str, response: Response):
             for segment in results["wpm_scores"]
         ]
 
+        # TTS 생성 방식에 따라 로그 메시지 설정
+        if script_text:
+            tts_source = "Script"
+        else:
+            tts_source = "LLM"
+
         analysis_result = AudioAnalysisResult(
             audio_similarity=results["audio_similarity"],
             average_wpm=results["original_speed"],

@@ -10,7 +10,6 @@ import os
 import uuid
 import logging
 import shutil
-import tempfile  # tempfile 모듈 임포트 추가
 
 router = APIRouter()
 
@@ -22,7 +21,7 @@ async def upload_video_with_optional_script(
     request: Request,
     response: Response,
     video: UploadFile = File(...),
-    script: Optional[UploadFile] = None  # Change from File(None) to None
+    script: Optional[Union[UploadFile, str]] = File(None)
 ):
     """
     비디오 파일을 업로드하고, MP3로 변환하여 저장한 후 video_id를 반환합니다.
@@ -34,15 +33,28 @@ async def upload_video_with_optional_script(
     logger.info("upload_video_with_optional_script 엔드포인트 호출됨")
     logger.info(f"수신된 비디오 파일: {video.filename}")
 
-    if script:
-        logger.info(f"스크립트가 수신 되었습니다.")
+    # script 필드가 빈 문자열로 전송된 경우 처리
+    if isinstance(script, str):
+        if not script.strip():
+            script = None
+        else:
+            raise HTTPException(status_code=400, detail="스크립트 파일 형식이 올바르지 않습니다.")
+
+    # script 필드 처리
+    if script is not None:
+        logger.info(f"스크립트가 수신되었습니다: {script.filename}")
     else:
         logger.info("스크립트가 제공되지 않았습니다.")
-        script = None  # 빈 문자열인 경우 None으로 설정
 
-   # 지원하는 영상 파일 형식 확인
-    ALLOWED_EXTENSIONS: Set[str] = {"webm", "mov", "avi", "mkv", "flac", "m4a", "mp3", "mp4", "mpeg", "mpga", "oga", "ogg", "wav"}
-    file_extension = video.filename.split(".")[-1].lower()
+    # 지원하는 영상 파일 형식 확인
+    ALLOWED_EXTENSIONS: Set[str] = {
+        "webm", "mov", "avi", "mkv", "flac", "m4a",
+        "mp3", "mp4", "mpeg", "mpga", "oga", "ogg", "wav"
+    }
+    if '.' in video.filename:
+        file_extension = video.filename.rsplit(".", 1)[-1].lower()
+    else:
+        file_extension = ""
     if file_extension not in ALLOWED_EXTENSIONS:
         logger.warning(f"지원하지 않는 파일 형식: {file_extension}")
         raise HTTPException(status_code=400, detail="지원하지 않는 영상 파일 형식입니다.")
@@ -50,7 +62,10 @@ async def upload_video_with_optional_script(
     # 지원하는 스크립트 파일 형식 확인
     ALLOWED_SCRIPT_EXTENSIONS: Set[str] = {"docx", "txt", "pdf", "hwp", "hwpx"}
     if script:
-        script_extension = script.filename.split(".")[-1].lower()
+        if '.' in script.filename:
+            script_extension = script.filename.rsplit(".", 1)[-1].lower()
+        else:
+            script_extension = ""
         if script_extension not in ALLOWED_SCRIPT_EXTENSIONS:
             logger.warning(f"지원하지 않는 파일 형식: {script_extension}")
             raise HTTPException(status_code=400, detail="지원하지 않는 script 파일 형식입니다.")
