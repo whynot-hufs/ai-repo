@@ -605,3 +605,103 @@ NameError: name 'logger' is not defined
 2024-12-03 14:49:38,924 - INFO - uvicorn.error - Application shutdown complete.
 2024-12-03 14:49:38,924 - INFO - uvicorn.error - Finished server process [66407]
 2024-12-03 14:49:39,440 - INFO - uvicorn.error - Stopping reloader process [61576]
+2024-12-03 19:18:15,508 - INFO - uvicorn.error - Will watch for changes in these directories: ['/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun']
+2024-12-03 19:18:15,509 - INFO - uvicorn.error - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-12-03 19:18:15,509 - INFO - uvicorn.error - Started reloader process [69423] using WatchFiles
+2024-12-03 19:18:15,986 - INFO - root - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-03 19:18:15,986 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-03 19:18:15,986 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-03 19:18:15,986 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-03 19:18:15,986 - INFO - root - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-03 19:18:16,096 - INFO - watchfiles.main - 3 changes detected
+2024-12-03 19:18:17,454 - INFO - uvicorn.error - Started server process [69425]
+2024-12-03 19:18:17,454 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-03 19:18:17,454 - INFO - main_logger - FastAPI pronun API Router Start
+2024-12-03 19:18:17,455 - INFO - root - All necessary directories are ensured.
+2024-12-03 19:18:17,455 - INFO - uvicorn.error - Application startup complete.
+2024-12-03 19:18:17,525 - INFO - watchfiles.main - 1 change detected
+2024-12-03 19:20:40,115 - INFO - main_logger - Request: GET http://0.0.0.0:8000/
+2024-12-03 19:20:40,125 - INFO - main - Root endpoint accessed
+2024-12-03 19:20:40,140 - INFO - main_logger - Response status: 200
+2024-12-03 19:20:43,806 - INFO - main_logger - Request: GET http://0.0.0.0:8000/docs
+2024-12-03 19:20:43,808 - INFO - main_logger - Response status: 200
+2024-12-03 19:20:44,088 - INFO - main_logger - Request: GET http://0.0.0.0:8000/openapi.json
+2024-12-03 19:20:44,105 - INFO - main_logger - Response status: 200
+2024-12-03 19:21:03,182 - INFO - main_logger - Request: POST http://0.0.0.0:8000/api/pronun/upload-video-with-script/
+2024-12-03 19:21:03,226 - INFO - main_logger - upload_video_with_optional_script 엔드포인트 호출됨
+2024-12-03 19:21:03,226 - INFO - main_logger - 수신된 비디오 파일: 002ece7f4ec7acb1 (3).mp4
+2024-12-03 19:21:03,226 - INFO - main_logger - 스크립트가 수신되었습니다: 테스트 대본1.hwpx
+2024-12-03 19:21:03,229 - INFO - main_logger - 비디오 파일이 성공적으로 저장되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video/54989fedd7204ffc8315bb1ef8fdd6e2.mp4
+2024-12-03 19:21:03,329 - INFO - watchfiles.main - 1 change detected
+2024-12-03 19:21:04,072 - INFO - watchfiles.main - 1 change detected
+2024-12-03 19:21:08,466 - INFO - main_logger - MP3 변환 완료: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/54989fedd7204ffc8315bb1ef8fdd6e2.mp3
+2024-12-03 19:21:08,468 - INFO - main_logger - MP3 변환이 성공했습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/54989fedd7204ffc8315bb1ef8fdd6e2.mp3
+2024-12-03 19:21:08,468 - INFO - main_logger - 스크립트 파일이 성공적으로 저장되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/54989fedd7204ffc8315bb1ef8fdd6e2.hwpx
+2024-12-03 19:21:08,469 - INFO - main_logger - Response status: 200
+2024-12-03 19:21:08,551 - INFO - watchfiles.main - 2 changes detected
+2024-12-03 19:21:16,747 - INFO - main_logger - Request: GET http://0.0.0.0:8000/api/pronun/send-feedback/54989fedd7204ffc8315bb1ef8fdd6e2
+2024-12-03 19:21:16,749 - INFO - main_logger - send_feedback 엔드포인트 호출됨 for video_id: 54989fedd7204ffc8315bb1ef8fdd6e2
+2024-12-03 19:21:16,750 - INFO - main_logger - 스크립트 파일을 발견했습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/54989fedd7204ffc8315bb1ef8fdd6e2.hwpx
+2024-12-03 19:21:16,780 - INFO - main_logger - 스크립트 텍스트 추출 성공
+2024-12-03 19:21:44,212 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:21:44,218 - INFO - root - 사용자가 제공한 스크립트를 사용합니다.
+2024-12-03 19:21:44,218 - INFO - root - TTS 생성을 생략합니다.
+2024-12-03 19:21:45,662 - INFO - root - 스크립트를 사용하여 TTS를 생성합니다.
+2024-12-03 19:21:45,662 - INFO - root - TTS를 생성하고 오디오 유사도를 비교합니다.
+2024-12-03 19:21:47,296 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2024-12-03 19:22:42,456 - INFO - root - TTS 생성 완료: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts/TTS_a666c527-f2d9-499c-89a5-e867a2a4c682.mp3
+2024-12-03 19:22:42,536 - INFO - watchfiles.main - 1 change detected
+2024-12-03 19:22:43,227 - INFO - watchfiles.main - 1 change detected
+2024-12-03 19:22:45,170 - INFO - watchfiles.main - 1 change detected
+2024-12-03 19:22:53,317 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:22:57,679 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:23:02,097 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:23:06,245 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:23:12,577 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:23:16,704 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:23:23,326 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:23:26,616 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:23:30,974 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:23:33,832 - INFO - main_logger - 비디오 ID 54989fedd7204ffc8315bb1ef8fdd6e2에 대한 분석이 성공적으로 완료되었습니다.
+2024-12-03 19:23:33,835 - INFO - main_logger - Response status: 200
+2024-12-03 19:23:53,215 - INFO - main_logger - Request: POST http://0.0.0.0:8000/api/pronun/upload-video-with-script/
+2024-12-03 19:23:53,252 - INFO - main_logger - upload_video_with_optional_script 엔드포인트 호출됨
+2024-12-03 19:23:53,253 - INFO - main_logger - 수신된 비디오 파일: 002ece7f4ec7acb1 (1).mp4
+2024-12-03 19:23:53,253 - INFO - main_logger - 스크립트가 제공되지 않았습니다.
+2024-12-03 19:23:53,256 - INFO - main_logger - 비디오 파일이 성공적으로 저장되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video/9f053b68c67d4c4b8ed7fe9528ad03b4.mp4
+2024-12-03 19:23:53,359 - INFO - watchfiles.main - 1 change detected
+2024-12-03 19:23:54,055 - INFO - watchfiles.main - 1 change detected
+2024-12-03 19:23:58,087 - INFO - main_logger - MP3 변환 완료: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/9f053b68c67d4c4b8ed7fe9528ad03b4.mp3
+2024-12-03 19:23:58,089 - INFO - main_logger - MP3 변환이 성공했습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/9f053b68c67d4c4b8ed7fe9528ad03b4.mp3
+2024-12-03 19:23:58,089 - INFO - main_logger - 스크립트 파일이 제공되지 않았습니다. STT 및 LLM을 사용하여 스크립트를 생성합니다.
+2024-12-03 19:23:58,091 - INFO - main_logger - Response status: 200
+2024-12-03 19:23:58,190 - INFO - watchfiles.main - 1 change detected
+2024-12-03 19:24:04,741 - INFO - main_logger - Request: GET http://0.0.0.0:8000/api/pronun/send-feedback/9f053b68c67d4c4b8ed7fe9528ad03b4
+2024-12-03 19:24:04,743 - INFO - main_logger - send_feedback 엔드포인트 호출됨 for video_id: 9f053b68c67d4c4b8ed7fe9528ad03b4
+2024-12-03 19:24:04,755 - INFO - main_logger - 스크립트 파일이 없거나 텍스트 추출에 실패했습니다. STT 및 LLM을 사용합니다.
+2024-12-03 19:24:31,305 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:24:31,719 - INFO - root - 스크립트가 제공되지 않았습니다. LLM으로 텍스트를 보정합니다.
+2024-12-03 19:24:51,502 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-03 19:24:52,942 - INFO - root - LLM을 사용하여 TTS를 생성합니다.
+2024-12-03 19:24:52,943 - INFO - root - TTS를 생성하고 오디오 유사도를 비교합니다.
+2024-12-03 19:24:55,118 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2024-12-03 19:25:42,168 - INFO - root - TTS 생성 완료: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts/TTS_f69b8add-eea9-4262-8a76-f0eeadf421c2.mp3
+2024-12-03 19:25:42,277 - INFO - watchfiles.main - 1 change detected
+2024-12-03 19:25:42,867 - INFO - watchfiles.main - 1 change detected
+2024-12-03 19:25:44,598 - INFO - watchfiles.main - 1 change detected
+2024-12-03 19:25:50,960 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:25:55,458 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:25:59,099 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:26:02,727 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:26:12,252 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:26:16,023 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:26:21,103 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:26:25,014 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:26:28,959 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-03 19:26:31,723 - INFO - main_logger - 비디오 ID 9f053b68c67d4c4b8ed7fe9528ad03b4에 대한 분석이 성공적으로 완료되었습니다.
+2024-12-03 19:26:31,727 - INFO - main_logger - Response status: 200
+2024-12-03 19:26:47,608 - INFO - uvicorn.error - Shutting down
+2024-12-03 19:26:47,710 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-03 19:26:47,711 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-03 19:26:47,712 - INFO - uvicorn.error - Finished server process [69425]
+2024-12-03 19:26:48,230 - INFO - uvicorn.error - Stopping reloader process [69423]
