@@ -22,3 +22,14 @@
 2024-11-29 17:50:57,855 - INFO - 127.0.0.1:57908 - "GET /openapi.json HTTP/1.1" 200
 2024-11-29 17:51:18,935 - INFO - 127.0.0.1:57914 - "GET /docs HTTP/1.1" 200
 2024-11-29 17:51:19,058 - INFO - 127.0.0.1:57914 - "GET /openapi.json HTTP/1.1" 200
+2024-12-03 14:17:59,318 - INFO - 127.0.0.1:54890 - "GET / HTTP/1.1" 200
+2024-12-03 14:18:02,229 - INFO - 127.0.0.1:54892 - "GET /docs HTTP/1.1" 200
+2024-12-03 14:18:02,469 - INFO - 127.0.0.1:54892 - "GET /openapi.json HTTP/1.1" 200
+2024-12-03 14:18:20,341 - INFO - 127.0.0.1:54896 - "POST /api/pronun/upload-video-with-script/ HTTP/1.1" 500
+2024-12-03 14:19:53,586 - INFO - 127.0.0.1:55047 - "POST /api/pronun/upload-video-with-script/ HTTP/1.1" 500
+2024-12-03 14:30:48,683 - INFO - 127.0.0.1:55632 - "GET /docs HTTP/1.1" 200
+2024-12-03 14:30:48,895 - INFO - 127.0.0.1:55632 - "GET /openapi.json HTTP/1.1" 200
+2024-12-03 14:33:02,637 - INFO - 127.0.0.1:55787 - "POST /api/pronun/upload-video-with-script/ HTTP/1.1" 500
+2024-12-03 14:40:24,474 - INFO - 127.0.0.1:56331 - "POST /api/pronun/upload-video-with-script/ HTTP/1.1" 500
+2024-12-03 14:43:54,442 - INFO - 127.0.0.1:56526 - "POST /api/pronun/upload-video-with-script/ HTTP/1.1" 200
+2024-12-03 14:46:45,896 - INFO - 127.0.0.1:56554 - "GET /api/pronun/send-feedback/ca9033295c3b433fb737f7d02350fddf HTTP/1.1" 200
