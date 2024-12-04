@@ -63,12 +63,12 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
                 segment_text = STT(temp_audio_path)
                 
                 if not segment_text:
-                    print(f"Segment {i} STT 변환에 실패했습니다.")
+                    logger.error(f"Segment {i} STT 변환에 실패했습니다.")
                     continue
             
             except Exception as file_error:
-                print(f"임시 파일 처리 중 오류 발생: {file_error}")
-                print(traceback.format_exc())
+                logger.error(f"임시 파일 처리 중 오류 발생: {file_error}")
+                logger.error(traceback.format_exc())
                 continue
 
             # 구간별 정확도 계산
@@ -90,8 +90,8 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
             wpms.append((time_str, wpm))
 
     except Exception as e:
-        print(f"정확도 및 WPM 분석 오류: {e}")
-        print(traceback.format_exc())
+        logger.error(f"정확도 및 WPM 분석 오류: {e}")
+        logger.error(traceback.format_exc())
         return [], [], 0.0
 
     finally:
@@ -100,9 +100,9 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
             if os.path.exists(temp_dir):
                 shutil.rmtree(temp_dir)  # 디렉토리와 내부 파일 모두 삭제
         except Exception as delete_error:
-            print(f"임시 디렉토리 삭제 실패: {temp_dir}")
-            print(f"삭제 오류: {delete_error}")
-            print(traceback.format_exc())
+            logger.error(f"임시 디렉토리 삭제 실패: {temp_dir}")
+            logger.error(f"삭제 오류: {delete_error}")
+            logger.error(traceback.format_exc())
 
         # 평균 발음 정확도 계산
         if accuracies:

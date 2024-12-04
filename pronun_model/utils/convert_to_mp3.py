@@ -35,7 +35,7 @@ def convert_to_mp3(file_path: str, video_id: str) -> str:
 
         if file_extension not in supported_formats:
             # 지원하지 않는 형식 처리
-            logger.warning(f"지원되지 않는 파일 형식입니다: {file_extension}")
+            logger.error(f"지원되지 않는 파일 형식입니다: {file_extension}")
             return None
 
         # 오디오 파일을 읽어서 MP3로 변환

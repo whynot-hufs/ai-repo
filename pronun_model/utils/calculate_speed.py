@@ -35,5 +35,5 @@ def calculate_speed(audio_file_path, text):
         return wpm
 
     except Exception as e:
-        print(f"속도 계산 오류: {e}")
+        logger.error(f"속도 계산 오류: {e}")
         return None

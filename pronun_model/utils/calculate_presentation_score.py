@@ -35,20 +35,20 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
         if not stt_text:
             logging.error("STT 변환에 실패했습니다.")
             return None
-        logging.debug("STT 변환된 텍스트:\n%s", stt_text)  # 필요 시 주석 해제
+        logger.debug("STT 변환된 텍스트:\n%s", stt_text)  # 필요 시 주석 해제
 
         # Step 2: 기준 텍스트 확인
         if script_text:
             # 사용자가 제공한 스크립트를 기준으로 사용
             script_source = "Script"
-            logging.info("사용자가 제공한 스크립트를 사용합니다.")
-            logging.info("TTS 생성을 생략합니다.")
+            logger.info("사용자가 제공한 스크립트를 사용합니다.")
+            logger.debug("TTS 생성을 생략합니다.")
         else:
             # 기준 스크립트가 없는 경우, LLM을 통해 STT 결과를 보정하여 사용
             script_source = "LLM"
-            logging.info("스크립트가 제공되지 않았습니다. LLM으로 텍스트를 보정합니다.")
+            logger.info("스크립트가 제공되지 않았습니다. LLM으로 텍스트를 보정합니다.")
             script_text = correct_text_with_llm(stt_text)
-            logging.debug("LLM으로 보정된 텍스트:\n%s", script_text)
+            logger.debug("LLM으로 보정된 텍스트:\n%s", script_text)
 
         # Step 3: 음성 WPM 계산
         audio_duration = calculate_audio_duration(audio_file_path)
@@ -62,11 +62,11 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
 
         # Step 5: TTS 생성 및 오디오 유사도 계산
         if script_source == "Script":
-            logging.info("스크립트를 사용하여 TTS를 생성합니다.")
+            logger.info("스크립트를 사용하여 TTS를 생성합니다.")
         else:
-            logging.info("LLM을 사용하여 TTS를 생성합니다.")
+            logger.info("LLM을 사용하여 TTS를 생성합니다.")
         
-        logging.info("TTS를 생성하고 오디오 유사도를 비교합니다.")
+        logger.info("TTS를 생성하고 오디오 유사도를 비교합니다.")
         tts_file_path = TTS(script_text, speed=tts_speed_ratio)  # TTS 생성
         if not tts_file_path:
             logging.error("TTS 변환에 실패했습니다.")
@@ -81,43 +81,43 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
         # Step 7: 오디오 유사도 계산
         audio_similarity = compare_audio_similarity(audio_file_path, tts_file_path)
         if audio_similarity is None:
-            logging.error("오디오 유사도 비교에 실패했습니다.")
+            logger.error("오디오 유사도 비교에 실패했습니다.")
             return None
 
         # --- 음성 정보 출력  ---
-        print("— 음성 정보 —")
-        print(f"오디오 길이 (초): {audio_duration:.2f}")
-        print(f"텍스트 단어 수: {word_count}")
-        print(f"사용자 발표 WPM: {user_speed:.2f}")
-        print(f"TTS 속도 설정: {tts_speed_ratio:.2f}")
+        logger.debug("— 음성 정보 —")
+        logger.debug(f"오디오 길이 (초): {audio_duration:.2f}")
+        logger.debug(f"텍스트 단어 수: {word_count}")
+        logger.debug(f"사용자 발표 WPM: {user_speed:.2f}")
+        logger.debug(f"TTS 속도 설정: {tts_speed_ratio:.2f}")
         
         if script_source == "Script":
-            print(f"TTS WPM (Script): {tts_wpm:.2f} WPM")
+            logger.debug(f"TTS WPM (Script): {tts_wpm:.2f} WPM")
         else:
-            print(f"TTS WPM (LLM): {tts_wpm:.2f} WPM")
+            logger.debug(f"TTS WPM (LLM): {tts_wpm:.2f} WPM")
 
         # --- 발음 정확도 계산  ---
-        print("\n— 구간별 발음 정확도 계산 —")
+        logger.debug("\n— 구간별 발음 정확도 계산 —")
         # analyze_low_accuracy (60초 단위로 오디오를 분할하여 발음 정확도를 분석하고 평균을 계산 - (STT 변환 텍스트 & Scirpt 일치도))
         low_accuracies, wpms, average_accuracy = analyze_low_accuracy(audio_file_path, script_text, chunk_size=60)
 
         for time_str, accuracy in low_accuracies:
-            print(f"{time_str} 구간의 발음 정확도: {accuracy:.2f}")
+            logger.debug(f"{time_str} 구간의 발음 정확도: {accuracy:.2f}")
 
-        print("\n- 구간별 WPM -")
+        logger.debug("\n- 구간별 WPM -")
         for time_str, wpm in wpms:
-            print(f"{time_str}구간의 WPM: {wpm:.2f}")
+            logger.debug(f"{time_str}구간의 WPM: {wpm:.2f}")
 
         # Step 7: 오디오 유사도 계산 (발표자 음성 - stt -> tts 변환 음성 유사도 비교)
         audio_similarity = compare_audio_similarity(audio_file_path, tts_file_path)
         if audio_similarity is None:
-            logging.error("오디오 유사도 비교에 실패했습니다.")
+            logger.error("오디오 유사도 비교에 실패했습니다.")
             return None
 
         # Step 8: 대본 텍스트와 일치도 (발표자 음성 -> stt - script 일치도 비교 (script 없으면 llm 보정))
         pronunciation_accuracy = analyze_pronunciation_accuracy(stt_text, script_text)
         if pronunciation_accuracy is None:
-            logging.error("대본 텍스트와 일치도 분석에 실패했습니다.")
+            logger.error("대본 텍스트와 일치도 분석에 실패했습니다.")
             return None
 
         # --- pronunciation_scores 및 wpm_scores 추가 ---
@@ -130,12 +130,12 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
             for time_str, wpm in wpms
         ]
 
-        print("\n- 최종 분석 결과 WPM -")
-        print(f"오디오 유사도: {audio_similarity:.2f}")
-        print(f"음성 평균 wpm: {average_wpm:.2f}")
-        print(f"TTS 속도: {tts_wpm:.2f}")
-        print(f"평균 발음 정확도: {average_accuracy:.2f}")
-        print(f"음성 & Script(문법) 일치도: {pronunciation_accuracy:.2f}")
+        logger.debug("\n- 최종 분석 결과 WPM -")
+        logger.debug(f"오디오 유사도: {audio_similarity:.2f}")
+        logger.debug(f"음성 평균 wpm: {average_wpm:.2f}")
+        logger.debug(f"TTS 속도: {tts_wpm:.2f}")
+        logger.debug(f"평균 발음 정확도: {average_accuracy:.2f}")
+        logger.debug(f"음성 & Script(문법) 일치도: {pronunciation_accuracy:.2f}")
 
         # 최종 결과 반환
         return {

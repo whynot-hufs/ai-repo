@@ -32,5 +32,5 @@ def STT(audio_file_path: str) -> Optional[str]:
         transcript = response.text
         return transcript
     except Exception as e:
-        print(f"STT 변환 오류: {e}")
+        logger.error(f"STT 변환 오류: {e}")
         return None

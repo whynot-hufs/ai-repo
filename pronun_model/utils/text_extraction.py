@@ -47,7 +47,7 @@ def get_hwp_text(filename):
         try:
             unpacked_data = zlib.decompress(data, -15) if is_compressed else data
         except zlib.error as e:
-            print(f"Decompression error: {e}")
+            logger.error(f"Decompression error: {e}")
             continue
 
         section_text = ""
@@ -67,7 +67,7 @@ def get_hwp_text(filename):
                     cleaned_text = re.sub(r'[^\uAC00-\uD7A3a-zA-Z0-9\s]', '', decoded_text)
                     section_text += cleaned_text + "\n"
                 except UnicodeDecodeError as e:
-                    print(f"Decoding error at position {i}: {e}")
+                    logger.error(f"Decoding error at position {i}: {e}")
 
             i += 4 + rec_len
 
@@ -91,7 +91,7 @@ def get_hwpx_text(filename):
         cleaned_text = clean_extracted_text(hwpx)
         return cleaned_text
     except Exception as e:
-        print(f"HWPX 파일 읽기 오류: {e}")
+        logger.error(f"HWPX 파일 읽기 오류: {e}")
         return None
 
 def get_docx_text(filename):
@@ -109,7 +109,7 @@ def get_docx_text(filename):
         text = '\n'.join([paragraph.text for paragraph in doc.paragraphs])
         return text
     except Exception as e:
-        print("Error reading DOCX file:", e)
+        logger.error("Error reading DOCX file:", e)
         return None
 
 def get_txt_text(filename):
@@ -127,7 +127,7 @@ def get_txt_text(filename):
             text = file.read()
         return text
     except Exception as e:
-        print("Error reading TXT file:", e)
+        logger.error("Error reading TXT file:", e)
         return None
 
 def get_pdf_text(filename):
@@ -149,7 +149,7 @@ def get_pdf_text(filename):
                 text += page_text + "\n"
         return text
     except Exception as e:
-        print("Error reading PDF file:", e)
+        logger.error("Error reading PDF file:", e)
         return None
 
 def extract_text(file_path):
@@ -167,7 +167,7 @@ def extract_text(file_path):
         try:
             return get_hwp_text(file_path)
         except Exception as e:
-            print(f"Error processing HWP file: {e}")
+            logger.error(f"Error processing HWP file: {e}")
             return None
     elif extension == 'docx':
         return get_docx_text(file_path)
@@ -178,5 +178,5 @@ def extract_text(file_path):
     elif extension == 'hwpx':
         return get_hwpx_text(file_path)
     else:
-        print("Unsupported file type.")
+        logger.error("Unsupported file type.")
         return None

@@ -38,5 +38,5 @@ def correct_text_with_llm(text):
         corrected_text = response.choices[0].message.content.strip()
         return corrected_text
     except Exception as e:
-        print(f"LLM 보정 오류: {e}")
+        logger.error(f"LLM 보정 오류: {e}")
         return text

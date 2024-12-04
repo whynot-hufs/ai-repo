@@ -34,7 +34,7 @@ async def upload_video_with_optional_script(
     response.headers["Access-Control-Allow-Credentials"] = "False"
 
     logger.info("upload_video_with_optional_script 엔드포인트 호출됨")
-    logger.info(f"수신된 비디오 파일: {video.filename}")
+    logger.debug(f"수신된 비디오 파일: {video.filename}")
 
     # script 필드가 빈 문자열로 전송된 경우 처리
     if isinstance(script, str):
@@ -47,7 +47,7 @@ async def upload_video_with_optional_script(
     if script is not None:
         logger.info(f"스크립트가 수신되었습니다: {script.filename}")
     else:
-        logger.info("스크립트가 제공되지 않았습니다.")
+        logger.info("스크립트가 제공되지 않았습니다.") # 선택사항이라 warning이 아닌 info로 level 설정
 
     # 지원하는 영상 파일 형식 확인
     ALLOWED_EXTENSIONS: Set[str] = {
@@ -113,7 +113,7 @@ async def upload_video_with_optional_script(
                 logger.error(f"스크립트 파일 저장 중 오류 발생. 경로: {script_path}, 오류: {e}")
                 raise HTTPException(status_code=500, detail="스크립트 파일 저장 실패")
         else:
-            logger.info("스크립트 파일이 제공되지 않았습니다. STT 및 LLM을 사용하여 스크립트를 생성합니다.")
+            logger.info("스크립트 파일이 제공되지 않았습니다. STT 및 LLM을 사용하여 스크립트를 생성합니다.") # 선택사항이라 warning이 아닌 Info로 level 설정
 
         # 성공 응답
         return UploadResponse(

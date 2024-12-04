@@ -28,5 +28,5 @@ def analyze_pronunciation_accuracy(stt_text, reference_text):
         accuracy = fuzz.token_set_ratio(stt_text_processed, reference_text_processed) / 100.0
         return accuracy
     except Exception as e:
-        print(f"일치도 계산 오류: {e}")
+        logger.error(f"일치도 계산 오류: {e}")
         return None

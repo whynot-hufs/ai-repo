@@ -43,7 +43,7 @@ async def send_feedback(video_id: str, response: Response):
         for ext in ALLOWED_SCRIPT_EXTENSIONS:
             script_path = os.path.join(SCRIPTS_DIR, f"{video_id}.{ext}")
             if os.path.exists(script_path):
-                logger.info(f"스크립트 파일을 발견했습니다: {script_path}")
+                logger.debug(f"스크립트 파일을 발견했습니다: {script_path}")
                 extracted_text = extract_text(script_path)
                 if extracted_text:
                     script_text = extracted_text
@@ -54,7 +54,7 @@ async def send_feedback(video_id: str, response: Response):
                 break
 
         if not script_found:
-            logger.info("스크립트 파일이 없거나 텍스트 추출에 실패했습니다. STT 및 LLM을 사용합니다.")
+            logger.warning("스크립트 파일이 없거나 텍스트 추출에 실패했습니다. STT 및 LLM을 사용합니다.")
 
         # 발표 점수 계산 (script_text가 존재하면 전달, 아니면 None 전달)
         results = calculate_presentation_score(mp3_path, script_text=script_text)

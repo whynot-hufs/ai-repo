@@ -50,5 +50,5 @@ def compare_audio_similarity(file1, file2):
         similarity = cosine_similarity(mfcc1.T, mfcc2.T).mean()
         return similarity
     except Exception as e:
-        print(f"오디오 유사도 비교 오류: {e}")
+        logger.error(f"오디오 유사도 비교 오류: {e}")
         return None
