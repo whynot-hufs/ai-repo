@@ -1,5 +1,6 @@
 # utils/stt.py
 
+from fastapi import HTTPException
 from openai import OpenAI
 from ..config import OPENAI_API_KEY
 from .convert_to_mp3 import convert_to_mp3
@@ -31,6 +32,9 @@ def STT(audio_file_path: str) -> Optional[str]:
             )
         transcript = response.text
         return transcript
+    except client.error.OpenAIError as e:
+        logger.error(f"STT 변환중 OpenAI 오류 발생: {e}")
+        raise HTTPException(status_code=502, detail="OpenAI API 통신 오류.")
     except Exception as e:
         logger.error(f"STT 변환 오류: {e}")
-        return None
+        raise HTTPException(status_code=500, detail="STT 변환 중 오류 발생.")

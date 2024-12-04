@@ -13,16 +13,25 @@ def adjust_audio_length(audio_path, target_duration):
     Returns:
         str: 수정된 오디오 파일 경로.
     """
-    audio = AudioSegment.from_file(audio_path)
-    current_duration = len(audio) / 1000  # 밀리초 단위에서 초 단위로 변환
+    try:   
+        audio = AudioSegment.from_file(audio_path)
+        current_duration = len(audio) / 1000  # 밀리초 단위에서 초 단위로 변환
+        logger.info(f"Original audio duration: {current_duration:.2f} seconds")
 
-    if current_duration < target_duration:
-        # 길이가 짧으면 침묵 추가
-        silence = AudioSegment.silent(duration=(target_duration - current_duration) * 1000)
-        adjusted_audio = audio + silence
-    else:
-        # 길이가 길면 자름
-        adjusted_audio = audio[:int(target_duration * 1000)]
+        if current_duration < target_duration:
+            # 길이가 짧으면 침묵 추가
+            silence = AudioSegment.silent(duration=(target_duration - current_duration) * 1000)
+            adjusted_audio = audio + silence
+            logger.debug(f"Added {silence_duration / 1000} seconds of silence")
+        else:
+            # 길이가 길면 자름
+            adjusted_audio = audio[:int(target_duration * 1000)]
+            logger.debug(f"Trimmed audio to {target_duration} seconds")
 
-    adjusted_audio.export(audio_path, format="mp3")
-    return audio_path
+        adjusted_audio.export(audio_path, format="mp3")
+        logger.info(f"Adjusted audio saved at: {audio_path}")
+        return audio_path
+
+    except Exception as e:
+        logger.error(f"Failed to adjust audio length for {audio_path}: {e}", exc_info=True)
+        raise AudioProcessingError(f"Failed to adjust audio length: {e}")

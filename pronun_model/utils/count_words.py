@@ -19,5 +19,5 @@ def count_words(text):
         words = text.split()
         return len(words)
     except Exception as e:
-        print(f"단어 수 계산 오류: {e}")
+        logger.error(f"단어 수 계산 오류: {e}")
         return 0

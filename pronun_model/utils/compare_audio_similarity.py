@@ -19,6 +19,7 @@ warnings.filterwarnings(
 import librosa
 from sklearn.metrics.pairwise import cosine_similarity
 import logging
+from pronun_model.exceptions import AudioProcessingError
 
 # 모듈별 로거 생성
 logger = logging.getLogger(__name__) 
@@ -47,8 +48,11 @@ def compare_audio_similarity(file1, file2):
         # MFCC 특징 추출 및 코사인 유사도 계산
         mfcc1 = librosa.feature.mfcc(y=y1, sr=sr1)
         mfcc2 = librosa.feature.mfcc(y=y2, sr=sr2)
+
         similarity = cosine_similarity(mfcc1.T, mfcc2.T).mean()
+        logger.debug(f"Audio similarity: {similarity:.4f}")
         return similarity
+
     except Exception as e:
         logger.error(f"오디오 유사도 비교 오류: {e}")
         return None

@@ -3,6 +3,7 @@
 from openai import OpenAI
 from ..config import OPENAI_API_KEY
 import logging
+from fastapi import HTTPException
 
 # 모듈별 로거 생성
 logger = logging.getLogger(__name__) 
@@ -36,7 +37,11 @@ def correct_text_with_llm(text):
             max_tokens=4000,
         )
         corrected_text = response.choices[0].message.content.strip()
+        logger.info("LLM 문법 교정이 성공했습니다.")
         return corrected_text
+    except client.error.OpenAIError as e:
+        logger.error(f"문법 보정 중 OpenAI 오류 발생: {e}")
+        raise HTTPException(status_code=502, detail="OpenAI API 통신 오류.")
     except Exception as e:
-        logger.error(f"LLM 보정 오류: {e}")
-        return text
+        logger.error(f"문법 보정 오류 발생: {e}")
+        raise HTTPException(status_code=500, detail="프레임 처리 중 오류가 발생.")

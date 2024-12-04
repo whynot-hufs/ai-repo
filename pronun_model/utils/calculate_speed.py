@@ -2,6 +2,7 @@
 
 from .calculate_audio_duration import calculate_audio_duration
 from .count_words import count_words
+from pronun_model.exceptions import AudioProcessingError
 import logging
 
 # 모듈별 로거 생성
@@ -22,9 +23,11 @@ def calculate_speed(audio_file_path, text):
     try:
         # Step 1: 오디오 길이 계산 (무음 제거 안 함)
         duration_seconds = calculate_audio_duration(audio_file_path)
+        logger.debug(f"Audio duration: {duration_seconds:.2f} seconds")
 
         # Step 2: 단어 수 계산
         word_count = count_words(text)
+        logger.debug(f"Word count: {word_count}")
 
         # Step 3: WPM 계산
         duration_minutes = duration_seconds / 60.0
@@ -32,8 +35,13 @@ def calculate_speed(audio_file_path, text):
             wpm = word_count / duration_minutes
         else:
             wpm = 0
+
+        logger.info(f"Calculated speaking speed: {wpm:.2f} WPM")
         return wpm
 
+    except AudioProcessingError as ape:
+        logger.error(f"Audio processing error during speed calculation: {ape.message}")
+        return None
     except Exception as e:
-        logger.error(f"속도 계산 오류: {e}")
+        logger.error(f"Error calculating speaking speed: {e}", exc_info=True)
         return None

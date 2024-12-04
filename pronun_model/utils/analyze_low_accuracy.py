@@ -19,6 +19,7 @@ warnings.filterwarnings(
 from .stt import STT
 from .analyze_pronunciation_accuracy import analyze_pronunciation_accuracy
 from .count_words import count_words
+from pronun_model.exceptions import AudioProcessingError
 import os
 import librosa
 import traceback
@@ -89,6 +90,8 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
             accuracies.append((time_str, accuracy))
             wpms.append((time_str, wpm))
 
+            logger.debug(f"Segment {time_str}: Accuracy={accuracy:.2f}, WPM={wpm:.2f}")
+
     except Exception as e:
         logger.error(f"정확도 및 WPM 분석 오류: {e}")
         logger.error(traceback.format_exc())
@@ -99,15 +102,17 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
         try:
             if os.path.exists(temp_dir):
                 shutil.rmtree(temp_dir)  # 디렉토리와 내부 파일 모두 삭제
+                logger.debug(f"Temporary directory {temp_dir} deleted.")
         except Exception as delete_error:
-            logger.error(f"임시 디렉토리 삭제 실패: {temp_dir}")
-            logger.error(f"삭제 오류: {delete_error}")
-            logger.error(traceback.format_exc())
+            logger.error(f"Failed to delete temporary directory {temp_dir}: {delete_error}")
+            logger.debug(traceback.format_exc())
 
         # 평균 발음 정확도 계산
         if accuracies:
             average_accuracy = sum(accuracy for _, accuracy in accuracies) / len(accuracies)
         else:
             average_accuracy = 0.0
+        
+        logger.info(f"Average pronunciation accuracy: {average_accuracy:.2f}")
 
         return accuracies, wpms, average_accuracy

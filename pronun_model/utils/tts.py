@@ -1,5 +1,6 @@
 # pronun_model/utils/tts.py
 
+from fastapi import HTTPException
 from pydub import AudioSegment
 import math
 import os
@@ -37,6 +38,7 @@ def TTS(script, output_path=None, speed=1.0):
                 output_path = CONVERT_TTS_DIR / output_path
 
         num = math.ceil(len(script) / 4000)
+
         if num == 1:
             response = client.audio.speech.create(
                 model="tts-1",
@@ -61,6 +63,7 @@ def TTS(script, output_path=None, speed=1.0):
                 )
                 with open(tts_segment_path, 'wb') as f:
                     f.write(response.content)  # 수정된 부분
+                logger.debug(f"TTS segment {i+1} saved at {tts_segment_path}")
                 tts_files.append(tts_segment_path)
 
             # 여러 개의 TTS 파일을 결합
@@ -69,6 +72,7 @@ def TTS(script, output_path=None, speed=1.0):
                 audio_segment = AudioSegment.from_mp3(tts_file)
                 combined_audio += audio_segment
                 os.remove(tts_file)  # 임시 파일 삭제
+                logger.debug(f"Combined and removed segment file {tts_file}")
 
             # 결합된 오디오 저장
             combined_audio.export(output_path, format="mp3")
@@ -76,7 +80,9 @@ def TTS(script, output_path=None, speed=1.0):
         logging.info(f"TTS 생성 완료: {output_path}")
         return str(output_path.resolve())
 
+    except client.error.OpenAIError as e:
+        logger.error(f"TTS 변환중 OpenAI 오류 발생: {e}")
+        raise HTTPException(status_code=502, detail="OpenAI API 통신 오류.")
     except Exception as e:
         logger.error(f"TTS 변환 오류: {e}")
-        logger.debug("트레이스백:", exc_info=True)
-        return None
+        raise HTTPException(status_code=500, detail="TTS 변환 중 오류 발생.")

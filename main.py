@@ -9,6 +9,7 @@ from fastapi import Response
 from pronun_model.routers.upload_video import router as upload_video_router
 from pronun_model.routers.send_feedback import router as send_feedback_router
 from pronun_model.config import UPLOAD_DIR, CONVERT_MP3_DIR, CONVERT_TTS_DIR, SCRIPTS_DIR, ENABLE_PLOTTING
+from pronun_model.exceptions import VideoProcessingError, ImageEncodingError, AudioProcessingError
 
 if ENABLE_PLOTTING:
     from pronun_model.plotting.plot_waveform import plot_waveform
@@ -59,6 +60,28 @@ async def log_requests(request: Request, call_next):
     except Exception as e:
         logger.error(f"Error processing request: {e}")
         raise e
+
+@app.exception_handler(DocumentProcessingError)
+async def document_processing_exception_handler(request: Request, exc: DocumentProcessingError):
+    return JSONResponse(
+        status_code=500,
+        content={"detail": exc.message},
+    )
+
+@app.exception_handler(AudioProcessingError)
+async def audio_processing_exception_handler(request: Request, exc: AudioProcessingError):
+    return JSONResponse(
+        status_code=400,
+        content={"detail": exc.message},
+    )
+
+@app.exception_handler(Exception)
+async def general_exception_handler(request: Request, exc: Exception):
+    logger.error(f"Unhandled error: {exc}", exc_info=True)
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Internal Server Error"},
+    )
 
 # 서버 실행 (uvicorn.run()에서 log_config 지정)
 if __name__ == "__main__":
