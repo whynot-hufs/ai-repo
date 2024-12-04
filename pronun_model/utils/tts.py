@@ -6,7 +6,8 @@ import math
 import os
 import uuid
 from openai import OpenAI
-from pronun_model.config import OPENAI_API_KEY, CONVERT_TTS_DIR # config에서 가져오기
+from ..openai_config import OPENAI_API_KEY
+from ..config import CONVERT_TTS_DIR
 import logging
 
 # 모듈별 로거 생성

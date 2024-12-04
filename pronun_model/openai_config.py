@@ -11,7 +11,7 @@ dotenv_path = Path(__file__).resolve().parent.parent / '.env'
 load_dotenv(dotenv_path=dotenv_path)
 
 # 환경 변수에서 API 키 가져오기
-OPENAI_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-if not OPENAI_KEY:
+if not OPENAI_API_KEY:
     raise ValueError("OPENAI_API_KEY is not set in the environment variables.")

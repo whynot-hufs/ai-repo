@@ -1,7 +1,7 @@
 # utils/correct_text_with_llm.py
 
 from openai import OpenAI
-from ..config import OPENAI_API_KEY
+from ..openai_config import OPENAI_API_KEY
 import logging
 from fastapi import HTTPException
 

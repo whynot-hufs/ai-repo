@@ -14,7 +14,7 @@ from typing import Optional, Dict, Any
 import logging
 
 # 모듈별 로거 생성
-logger = logging.getLogger(__name__) 
+logger = logging.getLogger(__name__)
 
 def calculate_presentation_score(audio_file_path: str, script_text: Optional[str] = None) -> Optional[Dict[str, Any]]:
     """
@@ -69,7 +69,7 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
         logger.info("TTS를 생성하고 오디오 유사도를 비교합니다.")
         tts_file_path = TTS(script_text, speed=tts_speed_ratio)  # TTS 생성
         if not tts_file_path:
-            logging.error("TTS 변환에 실패했습니다.")
+            logger.error("TTS 변환에 실패했습니다.")
             return None
 
         # TTS 속도 (WPM) 계산
@@ -97,7 +97,7 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
             logger.debug(f"TTS WPM (LLM): {tts_wpm:.2f} WPM")
 
         # --- 발음 정확도 계산  ---
-        logger.debug("\n— 구간별 발음 정확도 계산 —")
+        logger.debug("— 구간별 발음 정확도 계산 —")
         # analyze_low_accuracy (60초 단위로 오디오를 분할하여 발음 정확도를 분석하고 평균을 계산 - (STT 변환 텍스트 & Scirpt 일치도))
         low_accuracies, wpms, average_accuracy = analyze_low_accuracy(audio_file_path, script_text, chunk_size=60)
 
@@ -150,5 +150,5 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
         }
 
     except Exception as e:
-        logging.error(f"발표 점수 계산 중 오류 발생: {e}")
+        logger.error(f"발표 점수 계산 중 오류 발생: {e}")
         return None

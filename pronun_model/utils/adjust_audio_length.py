@@ -1,6 +1,11 @@
 # utils/adjust_audio_length.py
 
 from pydub import AudioSegment
+from pronun_model.exceptions import AudioProcessingError
+import logging
+
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__)
 
 def adjust_audio_length(audio_path, target_duration):
     """
@@ -20,9 +25,10 @@ def adjust_audio_length(audio_path, target_duration):
 
         if current_duration < target_duration:
             # 길이가 짧으면 침묵 추가
-            silence = AudioSegment.silent(duration=(target_duration - current_duration) * 1000)
+            silence_duration = target_duration - current_duration  # 초 단위
+            silence = AudioSegment.silent(duration=silence_duration * 1000)
             adjusted_audio = audio + silence
-            logger.debug(f"Added {silence_duration / 1000} seconds of silence")
+            logger.debug(f"Added {silence_duration} seconds of silence")
         else:
             # 길이가 길면 자름
             adjusted_audio = audio[:int(target_duration * 1000)]

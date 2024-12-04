@@ -173,24 +173,25 @@ def extract_text(file_path):
     Returns:
         str: 추출된 텍스트 또는 None (지원되지 않는 파일 형식 또는 추출 실패 시).
     """
-    extension = file_path.split('.')[-1].lower()
-    if extension == 'hwp':
-        try:
-            return get_hwp_text(file_path)
-        except Exception as e:
-            logger.error(f"Error processing HWP file: {e}")
-            return None
-    elif extension == 'docx':
-        return get_docx_text(file_path)
-    elif extension == 'txt':
-        return get_txt_text(file_path)
-    elif extension == 'pdf':
-        return get_pdf_text(file_path)
-    elif extension == 'hwpx':
-        return get_hwpx_text(file_path)
+    try:
+        extension = file_path.split('.')[-1].lower()
+        if extension == 'hwp':
+            try:
+                return get_hwp_text(file_path)
+            except Exception as e:
+                logger.error(f"Error processing HWP file: {e}")
+                return None
+        elif extension == 'docx':
+            return get_docx_text(file_path)
+        elif extension == 'txt':
+            return get_txt_text(file_path)
+        elif extension == 'pdf':
+            return get_pdf_text(file_path)
+        elif extension == 'hwpx':
+            return get_hwpx_text(file_path)
         else:
             logger.error(f"Unsupported file type for text extraction: {extension}")
-            return None
+        return None
     except DocumentProcessingError as dpe:
         logger.error(f"Error extracting text from {file_path}: {dpe.message}")
         return None

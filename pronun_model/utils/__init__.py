@@ -1,6 +1,6 @@
 # pronun_model/utils/__init__.py
 
-from ..config import OPENAI_API_KEY
+from ..openai_config import OPENAI_API_KEY
 
 from .convert_to_mp3 import convert_to_mp3
 from .stt import STT

@@ -2,7 +2,7 @@
 
 from fastapi import HTTPException
 from openai import OpenAI
-from ..config import OPENAI_API_KEY
+from ..openai_config import OPENAI_API_KEY
 from .convert_to_mp3 import convert_to_mp3
 from typing import Optional
 import logging

@@ -12,7 +12,6 @@ from pronun_model.config import UPLOAD_DIR, CONVERT_MP3_DIR, SCRIPTS_DIR
 from typing import Optional, Union, Set
 import os
 import uuid
-import logging
 import shutil
 
 router = APIRouter()

@@ -705,3 +705,915 @@ NameError: name 'logger' is not defined
 2024-12-03 19:26:47,711 - INFO - uvicorn.error - Application shutdown complete.
 2024-12-03 19:26:47,712 - INFO - uvicorn.error - Finished server process [69425]
 2024-12-03 19:26:48,230 - INFO - uvicorn.error - Stopping reloader process [69423]
+2024-12-04 20:12:27,857 - INFO - uvicorn.error - Will watch for changes in these directories: ['/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun']
+2024-12-04 20:12:27,858 - INFO - uvicorn.error - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-12-04 20:12:27,858 - INFO - uvicorn.error - Started reloader process [2075] using WatchFiles
+2024-12-04 20:12:28,359 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:12:28,360 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:12:28,360 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:12:28,360 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:12:28,360 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:12:28,360 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:12:28,360 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:12:28,360 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:12:28,360 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:12:28,360 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:12:28,451 - INFO - watchfiles.main - 13 changes detected
+2024-12-04 20:12:57,748 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:12:57,750 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/__init__.py'. Reloading...
+2024-12-04 20:12:58,376 - INFO - watchfiles.main - 6 changes detected
+2024-12-04 20:13:31,329 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:13:31,332 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/openai_config.py'. Reloading...
+2024-12-04 20:13:32,017 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:13:33,073 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:13:33,073 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/openai_config.py'. Reloading...
+2024-12-04 20:13:33,513 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:13:33,513 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:13:33,513 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:13:33,513 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:13:33,513 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:13:33,513 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:13:33,514 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:13:33,514 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:13:33,514 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:13:33,514 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:13:33,598 - INFO - watchfiles.main - 12 changes detected
+2024-12-04 20:13:33,959 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:13:50,197 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:13:50,197 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/stt.py'. Reloading...
+2024-12-04 20:13:50,850 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:13:50,850 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:13:50,850 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:13:50,850 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:13:50,850 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:13:50,850 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:13:50,850 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:13:50,850 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:13:50,850 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:13:50,850 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:13:50,938 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:13:51,303 - INFO - watchfiles.main - 4 changes detected
+2024-12-04 20:14:14,404 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:14:14,406 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/tts.py'. Reloading...
+2024-12-04 20:14:15,004 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:14:15,004 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:14:15,004 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:14:15,004 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:14:15,004 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:14:15,004 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:14:15,004 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:14:15,004 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:14:15,004 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:14:15,004 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:14:15,418 - INFO - watchfiles.main - 4 changes detected
+2024-12-04 20:14:30,460 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:14:30,462 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/tts.py'. Reloading...
+2024-12-04 20:14:30,999 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:14:31,000 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:14:31,000 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:14:31,000 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:14:31,000 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:14:31,000 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:14:31,000 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:14:31,000 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:14:31,000 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:14:31,000 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:14:31,413 - INFO - watchfiles.main - 4 changes detected
+2024-12-04 20:15:01,536 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:15:01,539 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/tts.py'. Reloading...
+2024-12-04 20:15:02,112 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:15:02,112 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:15:02,112 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:15:02,112 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:15:02,112 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:15:02,112 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:15:02,112 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:15:02,112 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:15:02,112 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:15:02,113 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:15:02,556 - INFO - watchfiles.main - 6 changes detected
+2024-12-04 20:15:04,372 - INFO - watchfiles.main - 22 changes detected
+2024-12-04 20:15:20,134 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:15:20,135 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/correct_text_with_llm.py'. Reloading...
+2024-12-04 20:15:20,661 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:15:20,662 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:15:20,662 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:15:20,662 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:15:20,662 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:15:20,662 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:15:20,662 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:15:20,662 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:15:20,662 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:15:20,662 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:15:22,188 - INFO - watchfiles.main - 13 changes detected
+2024-12-04 20:15:37,843 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:15:37,844 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/text_extraction.py'. Reloading...
+2024-12-04 20:15:38,560 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:15:38,561 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:15:38,561 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:15:38,561 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:15:38,561 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:15:38,561 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:15:38,561 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:15:38,561 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:15:38,561 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:15:38,561 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:15:40,107 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:15:50,697 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:15:50,699 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/text_extraction.py'. Reloading...
+2024-12-04 20:15:51,315 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:15:51,316 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:15:51,316 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:15:51,316 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:15:51,316 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:15:51,316 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:15:51,316 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:15:51,316 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:15:51,316 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:15:51,316 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:15:52,839 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:15:53,199 - INFO - watchfiles.main - 4 changes detected
+2024-12-04 20:16:17,645 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:16:17,647 - WARNING - uvicorn.error - WatchFiles detected changes in 'main.py'. Reloading...
+2024-12-04 20:16:18,012 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:16:18,245 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:16:18,245 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:16:18,245 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:16:18,245 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:16:18,245 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:16:18,245 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:16:18,245 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:16:18,245 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:16:18,245 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:16:18,245 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:16:19,653 - INFO - uvicorn.error - Started server process [3795]
+2024-12-04 20:16:19,653 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:16:19,653 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:16:19,729 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:16:24,638 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:16:24,639 - WARNING - uvicorn.error - WatchFiles detected changes in 'main.py'. Reloading...
+2024-12-04 20:16:24,710 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:16:24,811 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:16:24,812 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:16:24,812 - INFO - uvicorn.error - Finished server process [3795]
+2024-12-04 20:16:25,457 - INFO - watchfiles.main - 4 changes detected
+2024-12-04 20:16:25,647 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:16:25,647 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:16:25,647 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:16:25,647 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:16:25,647 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:16:25,647 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:16:25,647 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:16:25,648 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:16:25,648 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:16:25,648 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:16:26,622 - INFO - uvicorn.error - Stopping reloader process [2075]
+2024-12-04 20:16:33,611 - INFO - uvicorn.error - Will watch for changes in these directories: ['/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun']
+2024-12-04 20:16:33,611 - INFO - uvicorn.error - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2024-12-04 20:16:33,611 - INFO - uvicorn.error - Started reloader process [3969] using WatchFiles
+2024-12-04 20:16:34,047 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:16:34,047 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:16:34,047 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:16:34,047 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:16:34,047 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:16:34,047 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:16:34,047 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:16:34,047 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:16:34,047 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:16:34,047 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:16:35,242 - INFO - uvicorn.error - Started server process [3971]
+2024-12-04 20:16:35,242 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:16:35,242 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:16:35,347 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:16:43,764 - INFO - pronun_model - Request: GET http://0.0.0.0:8000/
+2024-12-04 20:16:43,767 - INFO - pronun_model - Root endpoint accessed
+2024-12-04 20:16:43,768 - INFO - pronun_model - Response status: 200
+2024-12-04 20:16:46,727 - INFO - pronun_model - Request: GET http://0.0.0.0:8000/docs
+2024-12-04 20:16:46,729 - INFO - pronun_model - Response status: 200
+2024-12-04 20:16:46,961 - INFO - pronun_model - Request: GET http://0.0.0.0:8000/openapi.json
+2024-12-04 20:16:46,971 - INFO - pronun_model - Response status: 200
+2024-12-04 20:17:06,796 - INFO - pronun_model - Request: POST http://0.0.0.0:8000/api/pronun/upload-video-with-script/
+2024-12-04 20:17:06,863 - INFO - pronun_model.routers.upload_video - upload_video_with_optional_script 엔드포인트 호출됨
+2024-12-04 20:17:06,864 - DEBUG - pronun_model.routers.upload_video - 수신된 비디오 파일: 002ece7f4ec7acb1 (3).mp4
+2024-12-04 20:17:06,864 - INFO - pronun_model.routers.upload_video - 스크립트가 수신되었습니다: 테스트 대본1.pdf
+2024-12-04 20:17:06,889 - INFO - pronun_model.routers.upload_video - 비디오 파일이 성공적으로 저장되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video/a18111c873564278a8cfef78ebfbf686.mp4
+2024-12-04 20:17:06,979 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:17:07,780 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:17:11,849 - INFO - pronun_model.utils.convert_to_mp3 - MP3 변환 완료: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3
+2024-12-04 20:17:11,851 - INFO - pronun_model.routers.upload_video - MP3 변환이 성공했습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3
+2024-12-04 20:17:11,852 - INFO - pronun_model.routers.upload_video - 스크립트 파일이 성공적으로 저장되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:17:11,854 - INFO - pronun_model - Response status: 200
+2024-12-04 20:17:11,923 - INFO - watchfiles.main - 2 changes detected
+2024-12-04 20:17:22,781 - INFO - pronun_model - Request: GET http://0.0.0.0:8000/api/pronun/send-feedback/a18111c873564278a8cfef78ebfbf686
+2024-12-04 20:17:22,784 - INFO - pronun_model.routers.send_feedback - send_feedback 엔드포인트 호출됨 for video_id: a18111c873564278a8cfef78ebfbf686
+2024-12-04 20:17:22,785 - DEBUG - pronun_model.routers.send_feedback - 스크립트 파일을 발견했습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:17:22,992 - INFO - pronun_model.utils.text_extraction - Extracted text from PDF file /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:17:22,993 - INFO - pronun_model.routers.send_feedback - 스크립트 텍스트 추출 성공
+2024-12-04 20:17:49,275 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:17:49,342 - DEBUG - pronun_model.utils.calculate_presentation_score - STT 변환된 텍스트:
+발표 시작하겠습니다. 안녕하세요. 저는 이번에 인공지능과 파이썬으로 금융 데이터 분석해보기 윗자연화 처리로 발표하게 될 김대현이라고 합니다. 일단 제 소개를 간단하게 드리자면은 저는 지금 모듈 연구소라는 곳에서 비전 랭키지 쪽으로 모델 연구를 하고 있고요. 또한 카카오테크 부트캡에서 생선형 인공지능 과정을 소강하고 있습니다. 최근에 이제 고파콘이라고 이제 고언어 관련해 가지고 열리는 큰 행사가 있는데 거기 준비위원회로 참가를 했고 이제 또 jrc라는 그 로봇 회사에서 로보틱스 엔지니어로 근무한 경력이 있습니다. 일단은 크게 4가지 주제를 다뤄볼 거에요. 이제 TF-IDF N-Gram, COVERT, 다이노싱 메소드, 포지티브 인덱스 리얼리티 즉 이제 신뢰지수에 대해서 한번 얘기를 해보려고 합니다. 일단은 이 프로젝트를 먼저 시작하게 된 계기가 바로 이거였어요. 일반적으로 우리가 주식을 할 때 처음에 화면을 보면 어떠한 걸 봐야 될지 모르겠는 거에요. 그래서 복잡한 리서치 화면 및 뉴스 커뮤니티에 통한 투자 결정에 어려움이 존재해서 이 프로젝트를 진행하게 되었고 또한 이제 일단은 한국 투자증권 기준으로 보면은 카테고리가 일단은 종목이 2400개가 있어요. 이거를 10개의 섹터로만 구분을 해서 의사결정에 대해서 어려운 점이 있었습니다. 그래서 이 프로젝트를 진행하게 되었고 요약해드리자면 이제 우리가 이걸 왜 하게 되었는지 중요 정보에 쉽게 접근하고 이제 정확한 투자 동향을 파악하면서 이제 유망한 분야 탐색하고 또한 이제 여론과 어느정도 상관관계 분석이 있는지 그걸 파악하면서 개발해 보려고 했습니다. 일단은 개발 설계 및 연구 방법에 대해서 설명을 드리면은 일단은 모델을 선정이랑 이제 어떻게 프로젝트를 진행하지 플레이닝을 했고요. 건담의 이제 데이터 수집 및 전처리, 부위 체계 세부나 키워드 감성 분석, 적용 데이터 분석, 데이터 시각화 이렇게 5가지로 구성을 했습니다. 일단 일반적으로 인공지능 관련한 프로젝트를 시작을 할 때 이제 데이터 수집을 해야 되잖아요. 그래서 일반적으로 가져와있을 금융 데이터가 이제 수치적으로 이제 csv 형태로 가져올 수 있는 금융 데이터는 이제 한국의 이제 한국 거래 거래소 같은 데가 있어요. 이제 거기서 정보 코드랑 이제 과연한 주요 내용들, 상장에 이러한 내용들을 가져왔고 그래서 판다스 라이벌을 활용해 가지고 이제 결측치량 중복값을 제거했습니다. 그리고 이제 tf-idf라는 것을 사용해 가지고 이제 그 문서 내에서 과일 한 단어가 얼마 정도 나오는지 그거에다 빈도를 분석을 했고 n-gram이라는 즉 slm 기열의 언어모델을 사용해 가지고 단어나 이제 문장의 확률값을 할당을 해요. 이제 그래서 이렇게 입력된 문장을 n개 단위로 잘라서 분석을 했습니다. 또한 이제 이 tf-idf랑 n-gram을 사용해서 이제 어느정도 빈도값에 대한 것을 파악했다면 이제 금융 분장 데이터서스로 모델별 성능을 평가하는 작업을 진행했어요. 물론 이때 파이토치 프레임워크를 사용했고 크게 3가지 모델을 사용했습니다. 이제 코벌트랑 KEC 일렉트라, 코어 일렉트라는 모델을 사용했었는데 이중에 코버트 모델이 0.8870 정도의 Accuracy를 보여 가지고 가장 높은 정확도를 보여서 사용했습니다. 그래서 이제 코버트 모델을 어떻게 활용을 했냐라고 간단하게 설명 드리면은 코버트 모델은 이제 그 버트 모델을 한국어로 프리트레인드 모델이에요. 그래서 이제 그 모델을 트랜스포머 기반으로 해서 사용을 했고 그 다음에 이제 이 모델을 가지고 감성 분석을 진행했습니다. 크게 3가지 라벨을 달았었거든요. 이제 물론 지도학습 방식으로 진행을 했고 0이 포지티브, 긍정, 1이 내추럴, 중립, 2가 네거티브, 이제 중립으로 해놓고 이제 진행을 했습니다. 또한 이제 벌트 모델의 아키텍처에 대해서 간단하게 설명 드리면은 일단은 우리가 앞에서 이제 금융 데이터셋을 가져와서 한다고 했잖아요. 이제 그 문장을 단어 단위로 분리를 합니다. 예를 들어서 오늘 주식 시장이 크게 상승했습니다. 이라는 데이터셋이 있으면은 단어 단위로 분리를 했어요. 오늘 주식 시장이 크게 상승했습니다. 이렇게 해서 토크나이저를 사용해서 문장을 단어 단위로 분리를 했고요. 그래서 이제 그 벌트 모델의 인풋 인베링 레이어를 넣어가지고 진행을 했습니다. 또한 이제 인코더 레이어에 들어가면 이제 리니어 레이어를 거쳐가지고 이제 셀프 어테이션 메커니즘이 적용이 돼요. 이거에 대해서는 앞에 설명 드린 자료에 나와 있듯이 이제 쿼리랑 키의 개념으로 구성이 되어 있는데 이 글을 보시면 이렇게 나와 있는데 이제 쿼리 키 소프트맥스 함수를 변환해가지고 스코어를 계산을 해요. 스코어를 기반해가지고 이제 그 쿼리에 대해서 키가 얼마나 연관성 있는지를 분석을 합니다. 또한 이제 프리트레인드 사전학습을 했을 때 mlm과 nsp 방식을 사용해가지고 진행을 했고요. 그 다음에 이제 파이트링 같은 경우에 이제 슈퍼바이스드 러닝 즉 지도학습을 사용해가지고 앞에서 설명 드렸다시피 이제 이렇게 감정 부유 앱앱 데이터세스를 분리했습니다. 또한 이제 금융 데이터세스 어떻게 분리를 했냐라고 이제 말씀을 드릴 수 있을 것 같은데 그게 데이터 수집 전처리, 데이터 아이솔레이션, 데이터 분리 이렇게 3가지 이제 분야를 나눠서 진행을 했고요. 데이터 수집은 이제 DART라는 한국 기업 공시정보 데이터를 가져왔고 그 다음에 이제 그에 관련한 타임 시리즈 데이터라고 이제 시규어 데이터도 있어요. 그걸 가져와서 이제 데이터 프리 프로세싱, 데이터 전처리를 해가지고 이제 여기서 이제 다이노이싱 메소드라는 걸 사용했습니다. 그래서 이제 여기서 이제 인포메이션은 즉 필요 있는 정보, 노이즈는 필요 없는 정보를 이렇게 해가지고 분리를 했습니다. 그럼 여기서 이제 다이노이싱 메소드를 왜 사용했냐라고 말씀드리면은 크게 2가지 사유가 있었어요. 일단은 첫 번째로 무의미한 가격 정보를 제거하면서 주식 폭등, 폭락 같은 쓸데없는 정보들을 제거하기 위해서 사용을 했고 그리고 의미 없는 정보를 이제 제거했습니다. 즉 분석과 무관한 뉴스를 사용을 했고 이걸 작업을 하면서 이제 정확하고 의미 있는 정보를 알기 위해서 사용했습니다. 그럼 이제 데이터 표현을 어떻게 했냐. 일단은 일반적으로 우리가 서비스화를 할 거면 일단 프론트엔드를 만들어야 되잖아요. 그걸 이제 리액트랑 JS를 써가지고 개발을 했고 데이터 시각화하는 거는 이제 D3랑 ChartJSL 라이벌이 있어요. 시각화를 해주는 그 라이벌을 사용을 했고 이제 그래프가 나오는 거는 이제 즉 노드, 노드 익스프레스 사용해가지고 데이터 서버를 제작해서 불러는 방식으로 구현했습니다. 이렇게 앞에 있는 그림 보시듯이 이렇게 디자인을 했고요. 이것은 시연 영상입니다. 그래서 어떠한 결론을 낼 수 있었냐라고 하면 크게 4가지가 있어요. 월변 양지수로 판단하는 거랑 재무지표 ESG, 타업종과의 비교, 키워드와 금융정보에 대해서 파악할 수 있었습니다. 그리고 긍정지수 신뢰도라는 게 있는데 이거 어떤 거냐면은 이제 저희가 실제 만든 예측한 거랑 이제 실제 ETF 수익률이 관계가 있는지를 나타내려고 만든 건데요. 이거는 즉 실제 주가의 노이즈를 제거해서 이제 긍정지수와 수익률의 상공관계를 분석을 합니다. 그리고 이제 시장의 긍정 반응과 부정 반응이 더 높은, 더 낮은 수익률 연결된다는 것과 긍정지수가 급격히 상승으로 하락할 때 수익률이 따라오는 경향을 이제 볼 수 있었습니다. 그래서 제가 내릴 수 있는 결론과 의논점에 대해서 얘기해 주자면은 일단은 저희 플랫폼을 통해서 성장 가능성과 평가 정보를 제공한다는 것, 두번째 이제 최신 트렌드 및 시장 동향을 분석할 수 있다는 것, 그리고 세번째는 데이터 수집 제한 시각화에 미흡할 수 있다는 점을 보였습니다. 이거는 과연한 레퍼런스 이고요. 제가 수집을 해서 사용했기 때문에 확인해 주시면 될 것 같습니다. 이상으로 발표 마치겠습니다.
+2024-12-04 20:17:49,351 - INFO - pronun_model.utils.calculate_presentation_score - 사용자가 제공한 스크립트를 사용합니다.
+2024-12-04 20:17:49,352 - DEBUG - pronun_model.utils.calculate_presentation_score - TTS 생성을 생략합니다.
+2024-12-04 20:17:50,445 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3: 536.98 seconds
+2024-12-04 20:17:51,188 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3: 536.98 seconds
+2024-12-04 20:17:51,188 - DEBUG - pronun_model.utils.calculate_speed - Audio duration: 536.98 seconds
+2024-12-04 20:17:51,188 - DEBUG - pronun_model.utils.calculate_speed - Word count: 938
+2024-12-04 20:17:51,188 - INFO - pronun_model.utils.calculate_speed - Calculated speaking speed: 104.81 WPM
+2024-12-04 20:17:51,188 - INFO - pronun_model.utils.calculate_presentation_score - 스크립트를 사용하여 TTS를 생성합니다.
+2024-12-04 20:17:51,189 - INFO - pronun_model.utils.calculate_presentation_score - TTS를 생성하고 오디오 유사도를 비교합니다.
+2024-12-04 20:17:53,032 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2024-12-04 20:18:52,599 - INFO - root - TTS 생성 완료: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts/TTS_f2a319f4-83b5-4373-9fd7-4920bb04ae5c.mp3
+2024-12-04 20:18:52,665 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:18:53,296 - ERROR - root - 발표 점수 계산 중 오류 발생: name 'logger' is not defined
+2024-12-04 20:18:53,297 - ERROR - pronun_model.routers.send_feedback - 비디오 ID a18111c873564278a8cfef78ebfbf686에 대한 분석이 실패했습니다.
+2024-12-04 20:18:53,298 - ERROR - pronun_model.routers.send_feedback - 알 수 없는 오류 발생: 500: 분석에 실패했습니다.
+2024-12-04 20:18:53,299 - INFO - pronun_model - Response status: 500
+2024-12-04 20:22:35,679 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:22:35,683 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/calculate_presentation_score.py'. Reloading...
+2024-12-04 20:22:35,693 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:22:35,796 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:22:35,797 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:22:35,798 - INFO - uvicorn.error - Finished server process [3971]
+2024-12-04 20:22:36,630 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:22:36,831 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:22:36,831 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:22:36,831 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:22:36,831 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:22:36,831 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:22:36,831 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:22:36,831 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:22:36,831 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:22:36,831 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:22:36,831 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:22:38,366 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:22:38,401 - INFO - uvicorn.error - Started server process [6287]
+2024-12-04 20:22:38,401 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:22:38,401 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:22:38,727 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:22:40,627 - INFO - pronun_model - Request: GET http://0.0.0.0:8000/api/pronun/send-feedback/a18111c873564278a8cfef78ebfbf686
+2024-12-04 20:22:40,629 - INFO - pronun_model.routers.send_feedback - send_feedback 엔드포인트 호출됨 for video_id: a18111c873564278a8cfef78ebfbf686
+2024-12-04 20:22:40,630 - DEBUG - pronun_model.routers.send_feedback - 스크립트 파일을 발견했습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:22:40,805 - INFO - pronun_model.utils.text_extraction - Extracted text from PDF file /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:22:40,805 - INFO - pronun_model.routers.send_feedback - 스크립트 텍스트 추출 성공
+2024-12-04 20:23:07,982 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:23:07,986 - DEBUG - pronun_model.utils.calculate_presentation_score - STT 변환된 텍스트:
+발표 시작하겠습니다. 안녕하세요. 저는 이번에 인공지능과 파이썬으로 금융 데이터 분석해보기 윗자연화 처리로 발표하게 될 김대현이라고 합니다. 일단 제 소개를 간단하게 드리자면은 저는 지금 모듈 연구소라는 곳에서 비전 랭키지 쪽으로 모델 연구를 하고 있고요. 또한 카카오테크 부트캡에서 생선형 인공지능 과정을 소강하고 있습니다. 최근에 이제 고파콘이라고 이제 고언어 관련해 가지고 열리는 큰 행사가 있는데 거기 준비위원회로 참가를 했고 이제 또 jrc라는 그 로봇 회사에서 로보틱스 엔지니어로 근무한 경력이 있습니다. 일단은 크게 4가지 주제를 다뤄볼 거에요. 이제 TF-IDF N-Gram, COVERT, 다이노싱 메소드, 포지티브 인덱스 리얼리티 즉 이제 신뢰지수에 대해서 한번 얘기를 해보려고 합니다. 일단은 이 프로젝트를 먼저 시작하게 된 계기가 바로 이거였어요. 일반적으로 우리가 주식을 할 때 처음에 화면을 보면 어떠한 걸 봐야 될지 모르겠는 거에요. 그래서 복잡한 리서치 화면 및 뉴스 커뮤니티에 통한 투자 결정에 어려움이 존재해서 이 프로젝트를 진행하게 되었고 또한 이제 일단은 한국 투자증권 기준으로 보면은 카테고리가 일단은 종목이 2400개가 있어요. 이거를 10개의 섹터로만 구분을 해서 의사결정에 대해서 어려운 점이 있었습니다. 그래서 이 프로젝트를 진행하게 되었고 요약해드리자면 이제 우리가 이걸 왜 하게 되었는지 중요 정보에 쉽게 접근하고 이제 정확한 투자 동향을 파악하면서 이제 유망한 분야 탐색하고 또한 이제 여론과 어느정도 상관관계 분석이 있는지 그걸 파악하면서 개발해 보려고 했습니다. 일단은 개발 설계 및 연구 방법에 대해서 설명을 드리면은 일단은 모델을 선정이랑 이제 어떻게 프로젝트를 진행하지 플레이닝을 했고요. 건담의 이제 데이터 수집 및 전처리, 부위 체계 세부나 키워드 감성 분석, 적용 데이터 분석, 데이터 시각화 이렇게 5가지로 구성을 했습니다. 일단 일반적으로 인공지능 관련한 프로젝트를 시작을 할 때 이제 데이터 수집을 해야 되잖아요. 그래서 일반적으로 가져와있을 금융 데이터가 이제 수치적으로 이제 csv 형태로 가져올 수 있는 금융 데이터는 이제 한국의 이제 한국 거래 거래소 같은 데가 있어요. 이제 거기서 정보 코드랑 이제 과연한 주요 내용들, 상장에 이러한 내용들을 가져왔고 그래서 판다스 라이벌을 활용해 가지고 이제 결측치량 중복값을 제거했습니다. 그리고 이제 tf-idf라는 것을 사용해 가지고 이제 그 문서 내에서 과일 한 단어가 얼마 정도 나오는지 그거에다 빈도를 분석을 했고 n-gram이라는 즉 slm 기열의 언어모델을 사용해 가지고 단어나 이제 문장의 확률값을 할당을 해요. 이제 그래서 이렇게 입력된 문장을 n개 단위로 잘라서 분석을 했습니다. 또한 이제 이 tf-idf랑 n-gram을 사용해서 이제 어느정도 빈도값에 대한 것을 파악했다면 이제 금융 분장 데이터서스로 모델별 성능을 평가하는 작업을 진행했어요. 물론 이때 파이토치 프레임워크를 사용했고 크게 3가지 모델을 사용했습니다. 이제 코벌트랑 KEC 일렉트라, 코어 일렉트라는 모델을 사용했었는데 이중에 코버트 모델이 0.8870 정도의 Accuracy를 보여 가지고 가장 높은 정확도를 보여서 사용했습니다. 그래서 이제 코버트 모델을 어떻게 활용을 했냐라고 간단하게 설명 드리면은 코버트 모델은 이제 그 버트 모델을 한국어로 프리트레인드 모델이에요. 그래서 이제 그 모델을 트랜스포머 기반으로 해서 사용을 했고 그 다음에 이제 이 모델을 가지고 감성 분석을 진행했습니다. 크게 3가지 라벨을 달았었거든요. 이제 물론 지도학습 방식으로 진행을 했고 0이 포지티브, 긍정, 1이 내추럴, 중립, 2가 네거티브, 이제 중립으로 해놓고 이제 진행을 했습니다. 또한 이제 벌트 모델의 아키텍처에 대해서 간단하게 설명 드리면은 일단은 우리가 앞에서 이제 금융 데이터셋을 가져와서 한다고 했잖아요. 이제 그 문장을 단어 단위로 분리를 합니다. 예를 들어서 오늘 주식 시장이 크게 상승했습니다. 이라는 데이터셋이 있으면은 단어 단위로 분리를 했어요. 오늘 주식 시장이 크게 상승했습니다. 이렇게 해서 토크나이저를 사용해서 문장을 단어 단위로 분리를 했고요. 그래서 이제 그 벌트 모델의 인풋 인베링 레이어를 넣어가지고 진행을 했습니다. 또한 이제 인코더 레이어에 들어가면 이제 리니어 레이어를 거쳐가지고 이제 셀프 어테이션 메커니즘이 적용이 돼요. 이거에 대해서는 앞에 설명 드린 자료에 나와 있듯이 이제 쿼리랑 키의 개념으로 구성이 되어 있는데 이 글을 보시면 이렇게 나와 있는데 이제 쿼리 키 소프트맥스 함수를 변환해가지고 스코어를 계산을 해요. 스코어를 기반해가지고 이제 그 쿼리에 대해서 키가 얼마나 연관성 있는지를 분석을 합니다. 또한 이제 프리트레인드 사전학습을 했을 때 mlm과 nsp 방식을 사용해가지고 진행을 했고요. 그 다음에 이제 파이트링 같은 경우에 이제 슈퍼바이스드 러닝 즉 지도학습을 사용해가지고 앞에서 설명 드렸다시피 이제 이렇게 감정 부유 앱앱 데이터세스를 분리했습니다. 또한 이제 금융 데이터세스 어떻게 분리를 했냐라고 이제 말씀을 드릴 수 있을 것 같은데 그게 데이터 수집 전처리, 데이터 아이솔레이션, 데이터 분리 이렇게 3가지 이제 분야를 나눠서 진행을 했고요. 데이터 수집은 이제 DART라는 한국 기업 공시정보 데이터를 가져왔고 그 다음에 이제 그에 관련한 타임 시리즈 데이터라고 이제 시규어 데이터도 있어요. 그걸 가져와서 이제 데이터 프리 프로세싱, 데이터 전처리를 해가지고 이제 여기서 이제 다이노이싱 메소드라는 걸 사용했습니다. 그래서 이제 여기서 이제 인포메이션은 즉 필요 있는 정보, 노이즈는 필요 없는 정보를 이렇게 해가지고 분리를 했습니다. 그럼 여기서 이제 다이노이싱 메소드를 왜 사용했냐라고 말씀드리면은 크게 2가지 사유가 있었어요. 일단은 첫 번째로 무의미한 가격 정보를 제거하면서 주식 폭등, 폭락 같은 쓸데없는 정보들을 제거하기 위해서 사용을 했고 그리고 의미 없는 정보를 이제 제거했습니다. 즉 분석과 무관한 뉴스를 사용을 했고 이걸 작업을 하면서 이제 정확하고 의미 있는 정보를 알기 위해서 사용했습니다. 그럼 이제 데이터 표현을 어떻게 했냐. 일단은 일반적으로 우리가 서비스화를 할 거면 일단 프론트엔드를 만들어야 되잖아요. 그걸 이제 리액트랑 JS를 써가지고 개발을 했고 데이터 시각화하는 거는 이제 D3랑 ChartJSL 라이벌이 있어요. 시각화를 해주는 그 라이벌을 사용을 했고 이제 그래프가 나오는 거는 이제 즉 노드, 노드 익스프레스 사용해가지고 데이터 서버를 제작해서 불러는 방식으로 구현했습니다. 이렇게 앞에 있는 그림 보시듯이 이렇게 디자인을 했고요. 이것은 시연 영상입니다. 그래서 어떠한 결론을 낼 수 있었냐라고 하면 크게 4가지가 있어요. 월변 양지수로 판단하는 거랑 재무지표 ESG, 타업종과의 비교, 키워드와 금융정보에 대해서 파악할 수 있었습니다. 그리고 긍정지수 신뢰도라는 게 있는데 이거 어떤 거냐면은 이제 저희가 실제 만든 예측한 거랑 이제 실제 ETF 수익률이 관계가 있는지를 나타내려고 만든 건데요. 이거는 즉 실제 주가의 노이즈를 제거해서 이제 긍정지수와 수익률의 상공관계를 분석을 합니다. 그리고 이제 시장의 긍정 반응과 부정 반응이 더 높은, 더 낮은 수익률 연결된다는 것과 긍정지수가 급격히 상승으로 하락할 때 수익률이 따라오는 경향을 이제 볼 수 있었습니다. 그래서 제가 내릴 수 있는 결론과 의논점에 대해서 얘기해 주자면은 일단은 저희 플랫폼을 통해서 성장 가능성과 평가 정보를 제공한다는 것, 두번째 이제 최신 트렌드 및 시장 동향을 분석할 수 있다는 것, 그리고 세번째는 데이터 수집 제한 시각화에 미흡할 수 있다는 점을 보였습니다. 이거는 과연한 레퍼런스 이고요. 제가 수집을 해서 사용했기 때문에 확인해 주시면 될 것 같습니다. 이상으로 발표 마치겠습니다.
+2024-12-04 20:23:07,987 - INFO - pronun_model.utils.calculate_presentation_score - 사용자가 제공한 스크립트를 사용합니다.
+2024-12-04 20:23:07,987 - DEBUG - pronun_model.utils.calculate_presentation_score - TTS 생성을 생략합니다.
+2024-12-04 20:23:08,797 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3: 536.98 seconds
+2024-12-04 20:23:09,465 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3: 536.98 seconds
+2024-12-04 20:23:09,466 - DEBUG - pronun_model.utils.calculate_speed - Audio duration: 536.98 seconds
+2024-12-04 20:23:09,466 - DEBUG - pronun_model.utils.calculate_speed - Word count: 938
+2024-12-04 20:23:09,466 - INFO - pronun_model.utils.calculate_speed - Calculated speaking speed: 104.81 WPM
+2024-12-04 20:23:09,466 - INFO - pronun_model.utils.calculate_presentation_score - 스크립트를 사용하여 TTS를 생성합니다.
+2024-12-04 20:23:09,466 - INFO - pronun_model.utils.calculate_presentation_score - TTS를 생성하고 오디오 유사도를 비교합니다.
+2024-12-04 20:23:11,339 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2024-12-04 20:24:08,669 - INFO - root - TTS 생성 완료: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts/TTS_7771b810-9d64-4170-aa0a-e60f6df19cb8.mp3
+2024-12-04 20:24:08,869 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:24:09,405 - ERROR - pronun_model.utils.calculate_presentation_score - 발표 점수 계산 중 오류 발생: name 'logger' is not defined
+2024-12-04 20:24:09,406 - ERROR - pronun_model.routers.send_feedback - 비디오 ID a18111c873564278a8cfef78ebfbf686에 대한 분석이 실패했습니다.
+2024-12-04 20:24:09,406 - ERROR - pronun_model.routers.send_feedback - 알 수 없는 오류 발생: 500: 분석에 실패했습니다.
+2024-12-04 20:24:09,408 - INFO - pronun_model - Response status: 500
+2024-12-04 20:24:20,964 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:24:20,967 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/calculate_presentation_score.py'. Reloading...
+2024-12-04 20:24:21,034 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:24:21,137 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:24:21,138 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:24:21,138 - INFO - uvicorn.error - Finished server process [6287]
+2024-12-04 20:24:21,906 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:24:22,096 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:24:22,097 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:24:22,097 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:24:22,097 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:24:22,097 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:24:22,097 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:24:22,097 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:24:22,097 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:24:22,097 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:24:22,097 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:24:23,489 - INFO - uvicorn.error - Started server process [6940]
+2024-12-04 20:24:23,489 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:24:23,489 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:24:23,569 - INFO - watchfiles.main - 4 changes detected
+2024-12-04 20:27:38,582 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:27:38,585 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/calculate_presentation_score.py'. Reloading...
+2024-12-04 20:27:38,685 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:27:38,788 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:27:38,790 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:27:38,790 - INFO - uvicorn.error - Finished server process [6940]
+2024-12-04 20:27:39,599 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:27:39,797 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:27:39,797 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:27:39,797 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:27:39,797 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:27:39,797 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:27:39,797 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:27:39,797 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:27:39,797 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:27:39,797 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:27:39,797 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:27:41,224 - INFO - uvicorn.error - Started server process [8153]
+2024-12-04 20:27:41,224 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:27:41,225 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:27:41,304 - INFO - watchfiles.main - 4 changes detected
+2024-12-04 20:27:50,307 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:27:50,307 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/calculate_presentation_score.py'. Reloading...
+2024-12-04 20:27:50,317 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:27:50,418 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:27:50,419 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:27:50,419 - INFO - uvicorn.error - Finished server process [8153]
+2024-12-04 20:27:51,062 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:27:51,255 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:27:51,255 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:27:51,255 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:27:51,255 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:27:51,255 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:27:51,255 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:27:51,255 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:27:51,256 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:27:51,256 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:27:51,256 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:27:52,553 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:27:52,625 - INFO - uvicorn.error - Started server process [8245]
+2024-12-04 20:27:52,625 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:27:52,625 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:27:52,911 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:27:53,359 - INFO - pronun_model - Request: GET http://0.0.0.0:8000/api/pronun/send-feedback/a18111c873564278a8cfef78ebfbf686
+2024-12-04 20:27:53,361 - INFO - pronun_model.routers.send_feedback - send_feedback 엔드포인트 호출됨 for video_id: a18111c873564278a8cfef78ebfbf686
+2024-12-04 20:27:53,361 - DEBUG - pronun_model.routers.send_feedback - 스크립트 파일을 발견했습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:27:53,600 - INFO - pronun_model.utils.text_extraction - Extracted text from PDF file /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:27:53,600 - INFO - pronun_model.routers.send_feedback - 스크립트 텍스트 추출 성공
+2024-12-04 20:28:14,452 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:28:14,456 - DEBUG - pronun_model.utils.calculate_presentation_score - STT 변환된 텍스트:
+발표 시작하겠습니다. 안녕하세요. 저는 이번에 인공지능과 파이썬으로 금융 데이터 분석해보기 윗자연화 처리로 발표하게 될 김대현이라고 합니다. 일단 제 소개를 간단하게 드리자면은 저는 지금 모듈 연구소라는 곳에서 비전 랭키지 쪽으로 모델 연구를 하고 있고요. 또한 카카오테크 부트캡에서 생선형 인공지능 과정을 소강하고 있습니다. 최근에 이제 고파콘이라고 이제 고언어 관련해 가지고 열리는 큰 행사가 있는데 거기 준비위원회로 참가를 했고 이제 또 jrc라는 그 로봇 회사에서 로보틱스 엔지니어로 근무한 경력이 있습니다. 일단은 크게 4가지 주제를 다뤄볼 거에요. 이제 TF-IDF N-Gram, COVERT, 다이노싱 메소드랑 포지티브 인덱스 리얼리티 즉 이제 신뢰지수에 대해서 한번 얘기를 해보려고 합니다. 일단은 이 프로젝트를 먼저 시작하게 된 계기가 바로 이거였어요. 일반적으로 우리가 주식을 할 때 처음에 화면을 보면은 어떠한 걸 봐야 될지 모르겠는 거에요. 그래서 복잡한 리서치 화면 및 뉴스 커뮤니티에 통한 투자 결정에 어려움이 존재해서 이 프로젝트를 진행하게 되었고 또한 이제 일단은 한국 투자증권 기준으로 보면은 카테고리가 일단은 종목이 2400개가 있어요. 이것을 10개의 섹터로만 구분해서 의사결정에 대해서 어려운 점이 있었습니다. 그래서 이 프로젝트를 진행하게 되었고 요약해드리자면 이제 우리가 이걸 왜 하게 되었는지 중요 정보에 쉽게 접근하고 이제 정확한 투자 동향을 파악하면서 유망한 분야에 탐색하고 또한 이제 여론과 어느정도 상관관계 분석이 있는지 그걸 파악하면서 개발해 보려고 개발했습니다. 일단은 개발 설계 및 연구방법에 대해서 설명을 드리면은 일단은 모델을 선정이랑 이제 어떻게 프로젝트를 진행하지 플레이닝을 했고요. 건담의 이제 데이터 수집 및 전처리, 부위 체계 세부나 키워드 감성 분석, 적용 데이터 분석, 데이터 시각화 이렇게 다섯가지로 구성을 했습니다. 일단 일반적으로 인공지능 관련한 프로젝트를 시작을 할 때 이제 데이터 수집을 해야 되잖아요. 그래서 일반적으로 가져와있을 금융 데이터가 이제 수치적으로, 즉 csv 형태로 가져와있을 금융 데이터는 이제 한국의 이제 한국 거래소 같은 데가 있어요. 이제 거기서 정보 코드랑 이제 과연한 주요 내용들, 상장에 이러한 내용들을 가져왔고 그래서 판다스 라이벌을 활용해 가지고 이제 결측치랑 중복값을 제거했습니다. 그리고 이제 tf-idf라는 것을 사용해 가지고 이제 그 문서 내에서 과일 한 단어가 얼마 정도 나오는지 그거에다가 빈도를 분석을 했고, 그 다음에 이제 ngram 이라는 즉 slm 기열의 언어모델을 사용해 가지고 단어나 이제 문장의 확률값을 할당을 해요. 그래서 이렇게 입력된 문장을 ng에 단위로 잘라서 분석을 했습니다. 또한 이제 이 tf-idf랑 ngram을 사용해서 이제 어느정도 빈도값에 대한 것을 파악을 했다면 이제 금융분장 데이터서스로 모델별 성능을 평가하는 작업을 진행했어요. 물론 이때 파이토치 프레임워크를 사용했고, 크게 세가지 모델을 사용했습니다. 이제 코벌트랑 KEC 일렉트라, 코엘리트라는 모델을 사용했었는데 이 중에 코벌트 모델이 0.8870 정도의 아큐리시를 보여 가지고 가장 높은 정확도를 보여서 사용했습니다. 그래서 이제 코벌트 모델을 어떻게 활용을 했냐라고 간단하게 설명을 드리면, 코벌트 모델은 이제 버틀 모델을 한국어로 프리트레인드 모델이에요. 그래서 이제 그 모델을 트랜스포머 기반으로 해서 사용을 했고, 그 다음에 이제 이 모델을 가지고 감성 분석을 진행했습니다. 크게 3가지 라벨을 달았었거든요. 이제 물론 지도학습 방식으로 진행을 했고, 0이 포지티브, 긍정, 1이 느추럴, 중립, 2가 네거티브, 이제 중립으로 해놓고 이제 진행을 했습니다. 또한 이제 벌트 모델의 아키텍처에 대해서 간단하게 설명을 드리면, 일단은 우리가 앞에서 이제 금융 데이터셋을 가져와서 한다고 했잖아요. 이제 그 문장을 단어 단위로 분리를 합니다. 예를 들어서, 올해 주식 시장이 크게 상승했습니다. 이라는 데이터셋이 있으면 단어 단위로 분리를 했어요. 오늘 주식 시장이 크게 상승했습니다. 이렇게 해서 토크나이저를 사용해서 문장을 단어 단위로 분리를 했고요. 그래서 이제 그 벌트 모델의 인풋 인베링 레이어를 넣어가지고 진행을 했습니다. 또한 이제 인코더 레이어에 들어가면 이제 리니어 레이어를 거쳐가지고 이제 셀프 어테이션 메커니즘이 적용이 돼요. 이거에 대해서는 앞에 설명드린 자료에 나와 있듯이 이제 쿼리랑 키의 개념으로 구성이 되어 있는데, 이 글을 보시면 이렇게 나와 있는데 이제 쿼리 키 소프트맥스 함수를 변환해가지고 스코어를 계산을 해요. 스코어를 기반해가지고 이제 그 쿼리에 대해서 키가 얼마나 연관성 있는지를 분석을 합니다. 또한 이제 프리트레인드 사전학습을 했을 때 이제 MLM과 NSP 방식을 사용해 가지고 진행을 했고요. 그 다음에 이제 파이트링 같은 경우에 이제 슈퍼바이스드 러닝 즉 지도학습을 사용해가지고 앞에서 설명드렸다시피 이제 이렇게 감정 부유 앱앱 데이터셋을 분리했습니다. 또한 이제 금융 데이터셋을 어떻게 분리를 했냐라고 이제 말씀을 드릴 수 있을 것 같은데, 그게 데이터 수집 전처리, 데이터 아이솔레이션, 데이터 분리 이렇게 3가지 이제 분야를 나눠서 진행을 했고요. 데이터 수집은 이제 DART라는 한국 기업 공시정보 데이터를 가져왔고, 그 다음에 이제 그에 관련한 타임 시리즈 데이터라고 이제 시결 데이터도 있어요. 그걸 가져와서 이제 데이터 프리프로세싱, 데이터 전처리를 해가지고 이제 여기서 이제 다이노이싱 메소드라는 걸 사용했습니다. 그래서 이제 여기서 이제 인포메이션은 즉 필요 있는 정보, 노이즈는 필요 없는 정보를 이렇게 해가지고 분리를 했습니다. 그럼 여기서 이제 다이노이싱 메소드를 왜 사용했냐라고 말씀드리면은 크게 2가지 사유가 있었어요. 일단은 첫 번째로 무의미한 가격 정보를 제거하면서 주식 폭등, 폭락 같은 쓸데없는 정보들을 제거하기 위해서 사용을 했고, 그리고 의미 없는 정보를 이제 제거했습니다. 즉 분석과 무관한 뉴스를 사용을 했고, 이걸 작업을 하면서 이제 정확하고 의미 있는 정보를 알기 위해서 사용했습니다. 그럼 이제 데이터 표현을 어떻게 했냐? 일단은 일반적으로 우리가 서비스화를 할 거면은 일단 프론트엔드를 만들어야 되잖아요. 그걸 이제 리액트랑 JS를 써가지고 개발을 했고, 데이터 시각화하는 거는 이제 D3랑 ChartJSL 라이벌이 있어요, 시각화를 해주는 그 라이벌을 사용을 했고, 이제 그래프 표현하는 거는 이제 즉 Node, NodeExpress를 사용해가지고 데이터 서버를 제작해서 불러는 방식으로 구현했습니다. 이렇게 앞에 있는 그림 보시듯이 이렇게 디자인을 했고요. 이것은 시연 영상입니다. 그래서 어떠한 결론을 낼 수 있었냐라고 하면 크게 4가지가 있어요. 월변 양지수로 판단하는 거랑, 재무지표 ESG, 타업종과의 비교, 키워드와 금융정보에 대해서 파악할 수 있었습니다. 그리고 긍정지수 신뢰도라는 게 있는데, 이거 어떤 거냐면은 이제 저희가 실제 만든 예측한 거랑 이제 실제 ETF 수익률이 관계가 있는지를 나타내려고 만든 건데요. 이거는 즉 실제 주가의 노이즈를 제거해서 이제 긍정지수와 수익률의 상공관리를 분석을 합니다. 그리고 이제 시장의 긍정반응과 부정반응이 더 높은, 더 낮은 수익률에 연결된다는 것과 이제 긍정지수가 급격히 상승으로 하락할 때 수익률이 따라오는 경향을 이제 볼 수 있었습니다. 그래서 제가 내릴 수 있는 결론과 의논점에 대해서 얘기해 주자면은 일단은 저희 플랫폼을 통해서 성장 가능성과 평가 정보를 제공한다는 것, 두번째 이제 최신 트렌드 및 시장 동향을 분석할 수 있다는 것, 그리고 세번째는 데이터 수집 제한 시각화에 미흡할 수 있다는 점을 보였습니다. 이거는 과연한 레퍼런스 이고요. 제가 수집을 해서 사용했기 때문에 확인해 주시면 될 것 같습니다. 이상으로 발표 마치겠습니다.
+2024-12-04 20:28:14,457 - INFO - pronun_model.utils.calculate_presentation_score - 사용자가 제공한 스크립트를 사용합니다.
+2024-12-04 20:28:14,457 - DEBUG - pronun_model.utils.calculate_presentation_score - TTS 생성을 생략합니다.
+2024-12-04 20:28:15,287 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3: 536.98 seconds
+2024-12-04 20:28:15,965 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3: 536.98 seconds
+2024-12-04 20:28:15,966 - DEBUG - pronun_model.utils.calculate_speed - Audio duration: 536.98 seconds
+2024-12-04 20:28:15,966 - DEBUG - pronun_model.utils.calculate_speed - Word count: 931
+2024-12-04 20:28:15,966 - INFO - pronun_model.utils.calculate_speed - Calculated speaking speed: 104.03 WPM
+2024-12-04 20:28:15,966 - INFO - pronun_model.utils.calculate_presentation_score - 스크립트를 사용하여 TTS를 생성합니다.
+2024-12-04 20:28:15,966 - INFO - pronun_model.utils.calculate_presentation_score - TTS를 생성하고 오디오 유사도를 비교합니다.
+2024-12-04 20:28:17,909 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2024-12-04 20:29:23,877 - INFO - root - TTS 생성 완료: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts/TTS_f40114bd-b90a-4c05-a5c5-f106e4d8076c.mp3
+2024-12-04 20:29:23,965 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:29:24,560 - ERROR - pronun_model.utils.calculate_presentation_score - 발표 점수 계산 중 오류 발생: name 'logger' is not defined
+2024-12-04 20:29:24,562 - ERROR - pronun_model.routers.send_feedback - 비디오 ID a18111c873564278a8cfef78ebfbf686에 대한 분석이 실패했습니다.
+2024-12-04 20:29:24,562 - ERROR - pronun_model.routers.send_feedback - 알 수 없는 오류 발생: 500: 분석에 실패했습니다.
+2024-12-04 20:29:24,564 - INFO - pronun_model - Response status: 500
+2024-12-04 20:29:53,238 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:29:53,241 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/calculate_presentation_score.py'. Reloading...
+2024-12-04 20:29:53,270 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:29:53,372 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:29:53,373 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:29:53,374 - INFO - uvicorn.error - Finished server process [8245]
+2024-12-04 20:29:54,094 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:29:54,353 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:29:54,353 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:29:54,353 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:29:54,353 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:29:54,353 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:29:54,353 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:29:54,353 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:29:54,353 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:29:54,353 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:29:54,354 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:29:56,004 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:29:56,035 - INFO - uvicorn.error - Started server process [8988]
+2024-12-04 20:29:56,035 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:29:56,035 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:29:56,365 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:30:57,263 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:30:57,267 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/upload_video.py'. Reloading...
+2024-12-04 20:30:57,330 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:30:57,433 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:30:57,434 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:30:57,435 - INFO - uvicorn.error - Finished server process [8988]
+2024-12-04 20:30:58,161 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:30:58,350 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:30:58,350 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:30:58,350 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:30:58,350 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:30:58,350 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:30:58,350 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:30:58,350 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:30:58,350 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:30:58,351 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:30:58,351 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:30:58,526 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:30:58,889 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:30:58,920 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/upload_video.py'. Reloading...
+2024-12-04 20:30:59,287 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:30:59,390 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:30:59,390 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:30:59,391 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:30:59,391 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:30:59,391 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:30:59,391 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:30:59,391 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:30:59,391 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:30:59,391 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:30:59,391 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:30:59,651 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:31:00,610 - INFO - uvicorn.error - Started server process [9433]
+2024-12-04 20:31:00,610 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:31:00,610 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:31:00,709 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:31:03,606 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:31:03,607 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/routers/upload_video.py'. Reloading...
+2024-12-04 20:31:03,644 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:31:03,745 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:31:03,745 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:31:03,746 - INFO - uvicorn.error - Finished server process [9433]
+2024-12-04 20:31:04,396 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:31:04,712 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:31:04,712 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:31:04,712 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:31:04,713 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:31:04,713 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:31:04,713 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:31:04,713 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:31:04,713 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:31:04,713 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:31:04,713 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:31:04,816 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:31:06,107 - INFO - uvicorn.error - Started server process [9477]
+2024-12-04 20:31:06,107 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:31:06,107 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:31:06,202 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:31:33,404 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:31:33,407 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/calculate_presentation_score.py'. Reloading...
+2024-12-04 20:31:33,445 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:31:33,550 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:31:33,555 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:31:33,556 - INFO - uvicorn.error - Finished server process [9477]
+2024-12-04 20:31:34,369 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:31:34,571 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:31:34,571 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:31:34,572 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:31:34,572 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:31:34,572 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:31:34,572 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:31:34,572 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:31:34,572 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:31:34,572 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:31:34,572 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:31:35,865 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:31:35,882 - INFO - uvicorn.error - Started server process [9677]
+2024-12-04 20:31:35,882 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:31:35,882 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:31:36,231 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:31:39,127 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:31:39,129 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/calculate_presentation_score.py'. Reloading...
+2024-12-04 20:31:39,220 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:31:39,321 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:31:39,321 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:31:39,321 - INFO - uvicorn.error - Finished server process [9677]
+2024-12-04 20:31:39,970 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:31:40,028 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:31:40,028 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:31:40,028 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:31:40,028 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:31:40,028 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:31:40,028 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:31:40,028 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:31:40,028 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:31:40,028 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:31:40,028 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:31:41,085 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:31:41,205 - INFO - uvicorn.error - Started server process [9738]
+2024-12-04 20:31:41,206 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:31:41,208 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:31:41,444 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:31:56,339 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:31:56,341 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/calculate_presentation_score.py'. Reloading...
+2024-12-04 20:31:56,378 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:31:56,481 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:31:56,486 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:31:56,486 - INFO - uvicorn.error - Finished server process [9738]
+2024-12-04 20:31:57,181 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:31:57,419 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:31:57,419 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:31:57,420 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:31:57,420 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:31:57,420 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:31:57,420 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:31:57,420 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:31:57,420 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:31:57,420 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:31:57,420 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:31:58,766 - INFO - uvicorn.error - Started server process [9856]
+2024-12-04 20:31:58,766 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:31:58,766 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:31:58,831 - INFO - watchfiles.main - 4 changes detected
+2024-12-04 20:31:58,908 - INFO - pronun_model - Request: GET http://0.0.0.0:8000/api/pronun/send-feedback/a18111c873564278a8cfef78ebfbf686
+2024-12-04 20:31:58,908 - INFO - pronun_model.routers.send_feedback - send_feedback 엔드포인트 호출됨 for video_id: a18111c873564278a8cfef78ebfbf686
+2024-12-04 20:31:58,909 - DEBUG - pronun_model.routers.send_feedback - 스크립트 파일을 발견했습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:31:59,074 - INFO - pronun_model.utils.text_extraction - Extracted text from PDF file /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:31:59,074 - INFO - pronun_model.routers.send_feedback - 스크립트 텍스트 추출 성공
+2024-12-04 20:32:26,403 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:32:26,407 - DEBUG - pronun_model.utils.calculate_presentation_score - STT 변환된 텍스트:
+발표 시작하겠습니다. 안녕하세요. 저는 이번에 인공지능과 파이썬으로 금융 데이터 분석해보기 윗자연화 처리로 발표하게 될 김대현이라고 합니다. 일단 제 소개를 간단하게 드리자면은 저는 지금 모듈 연구소라는 곳에서 비전 랭키지 쪽으로 모델 연구를 하고 있고요. 또한 카카오테크 부트캡에서 생선형 인공지능 과정을 소강하고 있습니다. 최근에 이제 고파콘이라고 이제 고언어 관련해 가지고 열리는 큰 행사가 있는데 거기 준비위원회로 참가를 했고 이제 또 jrc라는 그 로봇 회사에서 로보틱스 엔지니어로 근무한 경력이 있습니다. 일단은 크게 4가지 주제를 다뤄볼 거에요. 이제 TF-IDF N-Gram, COVERT, 다이노싱 메소드, 포지티브 인덱스 리얼리티 즉 이제 신뢰지수에 대해서 한번 얘기를 해보려고 합니다. 일단은 이 프로젝트를 먼저 시작하게 된 계기가 바로 이거였어요. 일반적으로 우리가 주식을 할 때 처음에 화면을 보면 어떠한 걸 봐야 될지 모르겠는 거에요. 그래서 복잡한 리서치 화면 및 뉴스 커뮤니티에 통한 투자 결정에 어려움이 존재해서 이 프로젝트를 진행하게 되었고 또한 이제 일단은 한국 투자증권 기준으로 보면은 카테고리가 일단은 종목이 2400개가 있어요. 이거를 10개의 섹터로만 구분을 해서 의사결정에 대해서 어려운 점이 있었습니다. 그래서 이 프로젝트를 진행하게 되었고 요약해드리자면 이제 우리가 이걸 왜 하게 되었는지 중요 정보에 쉽게 접근하고 이제 정확한 투자 동향을 파악하면서 이제 유망한 분야 탐색하고 또한 이제 여론과 어느정도 상관관계 분석이 있는지 그걸 파악하면서 개발해 보려고 했습니다. 일단은 개발 설계 및 연구 방법에 대해서 설명을 드리면은 일단은 모델을 선정이랑 이제 어떻게 프로젝트를 진행하지 플레이닝을 했고요. 건담의 이제 데이터 수집 및 전처리, 부위 체계 세부나 키워드 감성 분석, 적용 데이터 분석, 데이터 시각화 이렇게 5가지로 구성을 했습니다. 일단 일반적으로 인공지능 관련한 프로젝트를 시작을 할 때 이제 데이터 수집을 해야 되잖아요. 그래서 일반적으로 가져와있을 금융 데이터가 이제 수치적으로 이제 csv 형태로 가져올 수 있는 금융 데이터는 이제 한국의 이제 한국 거래 거래소 같은 데가 있어요. 이제 거기서 정보 코드랑 이제 과연한 주요 내용들, 상장에 이러한 내용들을 가져왔고 그래서 판다스 라이벌을 활용해 가지고 이제 결측치량 중복값을 제거했습니다. 그리고 이제 tf-idf라는 것을 사용해 가지고 이제 그 문서 내에서 과일 한 단어가 얼마 정도 나오는지 그거에다 빈도를 분석을 했고 n-gram이라는 즉 slm 기열의 언어모델을 사용해 가지고 단어나 이제 문장의 확률값을 할당을 해요. 이제 그래서 이렇게 입력된 문장을 n개 단위로 잘라서 분석을 했습니다. 또한 이제 이 tf-idf랑 n-gram을 사용해서 이제 어느정도 빈도값에 대한 것을 파악했다면 이제 금융 분장 데이터서스로 모델별 성능을 평가하는 작업을 진행했어요. 물론 이때 파이토치 프레임워크를 사용했고 크게 3가지 모델을 사용했습니다. 이제 코벌트랑 KEC 일렉트라, 코어 일렉트라는 모델을 사용했었는데 이중에 코버트 모델이 0.8870 정도의 Accuracy를 보여 가지고 가장 높은 정확도를 보여서 사용했습니다. 그래서 이제 코버트 모델을 어떻게 활용을 했냐라고 간단하게 설명 드리면은 코버트 모델은 이제 그 버트 모델을 한국어로 프리트레인드 모델이에요. 그래서 이제 그 모델을 트랜스포머 기반으로 해서 사용을 했고 그 다음에 이제 이 모델을 가지고 감성 분석을 진행했습니다. 크게 3가지 라벨을 달았었거든요. 이제 물론 지도학습 방식으로 진행을 했고 0이 포지티브, 긍정, 1이 내추럴, 중립, 2가 네거티브, 이제 중립으로 해놓고 이제 진행을 했습니다. 또한 이제 벌트 모델의 아키텍처에 대해서 간단하게 설명 드리면은 일단은 우리가 앞에서 이제 금융 데이터셋을 가져와서 한다고 했잖아요. 이제 그 문장을 단어 단위로 분리를 합니다. 예를 들어서 오늘 주식 시장이 크게 상승했습니다. 이라는 데이터셋이 있으면은 단어 단위로 분리를 했어요. 오늘 주식 시장이 크게 상승했습니다. 이렇게 해서 토크나이저를 사용해서 문장을 단어 단위로 분리를 했고요. 그래서 이제 그 벌트 모델의 인풋 인베링 레이어를 넣어가지고 진행을 했습니다. 또한 이제 인코더 레이어에 들어가면 이제 리니어 레이어를 거쳐가지고 이제 셀프 어테이션 메커니즘이 적용이 돼요. 이거에 대해서는 앞에 설명 드린 자료에 나와 있듯이 이제 쿼리랑 키의 개념으로 구성이 되어 있는데 이 글을 보시면 이렇게 나와 있는데 이제 쿼리 키 소프트맥스 함수를 변환해가지고 스코어를 계산을 해요. 스코어를 기반해가지고 이제 그 쿼리에 대해서 키가 얼마나 연관성 있는지를 분석을 합니다. 또한 이제 프리트레인드 사전학습을 했을 때 mlm과 nsp 방식을 사용해가지고 진행을 했고요. 그 다음에 이제 파이트링 같은 경우에 이제 슈퍼바이스드 러닝 즉 지도학습을 사용해가지고 앞에서 설명 드렸다시피 이제 이렇게 감정 부유 앱앱 데이터세스를 분리했습니다. 또한 이제 금융 데이터세스 어떻게 분리를 했냐라고 이제 말씀을 드릴 수 있을 것 같은데 그게 데이터 수집 전처리, 데이터 아이솔레이션, 데이터 분리 이렇게 3가지 이제 분야를 나눠서 진행을 했고요. 데이터 수집은 이제 DART라는 한국 기업 공시정보 데이터를 가져왔고 그 다음에 이제 그에 관련한 타임 시리즈 데이터라고 이제 시규어 데이터도 있어요. 그걸 가져와서 이제 데이터 프리 프로세싱, 데이터 전처리를 해가지고 이제 여기서 이제 다이노이싱 메소드라는 걸 사용했습니다. 그래서 이제 여기서 이제 인포메이션은 즉 필요 있는 정보, 노이즈는 필요 없는 정보를 이렇게 해가지고 분리를 했습니다. 그럼 여기서 이제 다이노이싱 메소드를 왜 사용했냐라고 말씀드리면은 크게 2가지 사유가 있었어요. 일단은 첫 번째로 무의미한 가격 정보를 제거하면서 주식 폭등, 폭락 같은 쓸데없는 정보들을 제거하기 위해서 사용을 했고 그리고 의미 없는 정보를 이제 제거했습니다. 즉 분석과 무관한 뉴스를 사용을 했고 이걸 작업을 하면서 이제 정확하고 의미 있는 정보를 알기 위해서 사용했습니다. 그럼 이제 데이터 표현을 어떻게 했냐. 일단은 일반적으로 우리가 서비스화를 할 거면 일단 프론트엔드를 만들어야 되잖아요. 그걸 이제 리액트랑 JS를 써가지고 개발을 했고 데이터 시각화하는 거는 이제 D3랑 ChartJSL 라이벌이 있어요. 시각화를 해주는 그 라이벌을 사용을 했고 이제 그래프가 나오는 거는 이제 즉 노드, 노드 익스프레스 사용해가지고 데이터 서버를 제작해서 불러는 방식으로 구현했습니다. 이렇게 앞에 있는 그림 보시듯이 이렇게 디자인을 했고요. 이것은 시연 영상입니다. 그래서 어떠한 결론을 낼 수 있었냐라고 하면 크게 4가지가 있어요. 월변 양지수로 판단하는 거랑 재무지표 ESG, 타업종과의 비교, 키워드와 금융정보에 대해서 파악할 수 있었습니다. 그리고 긍정지수 신뢰도라는 게 있는데 이거 어떤 거냐면은 이제 저희가 실제 만든 예측한 거랑 이제 실제 ETF 수익률이 관계가 있는지를 나타내려고 만든 건데요. 이거는 즉 실제 주가의 노이즈를 제거해서 이제 긍정지수와 수익률의 상공관계를 분석을 합니다. 그리고 이제 시장의 긍정 반응과 부정 반응이 더 높은, 더 낮은 수익률 연결된다는 것과 긍정지수가 급격히 상승으로 하락할 때 수익률이 따라오는 경향을 이제 볼 수 있었습니다. 그래서 제가 내릴 수 있는 결론과 의논점에 대해서 얘기해 주자면은 일단은 저희 플랫폼을 통해서 성장 가능성과 평가 정보를 제공한다는 것, 두번째 이제 최신 트렌드 및 시장 동향을 분석할 수 있다는 것, 그리고 세번째는 데이터 수집 제한 시각화에 미흡할 수 있다는 점을 보였습니다. 이거는 과연한 레퍼런스 이고요. 제가 수집을 해서 사용했기 때문에 확인해 주시면 될 것 같습니다. 이상으로 발표 마치겠습니다.
+2024-12-04 20:32:26,408 - INFO - pronun_model.utils.calculate_presentation_score - 사용자가 제공한 스크립트를 사용합니다.
+2024-12-04 20:32:26,408 - DEBUG - pronun_model.utils.calculate_presentation_score - TTS 생성을 생략합니다.
+2024-12-04 20:32:27,221 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3: 536.98 seconds
+2024-12-04 20:32:27,909 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3: 536.98 seconds
+2024-12-04 20:32:27,910 - DEBUG - pronun_model.utils.calculate_speed - Audio duration: 536.98 seconds
+2024-12-04 20:32:27,910 - DEBUG - pronun_model.utils.calculate_speed - Word count: 938
+2024-12-04 20:32:27,910 - INFO - pronun_model.utils.calculate_speed - Calculated speaking speed: 104.81 WPM
+2024-12-04 20:32:27,910 - INFO - pronun_model.utils.calculate_presentation_score - 스크립트를 사용하여 TTS를 생성합니다.
+2024-12-04 20:32:27,910 - INFO - pronun_model.utils.calculate_presentation_score - TTS를 생성하고 오디오 유사도를 비교합니다.
+2024-12-04 20:32:29,646 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2024-12-04 20:34:02,821 - INFO - root - TTS 생성 완료: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts/TTS_689c1f19-4a92-4afc-976c-71cf1fce0287.mp3
+2024-12-04 20:34:02,936 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:34:03,497 - ERROR - pronun_model.utils.calculate_presentation_score - 발표 점수 계산 중 오류 발생: name 'logger' is not defined
+2024-12-04 20:34:03,499 - ERROR - pronun_model.routers.send_feedback - 비디오 ID a18111c873564278a8cfef78ebfbf686에 대한 분석이 실패했습니다.
+2024-12-04 20:34:03,499 - ERROR - pronun_model.routers.send_feedback - 알 수 없는 오류 발생: 500: 분석에 실패했습니다.
+2024-12-04 20:34:03,501 - INFO - pronun_model - Response status: 500
+2024-12-04 20:34:56,911 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:34:56,913 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/adjust_audio_length.py'. Reloading...
+2024-12-04 20:34:56,987 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:34:57,089 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:34:57,090 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:34:57,090 - INFO - uvicorn.error - Finished server process [9856]
+2024-12-04 20:34:57,899 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:34:58,104 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:34:58,104 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:34:58,104 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:34:58,104 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:34:58,104 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:34:58,104 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:34:58,104 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:34:58,104 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:34:58,104 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:34:58,104 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:34:59,434 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:34:59,473 - INFO - uvicorn.error - Started server process [10984]
+2024-12-04 20:34:59,473 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:34:59,473 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:34:59,794 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:35:33,556 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:35:33,559 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/tts.py'. Reloading...
+2024-12-04 20:35:33,655 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:35:33,759 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:35:33,760 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:35:33,761 - INFO - uvicorn.error - Finished server process [10984]
+2024-12-04 20:35:34,469 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:35:34,734 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:35:34,735 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:35:34,735 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:35:34,735 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:35:34,735 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:35:34,735 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:35:34,735 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:35:34,735 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:35:34,735 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:35:34,735 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:35:35,160 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:35:36,219 - INFO - uvicorn.error - Started server process [11265]
+2024-12-04 20:35:36,219 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:35:36,219 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:35:36,334 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:35:36,485 - INFO - pronun_model - Request: GET http://0.0.0.0:8000/api/pronun/send-feedback/a18111c873564278a8cfef78ebfbf686
+2024-12-04 20:35:36,486 - INFO - pronun_model.routers.send_feedback - send_feedback 엔드포인트 호출됨 for video_id: a18111c873564278a8cfef78ebfbf686
+2024-12-04 20:35:36,487 - DEBUG - pronun_model.routers.send_feedback - 스크립트 파일을 발견했습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:35:36,655 - INFO - pronun_model.utils.text_extraction - Extracted text from PDF file /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:35:36,655 - INFO - pronun_model.routers.send_feedback - 스크립트 텍스트 추출 성공
+2024-12-04 20:36:04,771 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:36:04,774 - DEBUG - pronun_model.utils.calculate_presentation_score - STT 변환된 텍스트:
+발표 시작하겠습니다. 안녕하세요. 저는 이번에 인공지능과 파이썬으로 금융 데이터 분석해보기 윗자연화 처리로 발표하게 될 김대현이라고 합니다. 일단 제 소개를 간단하게 드리자면은 저는 지금 모듈 연구소라는 곳에서 비전 랭키지 쪽으로 모델 연구를 하고 있고요. 또한 카카오테크 부트캡에서 생선형 인공지능 과정을 소강하고 있습니다. 최근에 이제 고파콘이라고 이제 고언어 관련해 가지고 열리는 큰 행사가 있는데 거기 준비위원회로 참가를 했고 이제 또 jrc라는 그 로봇 회사에서 로보틱스 엔지니어로 근무한 경력이 있습니다. 일단은 크게 4가지 주제를 다뤄볼 거에요. 이제 TF-IDF N-Gram, COVERT, 다이노싱 메소드, 포지티브 인덱스 리얼리티 즉 이제 신뢰지수에 대해서 한번 얘기를 해보려고 합니다. 일단은 이 프로젝트를 먼저 시작하게 된 계기가 바로 이거였어요. 일반적으로 우리가 주식을 할 때 처음에 화면을 보면 어떠한 걸 봐야 될지 모르겠는 거에요. 그래서 복잡한 리서치 화면 및 뉴스 커뮤니티에 통한 투자 결정에 어려움이 존재해서 이 프로젝트를 진행하게 되었고 또한 이제 일단은 한국 투자증권 기준으로 보면은 카테고리가 일단은 종목이 2400개가 있어요. 이거를 10개의 섹터로만 구분을 해서 의사결정에 대해서 어려운 점이 있었습니다. 그래서 이 프로젝트를 진행하게 되었고 요약해드리자면 이제 우리가 이걸 왜 하게 되었는지 중요 정보에 쉽게 접근하고 이제 정확한 투자 동향을 파악하면서 이제 유망한 분야 탐색하고 또한 이제 여론과 어느정도 상관관계 분석이 있는지 그걸 파악하면서 개발해 보려고 했습니다. 일단은 개발 설계 및 연구 방법에 대해서 설명을 드리면은 일단은 모델을 선정이랑 이제 어떻게 프로젝트를 진행하지 플레이닝을 했고요. 건담의 이제 데이터 수집 및 전처리, 부위 체계 세부나 키워드 감성 분석, 적용 데이터 분석, 데이터 시각화 이렇게 5가지로 구성을 했습니다. 일단 일반적으로 인공지능 관련한 프로젝트를 시작을 할 때 이제 데이터 수집을 해야 되잖아요. 그래서 일반적으로 가져와있을 금융 데이터가 이제 수치적으로 이제 csv 형태로 가져올 수 있는 금융 데이터는 이제 한국의 이제 한국 거래 거래소 같은 데가 있어요. 이제 거기서 정보 코드랑 이제 과연한 주요 내용들, 상장에 이러한 내용들을 가져왔고 그래서 판다스 라이벌을 활용해 가지고 이제 결측치량 중복값을 제거했습니다. 그리고 이제 tf-idf라는 것을 사용해 가지고 이제 그 문서 내에서 과일 한 단어가 얼마 정도 나오는지 그거에다 빈도를 분석을 했고 n-gram이라는 즉 slm 기열의 언어모델을 사용해 가지고 단어나 이제 문장의 확률값을 할당을 해요. 이제 그래서 이렇게 입력된 문장을 n개 단위로 잘라서 분석을 했습니다. 또한 이제 이 tf-idf랑 n-gram을 사용해서 이제 어느정도 빈도값에 대한 것을 파악했다면 이제 금융 분장 데이터서스로 모델별 성능을 평가하는 작업을 진행했어요. 물론 이때 파이토치 프레임워크를 사용했고 크게 3가지 모델을 사용했습니다. 이제 코벌트랑 KEC 일렉트라, 코어 일렉트라는 모델을 사용했었는데 이중에 코버트 모델이 0.8870 정도의 Accuracy를 보여 가지고 가장 높은 정확도를 보여서 사용했습니다. 그래서 이제 코버트 모델을 어떻게 활용을 했냐라고 간단하게 설명 드리면은 코버트 모델은 이제 그 버트 모델을 한국어로 프리트레인드 모델이에요. 그래서 이제 그 모델을 트랜스포머 기반으로 해서 사용을 했고 그 다음에 이제 이 모델을 가지고 감성 분석을 진행했습니다. 크게 3가지 라벨을 달았었거든요. 이제 물론 지도학습 방식으로 진행을 했고 0이 포지티브, 긍정, 1이 내추럴, 중립, 2가 네거티브, 이제 중립으로 해놓고 이제 진행을 했습니다. 또한 이제 벌트 모델의 아키텍처에 대해서 간단하게 설명 드리면은 일단은 우리가 앞에서 이제 금융 데이터셋을 가져와서 한다고 했잖아요. 이제 그 문장을 단어 단위로 분리를 합니다. 예를 들어서 오늘 주식 시장이 크게 상승했습니다. 이라는 데이터셋이 있으면은 단어 단위로 분리를 했어요. 오늘 주식 시장이 크게 상승했습니다. 이렇게 해서 토크나이저를 사용해서 문장을 단어 단위로 분리를 했고요. 그래서 이제 그 벌트 모델의 인풋 인베링 레이어를 넣어가지고 진행을 했습니다. 또한 이제 인코더 레이어에 들어가면 이제 리니어 레이어를 거쳐가지고 이제 셀프 어테이션 메커니즘이 적용이 돼요. 이거에 대해서는 앞에 설명 드린 자료에 나와 있듯이 이제 쿼리랑 키의 개념으로 구성이 되어 있는데 이 글을 보시면 이렇게 나와 있는데 이제 쿼리 키 소프트맥스 함수를 변환해가지고 스코어를 계산을 해요. 스코어를 기반해가지고 이제 그 쿼리에 대해서 키가 얼마나 연관성 있는지를 분석을 합니다. 또한 이제 프리트레인드 사전학습을 했을 때 mlm과 nsp 방식을 사용해가지고 진행을 했고요. 그 다음에 이제 파이트링 같은 경우에 이제 슈퍼바이스드 러닝 즉 지도학습을 사용해가지고 앞에서 설명 드렸다시피 이제 이렇게 감정 부유 앱앱 데이터세스를 분리했습니다. 또한 이제 금융 데이터세스 어떻게 분리를 했냐라고 이제 말씀을 드릴 수 있을 것 같은데 그게 데이터 수집 전처리, 데이터 아이솔레이션, 데이터 분리 이렇게 3가지 이제 분야를 나눠서 진행을 했고요. 데이터 수집은 이제 DART라는 한국 기업 공시정보 데이터를 가져왔고 그 다음에 이제 그에 관련한 타임 시리즈 데이터라고 이제 시규어 데이터도 있어요. 그걸 가져와서 이제 데이터 프리 프로세싱, 데이터 전처리를 해가지고 이제 여기서 이제 다이노이싱 메소드라는 걸 사용했습니다. 그래서 이제 여기서 이제 인포메이션은 즉 필요 있는 정보, 노이즈는 필요 없는 정보를 이렇게 해가지고 분리를 했습니다. 그럼 여기서 이제 다이노이싱 메소드를 왜 사용했냐라고 말씀드리면은 크게 2가지 사유가 있었어요. 일단은 첫 번째로 무의미한 가격 정보를 제거하면서 주식 폭등, 폭락 같은 쓸데없는 정보들을 제거하기 위해서 사용을 했고 그리고 의미 없는 정보를 이제 제거했습니다. 즉 분석과 무관한 뉴스를 사용을 했고 이걸 작업을 하면서 이제 정확하고 의미 있는 정보를 알기 위해서 사용했습니다. 그럼 이제 데이터 표현을 어떻게 했냐. 일단은 일반적으로 우리가 서비스화를 할 거면 일단 프론트엔드를 만들어야 되잖아요. 그걸 이제 리액트랑 JS를 써가지고 개발을 했고 데이터 시각화하는 거는 이제 D3랑 ChartJSL 라이벌이 있어요. 시각화를 해주는 그 라이벌을 사용을 했고 이제 그래프가 나오는 거는 이제 즉 노드, 노드 익스프레스 사용해가지고 데이터 서버를 제작해서 불러는 방식으로 구현했습니다. 이렇게 앞에 있는 그림 보시듯이 이렇게 디자인을 했고요. 이것은 시연 영상입니다. 그래서 어떠한 결론을 낼 수 있었냐라고 하면 크게 4가지가 있어요. 월변 양지수로 판단하는 거랑 재무지표 ESG, 타업종과의 비교, 키워드와 금융정보에 대해서 파악할 수 있었습니다. 그리고 긍정지수 신뢰도라는 게 있는데 이거 어떤 거냐면은 이제 저희가 실제 만든 예측한 거랑 이제 실제 ETF 수익률이 관계가 있는지를 나타내려고 만든 건데요. 이거는 즉 실제 주가의 노이즈를 제거해서 이제 긍정지수와 수익률의 상공관계를 분석을 합니다. 그리고 이제 시장의 긍정 반응과 부정 반응이 더 높은, 더 낮은 수익률 연결된다는 것과 긍정지수가 급격히 상승으로 하락할 때 수익률이 따라오는 경향을 이제 볼 수 있었습니다. 그래서 제가 내릴 수 있는 결론과 의논점에 대해서 얘기해 주자면은 일단은 저희 플랫폼을 통해서 성장 가능성과 평가 정보를 제공한다는 것, 두번째 이제 최신 트렌드 및 시장 동향을 분석할 수 있다는 것, 그리고 세번째는 데이터 수집 제한 시각화에 미흡할 수 있다는 점을 보였습니다. 이거는 과연한 레퍼런스 이고요. 제가 수집을 해서 사용했기 때문에 확인해 주시면 될 것 같습니다. 이상으로 발표 마치겠습니다.
+2024-12-04 20:36:04,776 - INFO - pronun_model.utils.calculate_presentation_score - 사용자가 제공한 스크립트를 사용합니다.
+2024-12-04 20:36:04,776 - DEBUG - pronun_model.utils.calculate_presentation_score - TTS 생성을 생략합니다.
+2024-12-04 20:36:05,590 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3: 536.98 seconds
+2024-12-04 20:36:06,252 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3: 536.98 seconds
+2024-12-04 20:36:06,253 - DEBUG - pronun_model.utils.calculate_speed - Audio duration: 536.98 seconds
+2024-12-04 20:36:06,253 - DEBUG - pronun_model.utils.calculate_speed - Word count: 938
+2024-12-04 20:36:06,253 - INFO - pronun_model.utils.calculate_speed - Calculated speaking speed: 104.81 WPM
+2024-12-04 20:36:06,253 - INFO - pronun_model.utils.calculate_presentation_score - 스크립트를 사용하여 TTS를 생성합니다.
+2024-12-04 20:36:06,253 - INFO - pronun_model.utils.calculate_presentation_score - TTS를 생성하고 오디오 유사도를 비교합니다.
+2024-12-04 20:36:08,024 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2024-12-04 20:37:01,523 - INFO - root - TTS 생성 완료: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts/TTS_5821333a-816a-41f5-a1a6-ae615383b12e.mp3
+2024-12-04 20:37:01,621 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:37:02,225 - INFO - pronun_model.utils.adjust_audio_length - Original audio duration: 503.23 seconds
+2024-12-04 20:37:02,240 - ERROR - pronun_model.utils.adjust_audio_length - Failed to adjust audio length for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts/TTS_5821333a-816a-41f5-a1a6-ae615383b12e.mp3: name 'silence_duration' is not defined
+Traceback (most recent call last):
+  File "/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/pronun_model/utils/adjust_audio_length.py", line 29, in adjust_audio_length
+    logger.debug(f"Added {silence_duration / 1000} seconds of silence")
+                          ^^^^^^^^^^^^^^^^
+NameError: name 'silence_duration' is not defined
+2024-12-04 20:37:02,247 - ERROR - pronun_model.utils.calculate_presentation_score - 발표 점수 계산 중 오류 발생: name 'AudioProcessingError' is not defined
+2024-12-04 20:37:02,247 - ERROR - pronun_model.routers.send_feedback - 비디오 ID a18111c873564278a8cfef78ebfbf686에 대한 분석이 실패했습니다.
+2024-12-04 20:37:02,247 - ERROR - pronun_model.routers.send_feedback - 알 수 없는 오류 발생: 500: 분석에 실패했습니다.
+2024-12-04 20:37:02,249 - INFO - pronun_model - Response status: 500
+2024-12-04 20:37:37,031 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:37:37,034 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/adjust_audio_length.py'. Reloading...
+2024-12-04 20:37:37,136 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:37:37,240 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:37:37,244 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:37:37,244 - INFO - uvicorn.error - Finished server process [11265]
+2024-12-04 20:37:37,987 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:37:38,161 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:37:38,161 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:37:38,162 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:37:38,162 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:37:38,162 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:37:38,162 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:37:38,162 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:37:38,162 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:37:38,162 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:37:38,162 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:37:39,503 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:37:39,527 - INFO - uvicorn.error - Started server process [12046]
+2024-12-04 20:37:39,527 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:37:39,527 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:37:39,857 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:37:44,452 - INFO - pronun_model - Request: GET http://0.0.0.0:8000/api/pronun/send-feedback/a18111c873564278a8cfef78ebfbf686
+2024-12-04 20:37:44,455 - INFO - pronun_model.routers.send_feedback - send_feedback 엔드포인트 호출됨 for video_id: a18111c873564278a8cfef78ebfbf686
+2024-12-04 20:37:44,456 - DEBUG - pronun_model.routers.send_feedback - 스크립트 파일을 발견했습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:37:44,652 - INFO - pronun_model.utils.text_extraction - Extracted text from PDF file /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:37:44,652 - INFO - pronun_model.routers.send_feedback - 스크립트 텍스트 추출 성공
+2024-12-04 20:38:11,801 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:38:11,815 - DEBUG - pronun_model.utils.calculate_presentation_score - STT 변환된 텍스트:
+발표 시작하겠습니다. 안녕하세요. 저는 이번에 인공지능과 파이썬으로 금융 데이터 분석해보기 윗자연화 처리로 발표하게 될 김대현이라고 합니다. 일단 제 소개를 간단하게 드리자면은 저는 지금 모듈 연구소라는 곳에서 비전 랭키지 쪽으로 모델 연구를 하고 있고요. 또한 카카오테크 부트캡에서 생선형 인공지능 과정을 소강하고 있습니다. 최근에 이제 고파콘이라고 이제 고언어 관련해 가지고 열리는 큰 행사가 있는데 거기 준비위원회로 참가를 했고 이제 또 jrc라는 그 로봇 회사에서 로보틱스 엔지니어로 근무한 경력이 있습니다. 일단은 크게 4가지 주제를 다뤄볼 거에요. 이제 TF-IDF N-Gram, COVERT, 다이노싱 메소드, 포지티브 인덱스 리얼리티 즉 이제 신뢰지수에 대해서 한번 얘기를 해보려고 합니다. 일단은 이 프로젝트를 먼저 시작하게 된 계기가 바로 이거였어요. 일반적으로 우리가 주식을 할 때 처음에 화면을 보면 어떠한 걸 봐야 될지 모르겠는 거에요. 그래서 복잡한 리서치 화면 및 뉴스 커뮤니티에 통한 투자 결정에 어려움이 존재해서 이 프로젝트를 진행하게 되었고 또한 이제 일단은 한국 투자증권 기준으로 보면은 카테고리가 일단은 종목이 2400개가 있어요. 이거를 10개의 섹터로만 구분을 해서 의사결정에 대해서 어려운 점이 있었습니다. 그래서 이 프로젝트를 진행하게 되었고 요약해드리자면 이제 우리가 이걸 왜 하게 되었는지 중요 정보에 쉽게 접근하고 이제 정확한 투자 동향을 파악하면서 이제 유망한 분야 탐색하고 또한 이제 여론과 어느정도 상관관계 분석이 있는지 그걸 파악하면서 개발해 보려고 했습니다. 일단은 개발 설계 및 연구 방법에 대해서 설명을 드리면은 일단은 모델을 선정이랑 이제 어떻게 프로젝트를 진행하지 플레이닝을 했고요. 건담의 이제 데이터 수집 및 전처리, 부위 체계 세부나 키워드 감성 분석, 적용 데이터 분석, 데이터 시각화 이렇게 5가지로 구성을 했습니다. 일단 일반적으로 인공지능 관련한 프로젝트를 시작을 할 때 이제 데이터 수집을 해야 되잖아요. 그래서 일반적으로 가져와있을 금융 데이터가 이제 수치적으로 이제 csv 형태로 가져올 수 있는 금융 데이터는 이제 한국의 이제 한국 거래 거래소 같은 데가 있어요. 이제 거기서 정보 코드랑 이제 과연한 주요 내용들, 상장에 이러한 내용들을 가져왔고 그래서 판다스 라이벌을 활용해 가지고 이제 결측치량 중복값을 제거했습니다. 그리고 이제 tf-idf라는 것을 사용해 가지고 이제 그 문서 내에서 과일 한 단어가 얼마 정도 나오는지 그거에다 빈도를 분석을 했고 n-gram이라는 즉 slm 기열의 언어모델을 사용해 가지고 단어나 이제 문장의 확률값을 할당을 해요. 이제 그래서 이렇게 입력된 문장을 n개 단위로 잘라서 분석을 했습니다. 또한 이제 이 tf-idf랑 n-gram을 사용해서 이제 어느정도 빈도값에 대한 것을 파악했다면 이제 금융 분장 데이터서스로 모델별 성능을 평가하는 작업을 진행했어요. 물론 이때 파이토치 프레임워크를 사용했고 크게 3가지 모델을 사용했습니다. 이제 코벌트랑 KEC 일렉트라, 코어 일렉트라는 모델을 사용했었는데 이중에 코버트 모델이 0.8870 정도의 Accuracy를 보여 가지고 가장 높은 정확도를 보여서 사용했습니다. 그래서 이제 코버트 모델을 어떻게 활용을 했냐라고 간단하게 설명 드리면은 코버트 모델은 이제 그 버트 모델을 한국어로 프리트레인드 모델이에요. 그래서 이제 그 모델을 트랜스포머 기반으로 해서 사용을 했고 그 다음에 이제 이 모델을 가지고 감성 분석을 진행했습니다. 크게 3가지 라벨을 달았었거든요. 이제 물론 지도학습 방식으로 진행을 했고 0이 포지티브, 긍정, 1이 내추럴, 중립, 2가 네거티브, 이제 중립으로 해놓고 이제 진행을 했습니다. 또한 이제 벌트 모델의 아키텍처에 대해서 간단하게 설명 드리면은 일단은 우리가 앞에서 이제 금융 데이터셋을 가져와서 한다고 했잖아요. 이제 그 문장을 단어 단위로 분리를 합니다. 예를 들어서 오늘 주식 시장이 크게 상승했습니다. 이라는 데이터셋이 있으면은 단어 단위로 분리를 했어요. 오늘 주식 시장이 크게 상승했습니다. 이렇게 해서 토크나이저를 사용해서 문장을 단어 단위로 분리를 했고요. 그래서 이제 그 벌트 모델의 인풋 인베링 레이어를 넣어가지고 진행을 했습니다. 또한 이제 인코더 레이어에 들어가면 이제 리니어 레이어를 거쳐가지고 이제 셀프 어테이션 메커니즘이 적용이 돼요. 이거에 대해서는 앞에 설명 드린 자료에 나와 있듯이 이제 쿼리랑 키의 개념으로 구성이 되어 있는데 이 글을 보시면 이렇게 나와 있는데 이제 쿼리 키 소프트맥스 함수를 변환해가지고 스코어를 계산을 해요. 스코어를 기반해가지고 이제 그 쿼리에 대해서 키가 얼마나 연관성 있는지를 분석을 합니다. 또한 이제 프리트레인드 사전학습을 했을 때 mlm과 nsp 방식을 사용해가지고 진행을 했고요. 그 다음에 이제 파이트링 같은 경우에 이제 슈퍼바이스드 러닝 즉 지도학습을 사용해가지고 앞에서 설명 드렸다시피 이제 이렇게 감정 부유 앱앱 데이터세스를 분리했습니다. 또한 이제 금융 데이터세스 어떻게 분리를 했냐라고 이제 말씀을 드릴 수 있을 것 같은데 그게 데이터 수집 전처리, 데이터 아이솔레이션, 데이터 분리 이렇게 3가지 이제 분야를 나눠서 진행을 했고요. 데이터 수집은 이제 DART라는 한국 기업 공시정보 데이터를 가져왔고 그 다음에 이제 그에 관련한 타임 시리즈 데이터라고 이제 시규어 데이터도 있어요. 그걸 가져와서 이제 데이터 프리 프로세싱, 데이터 전처리를 해가지고 이제 여기서 이제 다이노이싱 메소드라는 걸 사용했습니다. 그래서 이제 여기서 이제 인포메이션은 즉 필요 있는 정보, 노이즈는 필요 없는 정보를 이렇게 해가지고 분리를 했습니다. 그럼 여기서 이제 다이노이싱 메소드를 왜 사용했냐라고 말씀드리면은 크게 2가지 사유가 있었어요. 일단은 첫 번째로 무의미한 가격 정보를 제거하면서 주식 폭등, 폭락 같은 쓸데없는 정보들을 제거하기 위해서 사용을 했고 그리고 의미 없는 정보를 이제 제거했습니다. 즉 분석과 무관한 뉴스를 사용을 했고 이걸 작업을 하면서 이제 정확하고 의미 있는 정보를 알기 위해서 사용했습니다. 그럼 이제 데이터 표현을 어떻게 했냐. 일단은 일반적으로 우리가 서비스화를 할 거면 일단 프론트엔드를 만들어야 되잖아요. 그걸 이제 리액트랑 JS를 써가지고 개발을 했고 데이터 시각화하는 거는 이제 D3랑 ChartJSL 라이벌이 있어요. 시각화를 해주는 그 라이벌을 사용을 했고 이제 그래프가 나오는 거는 이제 즉 노드, 노드 익스프레스 사용해가지고 데이터 서버를 제작해서 불러는 방식으로 구현했습니다. 이렇게 앞에 있는 그림 보시듯이 이렇게 디자인을 했고요. 이것은 시연 영상입니다. 그래서 어떠한 결론을 낼 수 있었냐라고 하면 크게 4가지가 있어요. 월변 양지수로 판단하는 거랑 재무지표 ESG, 타업종과의 비교, 키워드와 금융정보에 대해서 파악할 수 있었습니다. 그리고 긍정지수 신뢰도라는 게 있는데 이거 어떤 거냐면은 이제 저희가 실제 만든 예측한 거랑 이제 실제 ETF 수익률이 관계가 있는지를 나타내려고 만든 건데요. 이거는 즉 실제 주가의 노이즈를 제거해서 이제 긍정지수와 수익률의 상공관계를 분석을 합니다. 그리고 이제 시장의 긍정 반응과 부정 반응이 더 높은, 더 낮은 수익률 연결된다는 것과 긍정지수가 급격히 상승으로 하락할 때 수익률이 따라오는 경향을 이제 볼 수 있었습니다. 그래서 제가 내릴 수 있는 결론과 의논점에 대해서 얘기해 주자면은 일단은 저희 플랫폼을 통해서 성장 가능성과 평가 정보를 제공한다는 것, 두번째 이제 최신 트렌드 및 시장 동향을 분석할 수 있다는 것, 그리고 세번째는 데이터 수집 제한 시각화에 미흡할 수 있다는 점을 보였습니다. 이거는 과연한 레퍼런스 이고요. 제가 수집을 해서 사용했기 때문에 확인해 주시면 될 것 같습니다. 이상으로 발표 마치겠습니다.
+2024-12-04 20:38:11,817 - INFO - pronun_model.utils.calculate_presentation_score - 사용자가 제공한 스크립트를 사용합니다.
+2024-12-04 20:38:11,817 - DEBUG - pronun_model.utils.calculate_presentation_score - TTS 생성을 생략합니다.
+2024-12-04 20:38:12,607 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3: 536.98 seconds
+2024-12-04 20:38:13,313 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3: 536.98 seconds
+2024-12-04 20:38:13,313 - DEBUG - pronun_model.utils.calculate_speed - Audio duration: 536.98 seconds
+2024-12-04 20:38:13,313 - DEBUG - pronun_model.utils.calculate_speed - Word count: 938
+2024-12-04 20:38:13,313 - INFO - pronun_model.utils.calculate_speed - Calculated speaking speed: 104.81 WPM
+2024-12-04 20:38:13,313 - INFO - pronun_model.utils.calculate_presentation_score - 스크립트를 사용하여 TTS를 생성합니다.
+2024-12-04 20:38:13,314 - INFO - pronun_model.utils.calculate_presentation_score - TTS를 생성하고 오디오 유사도를 비교합니다.
+2024-12-04 20:38:15,252 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2024-12-04 20:39:07,462 - INFO - root - TTS 생성 완료: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts/TTS_c88709f2-30dd-4f1e-85fb-3c74651d5281.mp3
+2024-12-04 20:39:07,540 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:39:08,229 - INFO - pronun_model.utils.adjust_audio_length - Original audio duration: 497.23 seconds
+2024-12-04 20:39:08,243 - ERROR - pronun_model.utils.adjust_audio_length - Failed to adjust audio length for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts/TTS_c88709f2-30dd-4f1e-85fb-3c74651d5281.mp3: name 'silence_duration' is not defined
+Traceback (most recent call last):
+  File "/Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/pronun_model/utils/adjust_audio_length.py", line 30, in adjust_audio_length
+    logger.debug(f"Added {silence_duration / 1000} seconds of silence")
+                          ^^^^^^^^^^^^^^^^
+NameError: name 'silence_duration' is not defined
+2024-12-04 20:39:08,249 - ERROR - pronun_model.utils.calculate_presentation_score - 발표 점수 계산 중 오류 발생: Failed to adjust audio length: name 'silence_duration' is not defined
+2024-12-04 20:39:08,249 - ERROR - pronun_model.routers.send_feedback - 비디오 ID a18111c873564278a8cfef78ebfbf686에 대한 분석이 실패했습니다.
+2024-12-04 20:39:08,249 - ERROR - pronun_model.routers.send_feedback - 알 수 없는 오류 발생: 500: 분석에 실패했습니다.
+2024-12-04 20:39:08,251 - INFO - pronun_model - Response status: 500
+2024-12-04 20:50:02,522 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:50:02,527 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/adjust_audio_length.py'. Reloading...
+2024-12-04 20:50:02,549 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:50:02,658 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:50:02,660 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:50:02,660 - INFO - uvicorn.error - Finished server process [12046]
+2024-12-04 20:50:03,411 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:50:03,628 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:50:03,628 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:50:03,628 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:50:03,628 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:50:03,628 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:50:03,628 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:50:03,628 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:50:03,628 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:50:03,628 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:50:03,628 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:50:05,080 - INFO - watchfiles.main - 3 changes detected
+2024-12-04 20:50:05,232 - INFO - uvicorn.error - Started server process [16508]
+2024-12-04 20:50:05,232 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:50:05,232 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:50:05,434 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:50:06,668 - INFO - pronun_model - Request: GET http://0.0.0.0:8000/api/pronun/send-feedback/a18111c873564278a8cfef78ebfbf686
+2024-12-04 20:50:06,669 - INFO - pronun_model.routers.send_feedback - send_feedback 엔드포인트 호출됨 for video_id: a18111c873564278a8cfef78ebfbf686
+2024-12-04 20:50:06,670 - DEBUG - pronun_model.routers.send_feedback - 스크립트 파일을 발견했습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:50:06,841 - INFO - pronun_model.utils.text_extraction - Extracted text from PDF file /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts/a18111c873564278a8cfef78ebfbf686.pdf
+2024-12-04 20:50:06,842 - INFO - pronun_model.routers.send_feedback - 스크립트 텍스트 추출 성공
+2024-12-04 20:50:34,618 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:50:34,621 - DEBUG - pronun_model.utils.calculate_presentation_score - STT 변환된 텍스트:
+발표 시작하겠습니다. 안녕하세요. 저는 이번에 인공지능과 파이썬으로 금융 데이터 분석해보기 윗자연화 처리로 발표하게 될 김대현이라고 합니다. 일단 제 소개를 간단하게 드리자면은 저는 지금 모듈 연구소라는 곳에서 비전 랭키지 쪽으로 모델 연구를 하고 있고요. 또한 카카오테크 부트캡에서 생선형 인공지능 과정을 소강하고 있습니다. 최근에 이제 고파콘이라고 이제 고언어 관련해 가지고 열리는 큰 행사가 있는데 거기 준비위원회로 참가를 했고 이제 또 jrc라는 그 로봇 회사에서 로보틱스 엔지니어로 근무한 경력이 있습니다. 일단은 크게 4가지 주제를 다뤄볼 거에요. 이제 TF-IDF N-Gram, COVERT, 다이노싱 메소드, 포지티브 인덱스 리얼리티 즉 이제 신뢰지수에 대해서 한번 얘기를 해보려고 합니다. 일단은 이 프로젝트를 먼저 시작하게 된 계기가 바로 이거였어요. 일반적으로 우리가 주식을 할 때 처음에 화면을 보면 어떠한 걸 봐야 될지 모르겠는 거에요. 그래서 복잡한 리서치 화면 및 뉴스 커뮤니티에 통한 투자 결정에 어려움이 존재해서 이 프로젝트를 진행하게 되었고 또한 이제 일단은 한국 투자증권 기준으로 보면은 카테고리가 일단은 종목이 2400개가 있어요. 이거를 10개의 섹터로만 구분을 해서 의사결정에 대해서 어려운 점이 있었습니다. 그래서 이 프로젝트를 진행하게 되었고 요약해드리자면 이제 우리가 이걸 왜 하게 되었는지 중요 정보에 쉽게 접근하고 이제 정확한 투자 동향을 파악하면서 이제 유망한 분야 탐색하고 또한 이제 여론과 어느정도 상관관계 분석이 있는지 그걸 파악하면서 개발해 보려고 했습니다. 일단은 개발 설계 및 연구 방법에 대해서 설명을 드리면은 일단은 모델을 선정이랑 이제 어떻게 프로젝트를 진행하지 플레이닝을 했고요. 건담의 이제 데이터 수집 및 전처리, 부위 체계 세부나 키워드 감성 분석, 적용 데이터 분석, 데이터 시각화 이렇게 5가지로 구성을 했습니다. 일단 일반적으로 인공지능 관련한 프로젝트를 시작을 할 때 이제 데이터 수집을 해야 되잖아요. 그래서 일반적으로 가져와있을 금융 데이터가 이제 수치적으로 이제 csv 형태로 가져올 수 있는 금융 데이터는 이제 한국의 이제 한국 거래 거래소 같은 데가 있어요. 이제 거기서 정보 코드랑 이제 과연한 주요 내용들, 상장에 이러한 내용들을 가져왔고 그래서 판다스 라이벌을 활용해 가지고 이제 결측치량 중복값을 제거했습니다. 그리고 이제 tf-idf라는 것을 사용해 가지고 이제 그 문서 내에서 과일 한 단어가 얼마 정도 나오는지 그거에다 빈도를 분석을 했고 n-gram이라는 즉 slm 기열의 언어모델을 사용해 가지고 단어나 이제 문장의 확률값을 할당을 해요. 이제 그래서 이렇게 입력된 문장을 n개 단위로 잘라서 분석을 했습니다. 또한 이제 이 tf-idf랑 n-gram을 사용해서 이제 어느정도 빈도값에 대한 것을 파악했다면 이제 금융 분장 데이터서스로 모델별 성능을 평가하는 작업을 진행했어요. 물론 이때 파이토치 프레임워크를 사용했고 크게 3가지 모델을 사용했습니다. 이제 코벌트랑 KEC 일렉트라, 코어 일렉트라는 모델을 사용했었는데 이중에 코버트 모델이 0.8870 정도의 Accuracy를 보여 가지고 가장 높은 정확도를 보여서 사용했습니다. 그래서 이제 코버트 모델을 어떻게 활용을 했냐라고 간단하게 설명 드리면은 코버트 모델은 이제 그 버트 모델을 한국어로 프리트레인드 모델이에요. 그래서 이제 그 모델을 트랜스포머 기반으로 해서 사용을 했고 그 다음에 이제 이 모델을 가지고 감성 분석을 진행했습니다. 크게 3가지 라벨을 달았었거든요. 이제 물론 지도학습 방식으로 진행을 했고 0이 포지티브, 긍정, 1이 내추럴, 중립, 2가 네거티브, 이제 중립으로 해놓고 이제 진행을 했습니다. 또한 이제 벌트 모델의 아키텍처에 대해서 간단하게 설명 드리면은 일단은 우리가 앞에서 이제 금융 데이터셋을 가져와서 한다고 했잖아요. 이제 그 문장을 단어 단위로 분리를 합니다. 예를 들어서 오늘 주식 시장이 크게 상승했습니다. 이라는 데이터셋이 있으면은 단어 단위로 분리를 했어요. 오늘 주식 시장이 크게 상승했습니다. 이렇게 해서 토크나이저를 사용해서 문장을 단어 단위로 분리를 했고요. 그래서 이제 그 벌트 모델의 인풋 인베링 레이어를 넣어가지고 진행을 했습니다. 또한 이제 인코더 레이어에 들어가면 이제 리니어 레이어를 거쳐가지고 이제 셀프 어테이션 메커니즘이 적용이 돼요. 이거에 대해서는 앞에 설명 드린 자료에 나와 있듯이 이제 쿼리랑 키의 개념으로 구성이 되어 있는데 이 글을 보시면 이렇게 나와 있는데 이제 쿼리 키 소프트맥스 함수를 변환해가지고 스코어를 계산을 해요. 스코어를 기반해가지고 이제 그 쿼리에 대해서 키가 얼마나 연관성 있는지를 분석을 합니다. 또한 이제 프리트레인드 사전학습을 했을 때 mlm과 nsp 방식을 사용해가지고 진행을 했고요. 그 다음에 이제 파이트링 같은 경우에 이제 슈퍼바이스드 러닝 즉 지도학습을 사용해가지고 앞에서 설명 드렸다시피 이제 이렇게 감정 부유 앱앱 데이터세스를 분리했습니다. 또한 이제 금융 데이터세스 어떻게 분리를 했냐라고 이제 말씀을 드릴 수 있을 것 같은데 그게 데이터 수집 전처리, 데이터 아이솔레이션, 데이터 분리 이렇게 3가지 이제 분야를 나눠서 진행을 했고요. 데이터 수집은 이제 DART라는 한국 기업 공시정보 데이터를 가져왔고 그 다음에 이제 그에 관련한 타임 시리즈 데이터라고 이제 시규어 데이터도 있어요. 그걸 가져와서 이제 데이터 프리 프로세싱, 데이터 전처리를 해가지고 이제 여기서 이제 다이노이싱 메소드라는 걸 사용했습니다. 그래서 이제 여기서 이제 인포메이션은 즉 필요 있는 정보, 노이즈는 필요 없는 정보를 이렇게 해가지고 분리를 했습니다. 그럼 여기서 이제 다이노이싱 메소드를 왜 사용했냐라고 말씀드리면은 크게 2가지 사유가 있었어요. 일단은 첫 번째로 무의미한 가격 정보를 제거하면서 주식 폭등, 폭락 같은 쓸데없는 정보들을 제거하기 위해서 사용을 했고 그리고 의미 없는 정보를 이제 제거했습니다. 즉 분석과 무관한 뉴스를 사용을 했고 이걸 작업을 하면서 이제 정확하고 의미 있는 정보를 알기 위해서 사용했습니다. 그럼 이제 데이터 표현을 어떻게 했냐. 일단은 일반적으로 우리가 서비스화를 할 거면 일단 프론트엔드를 만들어야 되잖아요. 그걸 이제 리액트랑 JS를 써가지고 개발을 했고 데이터 시각화하는 거는 이제 D3랑 ChartJSL 라이벌이 있어요. 시각화를 해주는 그 라이벌을 사용을 했고 이제 그래프가 나오는 거는 이제 즉 노드, 노드 익스프레스 사용해가지고 데이터 서버를 제작해서 불러는 방식으로 구현했습니다. 이렇게 앞에 있는 그림 보시듯이 이렇게 디자인을 했고요. 이것은 시연 영상입니다. 그래서 어떠한 결론을 낼 수 있었냐라고 하면 크게 4가지가 있어요. 월변 양지수로 판단하는 거랑 재무지표 ESG, 타업종과의 비교, 키워드와 금융정보에 대해서 파악할 수 있었습니다. 그리고 긍정지수 신뢰도라는 게 있는데 이거 어떤 거냐면은 이제 저희가 실제 만든 예측한 거랑 이제 실제 ETF 수익률이 관계가 있는지를 나타내려고 만든 건데요. 이거는 즉 실제 주가의 노이즈를 제거해서 이제 긍정지수와 수익률의 상공관계를 분석을 합니다. 그리고 이제 시장의 긍정 반응과 부정 반응이 더 높은, 더 낮은 수익률 연결된다는 것과 긍정지수가 급격히 상승으로 하락할 때 수익률이 따라오는 경향을 이제 볼 수 있었습니다. 그래서 제가 내릴 수 있는 결론과 의논점에 대해서 얘기해 주자면은 일단은 저희 플랫폼을 통해서 성장 가능성과 평가 정보를 제공한다는 것, 두번째 이제 최신 트렌드 및 시장 동향을 분석할 수 있다는 것, 그리고 세번째는 데이터 수집 제한 시각화에 미흡할 수 있다는 점을 보였습니다. 이거는 과연한 레퍼런스 이고요. 제가 수집을 해서 사용했기 때문에 확인해 주시면 될 것 같습니다. 이상으로 발표 마치겠습니다.
+2024-12-04 20:50:34,622 - INFO - pronun_model.utils.calculate_presentation_score - 사용자가 제공한 스크립트를 사용합니다.
+2024-12-04 20:50:34,622 - DEBUG - pronun_model.utils.calculate_presentation_score - TTS 생성을 생략합니다.
+2024-12-04 20:50:35,413 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3: 536.98 seconds
+2024-12-04 20:50:36,071 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/a18111c873564278a8cfef78ebfbf686.mp3: 536.98 seconds
+2024-12-04 20:50:36,071 - DEBUG - pronun_model.utils.calculate_speed - Audio duration: 536.98 seconds
+2024-12-04 20:50:36,071 - DEBUG - pronun_model.utils.calculate_speed - Word count: 938
+2024-12-04 20:50:36,071 - INFO - pronun_model.utils.calculate_speed - Calculated speaking speed: 104.81 WPM
+2024-12-04 20:50:36,072 - INFO - pronun_model.utils.calculate_presentation_score - 스크립트를 사용하여 TTS를 생성합니다.
+2024-12-04 20:50:36,072 - INFO - pronun_model.utils.calculate_presentation_score - TTS를 생성하고 오디오 유사도를 비교합니다.
+2024-12-04 20:50:38,166 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2024-12-04 20:52:15,452 - INFO - root - TTS 생성 완료: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts/TTS_dccae44a-68ad-4d82-bacf-c3309e74994b.mp3
+2024-12-04 20:52:15,618 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:52:16,161 - INFO - pronun_model.utils.adjust_audio_length - Original audio duration: 500.83 seconds
+2024-12-04 20:52:16,178 - DEBUG - pronun_model.utils.adjust_audio_length - Added 36.149 seconds of silence
+2024-12-04 20:52:16,255 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:52:18,177 - INFO - pronun_model.utils.adjust_audio_length - Adjusted audio saved at: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts/TTS_dccae44a-68ad-4d82-bacf-c3309e74994b.mp3
+2024-12-04 20:52:18,250 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:52:22,061 - DEBUG - pronun_model.utils.compare_audio_similarity - Audio similarity: 0.9080
+2024-12-04 20:52:22,068 - DEBUG - pronun_model.utils.calculate_presentation_score - — 음성 정보 —
+2024-12-04 20:52:22,068 - DEBUG - pronun_model.utils.calculate_presentation_score - 오디오 길이 (초): 536.98
+2024-12-04 20:52:22,068 - DEBUG - pronun_model.utils.calculate_presentation_score - 텍스트 단어 수: 938
+2024-12-04 20:52:22,068 - DEBUG - pronun_model.utils.calculate_presentation_score - 사용자 발표 WPM: 104.81
+2024-12-04 20:52:22,068 - DEBUG - pronun_model.utils.calculate_presentation_score - TTS 속도 설정: 1.05
+2024-12-04 20:52:22,068 - DEBUG - pronun_model.utils.calculate_presentation_score - TTS WPM (Script): 104.81 WPM
+2024-12-04 20:52:22,068 - DEBUG - pronun_model.utils.calculate_presentation_score - 
+— 구간별 발음 정확도 계산 —
+2024-12-04 20:52:26,367 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:52:26,378 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.93
+2024-12-04 20:52:26,378 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 0분 0초 - 1분 0초: Accuracy=0.93, WPM=86.00
+2024-12-04 20:52:29,794 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:52:29,798 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.96
+2024-12-04 20:52:29,798 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 1분 0초 - 2분 0초: Accuracy=0.96, WPM=94.00
+2024-12-04 20:52:33,110 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:52:33,114 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.93
+2024-12-04 20:52:33,114 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 2분 0초 - 3분 0초: Accuracy=0.93, WPM=93.00
+2024-12-04 20:52:36,970 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:52:36,977 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.86
+2024-12-04 20:52:36,979 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 3분 0초 - 4분 0초: Accuracy=0.86, WPM=98.00
+2024-12-04 20:52:40,483 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:52:40,489 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.88
+2024-12-04 20:52:40,489 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 4분 0초 - 5분 0초: Accuracy=0.88, WPM=115.00
+2024-12-04 20:52:44,121 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:52:44,124 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.80
+2024-12-04 20:52:44,124 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 5분 0초 - 6분 0초: Accuracy=0.80, WPM=114.00
+2024-12-04 20:52:49,520 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:52:49,523 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.89
+2024-12-04 20:52:49,524 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 6분 0초 - 7분 0초: Accuracy=0.89, WPM=120.00
+2024-12-04 20:52:52,622 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:52:52,624 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.92
+2024-12-04 20:52:52,624 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 7분 0초 - 8분 0초: Accuracy=0.92, WPM=98.00
+2024-12-04 20:52:57,436 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:52:57,442 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.95
+2024-12-04 20:52:57,442 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 8분 0초 - 9분 0초: Accuracy=0.95, WPM=111.00
+2024-12-04 20:52:57,451 - DEBUG - pronun_model.utils.analyze_low_accuracy - Temporary directory /var/folders/r0/kbj729jj193gcp3fhjyc_dw40000gn/T/tmpr6pcjivt deleted.
+2024-12-04 20:52:57,452 - INFO - pronun_model.utils.analyze_low_accuracy - Average pronunciation accuracy: 0.90
+2024-12-04 20:52:57,456 - DEBUG - pronun_model.utils.calculate_presentation_score - 0분 0초 - 1분 0초 구간의 발음 정확도: 0.93
+2024-12-04 20:52:57,457 - DEBUG - pronun_model.utils.calculate_presentation_score - 1분 0초 - 2분 0초 구간의 발음 정확도: 0.96
+2024-12-04 20:52:57,457 - DEBUG - pronun_model.utils.calculate_presentation_score - 2분 0초 - 3분 0초 구간의 발음 정확도: 0.93
+2024-12-04 20:52:57,457 - DEBUG - pronun_model.utils.calculate_presentation_score - 3분 0초 - 4분 0초 구간의 발음 정확도: 0.86
+2024-12-04 20:52:57,457 - DEBUG - pronun_model.utils.calculate_presentation_score - 4분 0초 - 5분 0초 구간의 발음 정확도: 0.88
+2024-12-04 20:52:57,457 - DEBUG - pronun_model.utils.calculate_presentation_score - 5분 0초 - 6분 0초 구간의 발음 정확도: 0.80
+2024-12-04 20:52:57,457 - DEBUG - pronun_model.utils.calculate_presentation_score - 6분 0초 - 7분 0초 구간의 발음 정확도: 0.89
+2024-12-04 20:52:57,457 - DEBUG - pronun_model.utils.calculate_presentation_score - 7분 0초 - 8분 0초 구간의 발음 정확도: 0.92
+2024-12-04 20:52:57,465 - DEBUG - pronun_model.utils.calculate_presentation_score - 8분 0초 - 9분 0초 구간의 발음 정확도: 0.95
+2024-12-04 20:52:57,465 - DEBUG - pronun_model.utils.calculate_presentation_score - 
+- 구간별 WPM -
+2024-12-04 20:52:57,466 - DEBUG - pronun_model.utils.calculate_presentation_score - 0분 0초 - 1분 0초구간의 WPM: 86.00
+2024-12-04 20:52:57,466 - DEBUG - pronun_model.utils.calculate_presentation_score - 1분 0초 - 2분 0초구간의 WPM: 94.00
+2024-12-04 20:52:57,466 - DEBUG - pronun_model.utils.calculate_presentation_score - 2분 0초 - 3분 0초구간의 WPM: 93.00
+2024-12-04 20:52:57,466 - DEBUG - pronun_model.utils.calculate_presentation_score - 3분 0초 - 4분 0초구간의 WPM: 98.00
+2024-12-04 20:52:57,466 - DEBUG - pronun_model.utils.calculate_presentation_score - 4분 0초 - 5분 0초구간의 WPM: 115.00
+2024-12-04 20:52:57,466 - DEBUG - pronun_model.utils.calculate_presentation_score - 5분 0초 - 6분 0초구간의 WPM: 114.00
+2024-12-04 20:52:57,467 - DEBUG - pronun_model.utils.calculate_presentation_score - 6분 0초 - 7분 0초구간의 WPM: 120.00
+2024-12-04 20:52:57,467 - DEBUG - pronun_model.utils.calculate_presentation_score - 7분 0초 - 8분 0초구간의 WPM: 98.00
+2024-12-04 20:52:57,467 - DEBUG - pronun_model.utils.calculate_presentation_score - 8분 0초 - 9분 0초구간의 WPM: 111.00
+2024-12-04 20:53:00,297 - DEBUG - pronun_model.utils.compare_audio_similarity - Audio similarity: 0.9080
+2024-12-04 20:53:00,314 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.91
+2024-12-04 20:53:00,314 - DEBUG - pronun_model.utils.calculate_presentation_score - 
+- 최종 분석 결과 WPM -
+2024-12-04 20:53:00,314 - DEBUG - pronun_model.utils.calculate_presentation_score - 오디오 유사도: 0.91
+2024-12-04 20:53:00,314 - DEBUG - pronun_model.utils.calculate_presentation_score - 음성 평균 wpm: 100.00
+2024-12-04 20:53:00,314 - DEBUG - pronun_model.utils.calculate_presentation_score - TTS 속도: 104.81
+2024-12-04 20:53:00,314 - DEBUG - pronun_model.utils.calculate_presentation_score - 평균 발음 정확도: 0.90
+2024-12-04 20:53:00,314 - DEBUG - pronun_model.utils.calculate_presentation_score - 음성 & Script(문법) 일치도: 0.91
+2024-12-04 20:53:00,315 - INFO - pronun_model.routers.send_feedback - 비디오 ID a18111c873564278a8cfef78ebfbf686에 대한 분석이 성공적으로 완료되었습니다.
+2024-12-04 20:53:00,318 - INFO - pronun_model - Response status: 200
+2024-12-04 20:53:03,979 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:53:03,980 - WARNING - uvicorn.error - WatchFiles detected changes in 'pronun_model/utils/calculate_presentation_score.py'. Reloading...
+2024-12-04 20:53:04,054 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:53:04,155 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:53:04,155 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:53:04,156 - INFO - uvicorn.error - Finished server process [16508]
+2024-12-04 20:53:05,004 - INFO - watchfiles.main - 2 changes detected
+2024-12-04 20:53:05,176 - INFO - pronun_model.config - 로컬 환경으로 간주합니다. 기본 경로로 설정합니다.
+2024-12-04 20:53:05,176 - DEBUG - pronun_model.config - BASE_DIR 설정: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun
+2024-12-04 20:53:05,177 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:53:05,177 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video
+2024-12-04 20:53:05,177 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:53:05,177 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3
+2024-12-04 20:53:05,177 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:53:05,177 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts
+2024-12-04 20:53:05,177 - INFO - pronun_model.config - 디렉토리가 준비되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:53:05,177 - DEBUG - pronun_model.config - 생성된 디렉토리 경로: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/scripts
+2024-12-04 20:53:06,533 - INFO - uvicorn.error - Started server process [17669]
+2024-12-04 20:53:06,534 - INFO - uvicorn.error - Waiting for application startup.
+2024-12-04 20:53:06,534 - INFO - uvicorn.error - Application startup complete.
+2024-12-04 20:53:06,598 - INFO - watchfiles.main - 4 changes detected
+2024-12-04 20:53:20,217 - INFO - pronun_model - Request: POST http://0.0.0.0:8000/api/pronun/upload-video-with-script/
+2024-12-04 20:53:20,255 - INFO - pronun_model.routers.upload_video - upload_video_with_optional_script 엔드포인트 호출됨
+2024-12-04 20:53:20,255 - DEBUG - pronun_model.routers.upload_video - 수신된 비디오 파일: 002ece7f4ec7acb1 (1).mp4
+2024-12-04 20:53:20,255 - INFO - pronun_model.routers.upload_video - 스크립트가 제공되지 않았습니다.
+2024-12-04 20:53:20,258 - INFO - pronun_model.routers.upload_video - 비디오 파일이 성공적으로 저장되었습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/input_video/609e4307a89f4f5db60ace1055376779.mp4
+2024-12-04 20:53:20,324 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:53:21,056 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:53:25,156 - INFO - pronun_model.utils.convert_to_mp3 - MP3 변환 완료: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/609e4307a89f4f5db60ace1055376779.mp3
+2024-12-04 20:53:25,158 - INFO - pronun_model.routers.upload_video - MP3 변환이 성공했습니다: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/609e4307a89f4f5db60ace1055376779.mp3
+2024-12-04 20:53:25,158 - INFO - pronun_model.routers.upload_video - 스크립트 파일이 제공되지 않았습니다. STT 및 LLM을 사용하여 스크립트를 생성합니다.
+2024-12-04 20:53:25,160 - INFO - pronun_model - Response status: 200
+2024-12-04 20:53:25,270 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:53:32,318 - INFO - pronun_model - Request: GET http://0.0.0.0:8000/api/pronun/send-feedback/609e4307a89f4f5db60ace1055376779
+2024-12-04 20:53:32,319 - INFO - pronun_model.routers.send_feedback - send_feedback 엔드포인트 호출됨 for video_id: 609e4307a89f4f5db60ace1055376779
+2024-12-04 20:53:32,320 - WARNING - pronun_model.routers.send_feedback - 스크립트 파일이 없거나 텍스트 추출에 실패했습니다. STT 및 LLM을 사용합니다.
+2024-12-04 20:53:59,475 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:53:59,478 - DEBUG - pronun_model.utils.calculate_presentation_score - STT 변환된 텍스트:
+발표 시작하겠습니다. 안녕하세요. 저는 이번에 인공지능과 파이썬으로 금융 데이터 분석해보기 윗자연화 처리로 발표하게 될 김대현이라고 합니다. 일단 제 소개를 간단하게 드리자면은 저는 지금 모듈 연구소라는 곳에서 비전 랭키지 쪽으로 모델 연구를 하고 있고요. 또한 카카오테크 부트캡에서 생선형 인공지능 과정을 소강하고 있습니다. 최근에 이제 고파콘이라고 이제 고언어 관련해 가지고 열리는 큰 행사가 있는데 거기 준비위원회로 참가를 했고 이제 또 jrc라는 그 로봇 회사에서 로보틱스 엔지니어로 근무한 경력이 있습니다. 일단은 크게 4가지 주제를 다뤄볼 거에요. 이제 TF-IDF N-Gram, COVERT, 다이노싱 메소드, 포지티브 인덱스 리얼리티 즉 이제 신뢰지수에 대해서 한번 얘기를 해보려고 합니다. 일단은 이 프로젝트를 먼저 시작하게 된 계기가 바로 이거였어요. 일반적으로 우리가 주식을 할 때 처음에 화면을 보면 어떠한 걸 봐야 될지 모르겠는 거에요. 그래서 복잡한 리서치 화면 및 뉴스 커뮤니티에 통한 투자 결정에 어려움이 존재해서 이 프로젝트를 진행하게 되었고 또한 이제 일단은 한국 투자증권 기준으로 보면은 카테고리가 일단은 종목이 2400개가 있어요. 이거를 10개의 섹터로만 구분을 해서 의사결정에 대해서 어려운 점이 있었습니다. 그래서 이 프로젝트를 진행하게 되었고 요약해드리자면 이제 우리가 이걸 왜 하게 되었는지 중요 정보에 쉽게 접근하고 이제 정확한 투자 동향을 파악하면서 이제 유망한 분야 탐색하고 또한 이제 여론과 어느정도 상관관계 분석이 있는지 그걸 파악하면서 개발해 보려고 했습니다. 일단은 개발 설계 및 연구 방법에 대해서 설명을 드리면은 일단은 모델을 선정이랑 이제 어떻게 프로젝트를 진행하지 플레이닝을 했고요. 건담의 이제 데이터 수집 및 전처리, 부위 체계 세부나 키워드 감성 분석, 적용 데이터 분석, 데이터 시각화 이렇게 5가지로 구성을 했습니다. 일단 일반적으로 인공지능 관련한 프로젝트를 시작을 할 때 이제 데이터 수집을 해야 되잖아요. 그래서 일반적으로 가져와있을 금융 데이터가 이제 수치적으로 이제 csv 형태로 가져올 수 있는 금융 데이터는 이제 한국의 이제 한국 거래 거래소 같은 데가 있어요. 이제 거기서 정보 코드랑 이제 과연한 주요 내용들, 상장에 이러한 내용들을 가져왔고 그래서 판다스 라이벌을 활용해 가지고 이제 결측치량 중복값을 제거했습니다. 그리고 이제 tf-idf라는 것을 사용해 가지고 이제 그 문서 내에서 과일 한 단어가 얼마 정도 나오는지 그거에다 빈도를 분석을 했고 n-gram이라는 즉 slm 기열의 언어모델을 사용해 가지고 단어나 이제 문장의 확률값을 할당을 해요. 이제 그래서 이렇게 입력된 문장을 n개 단위로 잘라서 분석을 했습니다. 또한 이제 이 tf-idf랑 n-gram을 사용해서 이제 어느정도 빈도값에 대한 것을 파악했다면 이제 금융 분장 데이터서스로 모델별 성능을 평가하는 작업을 진행했어요. 물론 이때 파이토치 프레임워크를 사용했고 크게 3가지 모델을 사용했습니다. 이제 코벌트랑 KEC 일렉트라, 코어 일렉트라는 모델을 사용했었는데 이중에 코버트 모델이 0.8870 정도의 Accuracy를 보여 가지고 가장 높은 정확도를 보여서 사용했습니다. 그래서 이제 코버트 모델을 어떻게 활용을 했냐라고 간단하게 설명 드리면은 코버트 모델은 이제 그 버트 모델을 한국어로 프리트레인드 모델이에요. 그래서 이제 그 모델을 트랜스포머 기반으로 해서 사용을 했고 그 다음에 이제 이 모델을 가지고 감성 분석을 진행했습니다. 크게 3가지 라벨을 달았었거든요. 이제 물론 지도학습 방식으로 진행을 했고 0이 포지티브, 긍정, 1이 내추럴, 중립, 2가 네거티브, 이제 중립으로 해놓고 이제 진행을 했습니다. 또한 이제 벌트 모델의 아키텍처에 대해서 간단하게 설명 드리면은 일단은 우리가 앞에서 이제 금융 데이터셋을 가져와서 한다고 했잖아요. 이제 그 문장을 단어 단위로 분리를 합니다. 예를 들어서 오늘 주식 시장이 크게 상승했습니다. 이라는 데이터셋이 있으면은 단어 단위로 분리를 했어요. 오늘 주식 시장이 크게 상승했습니다. 이렇게 해서 토크나이저를 사용해서 문장을 단어 단위로 분리를 했고요. 그래서 이제 그 벌트 모델의 인풋 인베링 레이어를 넣어가지고 진행을 했습니다. 또한 이제 인코더 레이어에 들어가면 이제 리니어 레이어를 거쳐가지고 이제 셀프 어테이션 메커니즘이 적용이 돼요. 이거에 대해서는 앞에 설명 드린 자료에 나와 있듯이 이제 쿼리랑 키의 개념으로 구성이 되어 있는데 이 글을 보시면 이렇게 나와 있는데 이제 쿼리 키 소프트맥스 함수를 변환해가지고 스코어를 계산을 해요. 스코어를 기반해가지고 이제 그 쿼리에 대해서 키가 얼마나 연관성 있는지를 분석을 합니다. 또한 이제 프리트레인드 사전학습을 했을 때 mlm과 nsp 방식을 사용해가지고 진행을 했고요. 그 다음에 이제 파이트링 같은 경우에 이제 슈퍼바이스드 러닝 즉 지도학습을 사용해가지고 앞에서 설명 드렸다시피 이제 이렇게 감정 부유 앱앱 데이터세스를 분리했습니다. 또한 이제 금융 데이터세스 어떻게 분리를 했냐라고 이제 말씀을 드릴 수 있을 것 같은데 그게 데이터 수집 전처리, 데이터 아이솔레이션, 데이터 분리 이렇게 3가지 이제 분야를 나눠서 진행을 했고요. 데이터 수집은 이제 DART라는 한국 기업 공시정보 데이터를 가져왔고 그 다음에 이제 그에 관련한 타임 시리즈 데이터라고 이제 시규어 데이터도 있어요. 그걸 가져와서 이제 데이터 프리 프로세싱, 데이터 전처리를 해가지고 이제 여기서 이제 다이노이싱 메소드라는 걸 사용했습니다. 그래서 이제 여기서 이제 인포메이션은 즉 필요 있는 정보, 노이즈는 필요 없는 정보를 이렇게 해가지고 분리를 했습니다. 그럼 여기서 이제 다이노이싱 메소드를 왜 사용했냐라고 말씀드리면은 크게 2가지 사유가 있었어요. 일단은 첫 번째로 무의미한 가격 정보를 제거하면서 주식 폭등, 폭락 같은 쓸데없는 정보들을 제거하기 위해서 사용을 했고 그리고 의미 없는 정보를 이제 제거했습니다. 즉 분석과 무관한 뉴스를 사용을 했고 이걸 작업을 하면서 이제 정확하고 의미 있는 정보를 알기 위해서 사용했습니다. 그럼 이제 데이터 표현을 어떻게 했냐. 일단은 일반적으로 우리가 서비스화를 할 거면 일단 프론트엔드를 만들어야 되잖아요. 그걸 이제 리액트랑 JS를 써가지고 개발을 했고 데이터 시각화하는 거는 이제 D3랑 ChartJSL 라이벌이 있어요. 시각화를 해주는 그 라이벌을 사용을 했고 이제 그래프가 나오는 거는 이제 즉 노드, 노드 익스프레스 사용해가지고 데이터 서버를 제작해서 불러는 방식으로 구현했습니다. 이렇게 앞에 있는 그림 보시듯이 이렇게 디자인을 했고요. 이것은 시연 영상입니다. 그래서 어떠한 결론을 낼 수 있었냐라고 하면 크게 4가지가 있어요. 월변 양지수로 판단하는 거랑 재무지표 ESG, 타업종과의 비교, 키워드와 금융정보에 대해서 파악할 수 있었습니다. 그리고 긍정지수 신뢰도라는 게 있는데 이거 어떤 거냐면은 이제 저희가 실제 만든 예측한 거랑 이제 실제 ETF 수익률이 관계가 있는지를 나타내려고 만든 건데요. 이거는 즉 실제 주가의 노이즈를 제거해서 이제 긍정지수와 수익률의 상공관계를 분석을 합니다. 그리고 이제 시장의 긍정 반응과 부정 반응이 더 높은, 더 낮은 수익률 연결된다는 것과 긍정지수가 급격히 상승으로 하락할 때 수익률이 따라오는 경향을 이제 볼 수 있었습니다. 그래서 제가 내릴 수 있는 결론과 의논점에 대해서 얘기해 주자면은 일단은 저희 플랫폼을 통해서 성장 가능성과 평가 정보를 제공한다는 것, 두번째 이제 최신 트렌드 및 시장 동향을 분석할 수 있다는 것, 그리고 세번째는 데이터 수집 제한 시각화에 미흡할 수 있다는 점을 보였습니다. 이거는 과연한 레퍼런스 이고요. 제가 수집을 해서 사용했기 때문에 확인해 주시면 될 것 같습니다. 이상으로 발표 마치겠습니다.
+2024-12-04 20:53:59,479 - INFO - pronun_model.utils.calculate_presentation_score - 스크립트가 제공되지 않았습니다. LLM으로 텍스트를 보정합니다.
+2024-12-04 20:54:31,245 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-04 20:54:31,260 - INFO - pronun_model.utils.correct_text_with_llm - LLM 문법 교정이 성공했습니다.
+2024-12-04 20:54:31,260 - DEBUG - pronun_model.utils.calculate_presentation_score - LLM으로 보정된 텍스트:
+발표를 시작하겠습니다. 안녕하세요. 저는 이번에 인공지능과 파이썬을 활용하여 금융 데이터를 분석해 보고, 그 결과를 바탕으로 자연어 처리에 대한 발표를 맡은 김대현입니다. 먼저 제 소개를 간단하게 드리겠습니다. 저는 현재 모듈 연구소라는 곳에서 비전 랭귀지 분야의 모델 연구를 진행하고 있으며, 또한 카카오테크 부트캠프에서 생성형 인공지능 과정도 수강하고 있습니다. 최근에는 고파콘이라는 고언어 관련 대규모 행사의 준비위원회에 참가하였고, JRC라는 로봇 회사에서 로보틱스 엔지니어로 근무한 경력도 있습니다. 오늘 발표에서는 크게 네 가지 주제를 다루어 볼 것입니다. TF-IDF, N-Gram, COVERT, 그리고 다이노싱 메소드와 포지티브 인덱스 리얼리티, 즉 신뢰 지수에 대해 말씀드릴 예정입니다. 이 프로젝트를 시작하게 된 계기는 일반적으로 주식 거래를 할 때 처음 화면을 보았을 때 무엇을 어떻게 봐야 할지 모르겠다는 점에서 시작되었습니다. 복잡한 리서치 화면과 뉴스 커뮤니티를 통한 투자 결정의 어려움이 있었기 때문에 이 프로젝트를 진행하게 되었습니다. 또한 한국 투자증권을 기준으로 했을 때, 카테고리가 2,400개의 종목으로 구분되어 있어 의사 결정이 어렵다는 점도 있었습니다. 요약하자면, 우리가 이 프로젝트를 진행한 이유는 중요 정보에 쉽게 접근하고 정확한 투자 동향을 파악하여 유망한 분야를 탐색하고, 여론과의 상관관계를 분석하기 위해서였습니다.
+
+이제 개발 설계 및 연구 방법에 대해 설명드리겠습니다. 먼저 모델 선정과 프로젝트 진행 방향을 계획하였고, 데이터 수집 및 전처리, 부위 체계 세부키워드 감성 분석, 적용 데이터 분석, 데이터 시각화 등 다섯 가지 구성 요소로 프로젝트를 진행했습니다. 일반적으로 인공지능 관련 프로젝트를 시작할 때 데이터 수집이 필요한데요, 이를 위해 우리는 한국 거래소와 같은 곳에서 수치적으로 CSV 형태의 금융 데이터를 수집하였습니다. 여기서는 정보 코드와 주요 내용, 상장 등의 데이터를 가져왔으며, 이를 판다스 라이브러리를 활용하여 결측치와 중복값을 제거했습니다. 이어서 TF-IDF라는 기법을 사용하여 문서 내 단어의 발생 빈도를 분석하였고, N-Gram인 즉, SLM 기반의 언어 모델을 활용하여 단어나 문장의 확률값을 할당하였습니다. 이렇게 입력된 문장을 n개 단위로 잘라 분석을 진행하였습니다.
+
+TF-IDF와 N-Gram을 사용하여 빈도값을 파악한 후, 금융 문장 데이터 소스를 통해 모델 성능을 평가하는 작업을 수행했습니다. 이때 파이토치 프레임워크를 사용하였으며, 크게 세 가지 모델을 활용했습니다. 코벌트, KEC 일렉트라, 그리고 코어 일렉트라 모델이 있었습니다. 이 중 코벌트 모델이 0.8870 정도의 정확도를 보여 가장 높은 정확도를 기록하여 선택하였습니다. 코벌트 모델을 어떻게 활용했는지 간단히 말씀드리자면, 이 모델은 한국어로 프리트레인된 버트 모델입니다. 따라서 우리는 이 모델을 트랜스포머 기반으로 사용하였고, 이후 이 모델을 통해 감성 분석을 진행했습니다. 우리는 크게 세 가지 라벨을 설정하였으며, 지도 학습 방식으로 진행하였습니다. 0이 포지티브, 즉 긍정, 1이 네추럴, 즉 중립, 2가 네거티브, 즉 부정으로 설정하여 분석을 진행하였습니다.
+
+벌트 모델의 아키텍처에 대해 간단히 설명드리자면, 우리가 금융 데이터셋을 가져와서 문장을 단어 단위로 분리합니다. 예를 들어 "오늘 주식 시장이 크게 상승했습니다"라는 데이터셋이 있을 경우, 이를 단어 단위로 분리하여 "오늘 주식 시장이 크게 상승했습니다"처럼 처리하였습니다. 그런 다음, 벌트 모델의 인풋 임베딩 레이어에 넣어 진행하였습니다. 인코더 레이어에 들어가서는 리니어 레이어를 거쳐 셀프 어텐션 메커니즘이 적용됩니다. 이 과정에서 쿼리와 키의 개념을 통해 구성됩니다. 쿼리와 키는 소프트맥스 함수를 통해 점수를 계산하며, 이 점수를 기반으로 쿼리에 대한 키의 연관성을 분석합니다. 또한 프리트레인드 단계에서는 MLM과 NSP 방식을 사용하여 학습을 진행하였으며, 지도 학습 방식으로 감정 데이터셋을 분리하였습니다.
+
+금융 데이터셋의 분리는 데이터 수집, 전처리, 데이터 아이솔레이션, 데이터 분리 이렇게 세 가지 단계로 나누어 진행하였습니다. 데이터 수집 단계에서는 DART라는 한국 기업 공시정보 데이터를 활용하였고, 시간적 연속성이 있는 시계열 데이터도 함께 수집하였습니다. 이 데이터들을 가공하여 데이터 전처리 과정, 그리고 다이노싱 메소드를 사용하여 필요한 정보와 불필요한 정보를 분리하였습니다. 다이노싱 메소드를 사용한 이유는 두 가지입니다. 첫 번째로, 무의미한 가격 정보를 제거하여 주식의 폭등이나 폭락 같은 불필요한 정보를 지우기 위해서였습니다. 두 번째로, 분석과 무관한 정보를 제거하기 위해 사용하였습니다. 이를 통해 정확하고 의미 있는 정보를 얻기 위해 노력하였습니다. 
+
+이제 데이터 표현을 어떻게 했냐면, 서비스화를 위해 프론트엔드를 개발해야 하므로 리액트와 JS를 사용하였습니다. 데이터 시각화은 D3와 Chart.js 라이브러리를 활용하여 그래프를 생성하였고, 노드와 노드 익스프레스를 사용해 데이터 서버를 구축하여 데이터를 불러오는 방식으로 구현하였습니다. 화면에 보시는 그림처럼 디자인하였으며, 여기서 시연 영상을 보여드리겠습니다. 결론적으로 말씀드리자면, 크게 네 가지를 도출할 수 있었습니다. 첫 번째, 월변 양지수로 판단하는 것과 재무 지표 ESG, 그리고 타 업종과의 비교, 마지막으로 키워드와 금융 정보 간의 관계를 파악할 수 있었습니다. 긍정 지수 신뢰도에 대해서는 저희가 실제로 만든 예측과 실제 ETF 수익률 간의 관계를 나타내기 위해 개발하였으며, 이를 통해 주가 노이즈를 제거함으로써 긍정 지수와 수익률 간의 상관관계를 분석했습니다. 시장의 긍정 반응과 부정 반응이 더 높은 혹은 더 낮은 수익률에 연결된다는 사실과 긍정 지수가 급격히 상승하거나 하락할 때 수익률이 따라서 변동하는 경향을 볼 수 있었습니다. 제가 내릴 수 있는 결론과 토의하고 싶은 사항은, 저희 플랫폼을 통해 성장 가능성과 평가 정보를 제공할 수 있다는 점, 두 번째로 최신 트렌드와 시장 동향을 분석할 수 있다는 점, 그리고 세 번째로 데이터 수집과 시각화에서의 미흡함을 보일 수도 있다는 점입니다. 이 내용을 바탕으로 한 레퍼런스도 준비하였으니, 궁금하신 부분은 확인해 주시면 좋겠습니다. 이상으로 발표를 마치겠습니다.
+2024-12-04 20:54:32,044 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/609e4307a89f4f5db60ace1055376779.mp3: 536.98 seconds
+2024-12-04 20:54:32,709 - INFO - pronun_model.utils.calculate_audio_duration - Audio duration for /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_mp3/609e4307a89f4f5db60ace1055376779.mp3: 536.98 seconds
+2024-12-04 20:54:32,709 - DEBUG - pronun_model.utils.calculate_speed - Audio duration: 536.98 seconds
+2024-12-04 20:54:32,709 - DEBUG - pronun_model.utils.calculate_speed - Word count: 938
+2024-12-04 20:54:32,709 - INFO - pronun_model.utils.calculate_speed - Calculated speaking speed: 104.81 WPM
+2024-12-04 20:54:32,709 - INFO - pronun_model.utils.calculate_presentation_score - LLM을 사용하여 TTS를 생성합니다.
+2024-12-04 20:54:32,709 - INFO - pronun_model.utils.calculate_presentation_score - TTS를 생성하고 오디오 유사도를 비교합니다.
+2024-12-04 20:54:34,425 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/speech "HTTP/1.1 200 OK"
+2024-12-04 20:55:20,575 - INFO - root - TTS 생성 완료: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts/TTS_6d916e7b-8711-40fd-8e7e-157aeadee842.mp3
+2024-12-04 20:55:20,650 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:55:21,134 - INFO - pronun_model.utils.adjust_audio_length - Original audio duration: 404.78 seconds
+2024-12-04 20:55:21,168 - DEBUG - pronun_model.utils.adjust_audio_length - Added 132.197 seconds of silence
+2024-12-04 20:55:21,285 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:55:22,860 - INFO - pronun_model.utils.adjust_audio_length - Adjusted audio saved at: /Users/daehyunkim_kakao/Desktop/Kakao Business (Project)/AIM-14-AI-Pronun/storage/convert_tts/TTS_6d916e7b-8711-40fd-8e7e-157aeadee842.mp3
+2024-12-04 20:55:22,963 - INFO - watchfiles.main - 1 change detected
+2024-12-04 20:55:26,685 - DEBUG - pronun_model.utils.compare_audio_similarity - Audio similarity: 0.8994
+2024-12-04 20:55:26,694 - DEBUG - pronun_model.utils.calculate_presentation_score - — 음성 정보 —
+2024-12-04 20:55:26,695 - DEBUG - pronun_model.utils.calculate_presentation_score - 오디오 길이 (초): 536.98
+2024-12-04 20:55:26,695 - DEBUG - pronun_model.utils.calculate_presentation_score - 텍스트 단어 수: 938
+2024-12-04 20:55:26,695 - DEBUG - pronun_model.utils.calculate_presentation_score - 사용자 발표 WPM: 104.81
+2024-12-04 20:55:26,695 - DEBUG - pronun_model.utils.calculate_presentation_score - TTS 속도 설정: 1.05
+2024-12-04 20:55:26,695 - DEBUG - pronun_model.utils.calculate_presentation_score - TTS WPM (LLM): 104.81 WPM
+2024-12-04 20:55:26,695 - DEBUG - pronun_model.utils.calculate_presentation_score - — 구간별 발음 정확도 계산 —
+2024-12-04 20:55:32,085 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:55:32,094 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.66
+2024-12-04 20:55:32,095 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 0분 0초 - 1분 0초: Accuracy=0.66, WPM=86.00
+2024-12-04 20:55:35,055 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:55:35,059 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.58
+2024-12-04 20:55:35,059 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 1분 0초 - 2분 0초: Accuracy=0.58, WPM=94.00
+2024-12-04 20:55:38,725 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:55:38,728 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.50
+2024-12-04 20:55:38,729 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 2분 0초 - 3분 0초: Accuracy=0.50, WPM=93.00
+2024-12-04 20:55:42,399 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:55:42,405 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.65
+2024-12-04 20:55:42,405 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 3분 0초 - 4분 0초: Accuracy=0.65, WPM=98.00
+2024-12-04 20:55:48,168 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:55:48,171 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.61
+2024-12-04 20:55:48,171 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 4분 0초 - 5분 0초: Accuracy=0.61, WPM=112.00
+2024-12-04 20:55:51,852 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:55:51,855 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.51
+2024-12-04 20:55:51,855 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 5분 0초 - 6분 0초: Accuracy=0.51, WPM=114.00
+2024-12-04 20:55:55,677 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:55:55,681 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.51
+2024-12-04 20:55:55,681 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 6분 0초 - 7분 0초: Accuracy=0.51, WPM=120.00
+2024-12-04 20:55:59,357 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:55:59,362 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.47
+2024-12-04 20:55:59,365 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 7분 0초 - 8분 0초: Accuracy=0.47, WPM=98.00
+2024-12-04 20:56:03,617 - INFO - httpx - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2024-12-04 20:56:03,620 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.61
+2024-12-04 20:56:03,620 - DEBUG - pronun_model.utils.analyze_low_accuracy - Segment 8분 0초 - 9분 0초: Accuracy=0.61, WPM=111.00
+2024-12-04 20:56:03,627 - DEBUG - pronun_model.utils.analyze_low_accuracy - Temporary directory /var/folders/r0/kbj729jj193gcp3fhjyc_dw40000gn/T/tmpdsunegui deleted.
+2024-12-04 20:56:03,628 - INFO - pronun_model.utils.analyze_low_accuracy - Average pronunciation accuracy: 0.57
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 0분 0초 - 1분 0초 구간의 발음 정확도: 0.66
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 1분 0초 - 2분 0초 구간의 발음 정확도: 0.58
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 2분 0초 - 3분 0초 구간의 발음 정확도: 0.50
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 3분 0초 - 4분 0초 구간의 발음 정확도: 0.65
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 4분 0초 - 5분 0초 구간의 발음 정확도: 0.61
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 5분 0초 - 6분 0초 구간의 발음 정확도: 0.51
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 6분 0초 - 7분 0초 구간의 발음 정확도: 0.51
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 7분 0초 - 8분 0초 구간의 발음 정확도: 0.47
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 8분 0초 - 9분 0초 구간의 발음 정확도: 0.61
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 
+- 구간별 WPM -
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 0분 0초 - 1분 0초구간의 WPM: 86.00
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 1분 0초 - 2분 0초구간의 WPM: 94.00
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 2분 0초 - 3분 0초구간의 WPM: 93.00
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 3분 0초 - 4분 0초구간의 WPM: 98.00
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 4분 0초 - 5분 0초구간의 WPM: 112.00
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 5분 0초 - 6분 0초구간의 WPM: 114.00
+2024-12-04 20:56:03,631 - DEBUG - pronun_model.utils.calculate_presentation_score - 6분 0초 - 7분 0초구간의 WPM: 120.00
+2024-12-04 20:56:03,632 - DEBUG - pronun_model.utils.calculate_presentation_score - 7분 0초 - 8분 0초구간의 WPM: 98.00
+2024-12-04 20:56:03,632 - DEBUG - pronun_model.utils.calculate_presentation_score - 8분 0초 - 9분 0초구간의 WPM: 111.00
+2024-12-04 20:56:06,445 - DEBUG - pronun_model.utils.compare_audio_similarity - Audio similarity: 0.8994
+2024-12-04 20:56:06,463 - DEBUG - pronun_model.utils.analyze_pronunciation_accuracy - accuracy score: 0.70
+2024-12-04 20:56:06,463 - DEBUG - pronun_model.utils.calculate_presentation_score - 
+- 최종 분석 결과 WPM -
+2024-12-04 20:56:06,463 - DEBUG - pronun_model.utils.calculate_presentation_score - 오디오 유사도: 0.90
+2024-12-04 20:56:06,463 - DEBUG - pronun_model.utils.calculate_presentation_score - 음성 평균 wpm: 100.00
+2024-12-04 20:56:06,463 - DEBUG - pronun_model.utils.calculate_presentation_score - TTS 속도: 104.81
+2024-12-04 20:56:06,463 - DEBUG - pronun_model.utils.calculate_presentation_score - 평균 발음 정확도: 0.57
+2024-12-04 20:56:06,463 - DEBUG - pronun_model.utils.calculate_presentation_score - 음성 & Script(문법) 일치도: 0.70
+2024-12-04 20:56:06,464 - INFO - pronun_model.routers.send_feedback - 비디오 ID 609e4307a89f4f5db60ace1055376779에 대한 분석이 성공적으로 완료되었습니다.
+2024-12-04 20:56:06,466 - INFO - pronun_model - Response status: 200
+2024-12-04 20:56:12,319 - INFO - uvicorn.error - Shutting down
+2024-12-04 20:56:12,422 - INFO - uvicorn.error - Waiting for application shutdown.
+2024-12-04 20:56:12,423 - INFO - uvicorn.error - Application shutdown complete.
+2024-12-04 20:56:12,424 - INFO - uvicorn.error - Finished server process [17669]
+2024-12-04 20:56:12,972 - INFO - uvicorn.error - Stopping reloader process [3969]
