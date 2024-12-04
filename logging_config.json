@@ -43,6 +43,11 @@
             "handlers": ["access_file"],
             "level": "DEBUG",
             "propagate": false
+        },
+        "main_logger": { 
+            "handlers": ["default", "file"],
+            "level": "DEBUG",
+            "propagate": false
         }
     },
     "root": {

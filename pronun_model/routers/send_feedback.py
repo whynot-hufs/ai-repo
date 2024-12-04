@@ -13,11 +13,6 @@ from pathlib import Path
 router = APIRouter()
 
 # JSON 기반 로깅 설정 적용
-logging_config_path = Path(__file__).resolve().parent.parent.parent / "logging_config.json"  # 최상단 경로
-with open(logging_config_path, "r") as f:
-    logging_config = json.load(f)
-
-logging.config.dictConfig(logging_config)
 logger = logging.getLogger("main_logger")
 
 ALLOWED_SCRIPT_EXTENSIONS = {"docx", "txt", "pdf", "hwp", "hwpx"}
