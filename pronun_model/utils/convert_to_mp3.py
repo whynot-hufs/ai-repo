@@ -3,13 +3,13 @@
 from pydub import AudioSegment
 from pathlib import Path
 import os
-import logging
 import subprocess
 import uuid
 from pronun_model.config import CONVERT_MP3_DIR  # config에서 가져오기
+import logging
 
-# main_logger 인스턴스 가져오기
-logger = logging.getLogger("main_logger")
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__) 
 
 def convert_to_mp3(file_path: str, video_id: str) -> str:
     """

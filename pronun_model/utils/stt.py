@@ -4,6 +4,10 @@ from openai import OpenAI
 from ..config import OPENAI_API_KEY
 from .convert_to_mp3 import convert_to_mp3
 from typing import Optional
+import logging
+
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__) 
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 

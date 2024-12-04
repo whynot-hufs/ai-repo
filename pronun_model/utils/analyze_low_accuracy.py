@@ -25,6 +25,10 @@ import traceback
 import soundfile as sf
 from tempfile import mkdtemp
 import shutil  # 디렉토리 삭제용
+import logging
+
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__) 
 
 def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
     """

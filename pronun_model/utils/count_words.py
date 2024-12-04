@@ -1,5 +1,10 @@
 # utils/count_words.py
 
+import logging
+
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__) 
+
 def count_words(text):
     """
     텍스트의 단어 수를 계산합니다.

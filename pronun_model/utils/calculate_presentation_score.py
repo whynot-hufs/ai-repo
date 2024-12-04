@@ -13,6 +13,9 @@ from .analyze_pronunciation_accuracy import analyze_pronunciation_accuracy
 from typing import Optional, Dict, Any
 import logging
 
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__) 
+
 def calculate_presentation_score(audio_file_path: str, script_text: Optional[str] = None) -> Optional[Dict[str, Any]]:
     """
     프레젠테이션 음성을 분석하여 점수를 계산합니다.

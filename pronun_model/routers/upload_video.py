@@ -17,7 +17,7 @@ import shutil
 
 router = APIRouter()
 
-logger = logging.getLogger("main_logger")
+logger = logging.getLogger(__name__)  # 'pronun_model.routers.upload_video' 로거 사용
 
 @router.post("/upload-video-with-script/", response_model=UploadResponse)
 async def upload_video_with_optional_script(

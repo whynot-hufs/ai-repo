@@ -9,6 +9,10 @@ from PyPDF2 import PdfReader
 import gethwp
 import re
 from .text_cleaning import clean_extracted_text
+import logging
+
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__) 
 
 def get_hwp_text(filename):
     """

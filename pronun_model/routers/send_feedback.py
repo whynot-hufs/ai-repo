@@ -12,8 +12,7 @@ from pathlib import Path
 
 router = APIRouter()
 
-# JSON 기반 로깅 설정 적용
-logger = logging.getLogger("main_logger")
+logger = logging.getLogger(__name__)  # 'pronun_model.routers.send_feedback' 로거 사용
 
 ALLOWED_SCRIPT_EXTENSIONS = {"docx", "txt", "pdf", "hwp", "hwpx"}
 

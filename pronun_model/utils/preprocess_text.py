@@ -1,6 +1,10 @@
 # utils/preprocess_text.py
 
 import re
+import logging
+
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__) 
 
 def preprocess_text(text):
     """

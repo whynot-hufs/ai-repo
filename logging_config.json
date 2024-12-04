@@ -10,7 +10,7 @@
         }
     },
     "handlers": {
-        "default": {
+        "console": {
             "class": "logging.StreamHandler",
             "formatter": "default",
             "stream": "ext://sys.stdout"
@@ -30,12 +30,12 @@
     },
     "loggers": {
         "uvicorn": {
-            "handlers": ["default", "file"],
+            "handlers": ["console", "file"],
             "level": "DEBUG",
             "propagate": false
         },
         "uvicorn.error": {
-            "handlers": ["default", "file"],
+            "handlers": ["console", "file"],
             "level": "DEBUG",
             "propagate": false
         },
@@ -44,14 +44,27 @@
             "level": "DEBUG",
             "propagate": false
         },
-        "main_logger": { 
-            "handlers": ["default", "file"],
+        "pronun_model": { 
+            "handlers": ["console", "file"],
             "level": "DEBUG",
             "propagate": false
+        },
+        "pronun_model.routers": {
+            "level": "DEBUG",
+            "propagate": true
+        },
+        "pronun_model.utils": {
+            "level": "DEBUG",
+            "propagate": true
+        },
+        "pronun_model.config": { 
+            "level": "DEBUG",
+            "propagate": true
         }
     },
     "root": {
         "level": "INFO",
-        "handlers": ["default", "file"]
+        "handlers": ["console", "file"]
     }
-}
+  }
+  

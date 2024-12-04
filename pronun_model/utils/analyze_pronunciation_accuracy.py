@@ -2,6 +2,10 @@
 
 from .preprocess_text import preprocess_text
 from fuzzywuzzy import fuzz
+import logging
+
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__) 
 
 def analyze_pronunciation_accuracy(stt_text, reference_text):
     """

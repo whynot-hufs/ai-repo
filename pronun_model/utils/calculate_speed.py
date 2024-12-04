@@ -2,6 +2,10 @@
 
 from .calculate_audio_duration import calculate_audio_duration
 from .count_words import count_words
+import logging
+
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__) 
 
 def calculate_speed(audio_file_path, text):
     """

@@ -8,8 +8,7 @@ from fastapi import Response
 
 from pronun_model.routers.upload_video import router as upload_video_router
 from pronun_model.routers.send_feedback import router as send_feedback_router
-from pronun_model.config import ENABLE_PLOTTING
-from pronun_model.utils import ensure_directories 
+from pronun_model.config import UPLOAD_DIR, CONVERT_MP3_DIR, CONVERT_TTS_DIR, SCRIPTS_DIR, ENABLE_PLOTTING
 
 if ENABLE_PLOTTING:
     from pronun_model.plotting.plot_waveform import plot_waveform
@@ -26,7 +25,7 @@ with open(logging_config_path, "r") as f:
     logging_config = json.load(f)
 
 logging.config.dictConfig(logging_config)
-logger = logging.getLogger("main_logger")
+logger = logging.getLogger("pronun_main_logger")
 
 app = FastAPI()
 
@@ -43,18 +42,9 @@ app.add_middleware(
 app.include_router(upload_video_router, prefix="/api/pronun", tags=["Video Upload & Script"])
 app.include_router(send_feedback_router, prefix="/api/pronun", tags=["Feedback Retrieval"])
 
-@app.on_event("startup")
-async def startup_event():
-    """
-    FastAPI 서버 시작 시 초기화 작업 수행.
-    """
-    logger.info("FastAPI pronun API Router Start")
-    ensure_directories()  # 디렉토리 확인 및 생성
-
 # 루트 엔드포인트 (선택 사항)
 @app.get("/")
 def read_root():
-    logger = logging.getLogger(__name__)
     logger.info("Root endpoint accessed")
     return {"message": "Hello, Selina!"}
 

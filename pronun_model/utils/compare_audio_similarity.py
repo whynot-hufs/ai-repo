@@ -18,6 +18,10 @@ warnings.filterwarnings(
 
 import librosa
 from sklearn.metrics.pairwise import cosine_similarity
+import logging
+
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__) 
 
 def compare_audio_similarity(file1, file2):
     """
