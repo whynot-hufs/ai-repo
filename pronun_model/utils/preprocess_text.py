@@ -2,6 +2,7 @@
 
 import re
 import logging
+from pronun_model.exceptions import AudioProcessingError
 
 # 모듈별 로거 생성
 logger = logging.getLogger(__name__) 

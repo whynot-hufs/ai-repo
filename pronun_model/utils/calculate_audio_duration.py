@@ -17,5 +17,8 @@ def calculate_audio_duration(audio_path):
         logger.info(f"Audio duration for {audio_path}: {duration_seconds:.2f} seconds")
         return duration_seconds
     except Exception as e:
-        logger.error(f"Failed to calculate audio duration for {audio_path}: {e}", exc_info=True)
-        raise AudioProcessingError(f"Failed to calculate audio duration: {e}")
+        logger.error(f"오디오 길이를 계산하는데 실패했습니다.{audio_path}: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": str(e)
+        }, exc_info=True)
+        raise AudioProcessingError(f"오디오 길이를 계산하는데 실패했습니다: {e}") from e

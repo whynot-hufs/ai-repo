@@ -7,3 +7,7 @@ class DocumentProcessingError(Exception):
 class AudioProcessingError(Exception):
     def __init__(self, message: str):
         self.message = message
+
+class AudioImportingError(Exception):
+    def __init__(self, message: str):
+        self.message = message

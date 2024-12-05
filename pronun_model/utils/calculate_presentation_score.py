@@ -10,6 +10,7 @@ from .adjust_audio_length import adjust_audio_length
 from .analyze_low_accuracy import analyze_low_accuracy
 from .compare_audio_similarity import compare_audio_similarity
 from .analyze_pronunciation_accuracy import analyze_pronunciation_accuracy
+from pronun_model.exceptions import AudioProcessingError
 from typing import Optional, Dict, Any
 import logging
 
@@ -33,8 +34,11 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
         # Step 1: STT(음성을 텍스트로 변환)
         stt_text = STT(audio_file_path)
         if not stt_text:
-            logging.error("STT 변환에 실패했습니다.")
-            return None
+            logger.error("STT 변환에 실패했습니다.", extra={
+                "errorType": "STTConversionError",
+                "error_message": "STT 변환이 실패했습니다."
+            },exc_info=True)
+            raise AudioProcessingError("STT 변환에 실패했습니다.")
         logger.debug("STT 변환된 텍스트:\n%s", stt_text)  # 필요 시 주석 해제
 
         # Step 2: 기준 텍스트 확인
@@ -61,28 +65,44 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
         tts_speed_ratio = max(0.5, min(tts_speed_ratio, 4.0))  # 속도 제한 적용
 
         # Step 5: TTS 생성 및 오디오 유사도 계산
-        if script_source == "Script":
-            logger.info("스크립트를 사용하여 TTS를 생성합니다.")
-        else:
-            logger.info("LLM을 사용하여 TTS를 생성합니다.")
-        
-        logger.info("TTS를 생성하고 오디오 유사도를 비교합니다.")
-        tts_file_path = TTS(script_text, speed=tts_speed_ratio)  # TTS 생성
-        if not tts_file_path:
-            logger.error("TTS 변환에 실패했습니다.")
-            return None
+        try:
+            if script_source == "Script":
+                logger.info("스크립트를 사용하여 TTS를 생성합니다.")
+            else:
+                logger.info("LLM을 사용하여 TTS를 생성합니다.")
+            
+            logger.info("TTS를 생성하고 오디오 유사도를 비교합니다.")
+            tts_file_path = TTS(script_text, speed=tts_speed_ratio)  # TTS 생성
+            if not tts_file_path:
+                logger.error("TTS 변환에 실패했습니다.", extra={
+                    "errorType": "TTSConversionError",
+                    "error_message": "TTS 변환이 실패했습니다."
+                }, exc_info=True)
+                raise AudioProcessingError("TTS 변환에 실패했습니다.")
 
-        # TTS 속도 (WPM) 계산
-        tts_wpm = tts_speed_ratio * average_wpm
+            # TTS 속도 (WPM) 계산
+            tts_wpm = tts_speed_ratio * average_wpm
 
-        # Step 6: TTS와 사용자 음성 길이 동기화
-        adjust_audio_length(tts_file_path, audio_duration)
+            # Step 6: TTS와 사용자 음성 길이 동기화
+            adjust_audio_length(tts_file_path, audio_duration)
 
-        # Step 7: 오디오 유사도 계산
-        audio_similarity = compare_audio_similarity(audio_file_path, tts_file_path)
-        if audio_similarity is None:
-            logger.error("오디오 유사도 비교에 실패했습니다.")
-            return None
+            # Step 7: 오디오 유사도 계산
+            audio_similarity = compare_audio_similarity(audio_file_path, tts_file_path)
+            if audio_similarity is None:
+                logger.error("오디오 유사도 비교에 실패했습니다.", extra={
+                    "errorType": "AudioSimilarityError",
+                    "error_message": "오디오 유사도 비교가 실패했습니다."
+                }, exc_info=True)
+                raise AudioProcessingError("오디오 유사도 비교에 실패했습니다.")
+        except AudioProcessingError as ape:
+            # 이미 AudioProcessingError를 raise했기 때문에 여기서 다시 raise
+            raise ape
+        except Exception as similarity_error:
+            logger.error(f"오디오 유사도 계산 중 오류 발생: {similarity_error}", extra={
+                "errorType": type(similarity_error).__name__,
+                "error_message": str(similarity_error)
+            }, exc_info=True)
+            raise AudioProcessingError("오디오 유사도 계산 중 오류가 발생했습니다.") from similarity_error
 
         # --- 음성 정보 출력  ---
         logger.debug("— 음성 정보 —")
@@ -98,27 +118,40 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
 
         # --- 발음 정확도 계산  ---
         logger.debug("— 구간별 발음 정확도 계산 —")
-        # analyze_low_accuracy (60초 단위로 오디오를 분할하여 발음 정확도를 분석하고 평균을 계산 - (STT 변환 텍스트 & Scirpt 일치도))
-        low_accuracies, wpms, average_accuracy = analyze_low_accuracy(audio_file_path, script_text, chunk_size=60)
+        try:
+            # analyze_low_accuracy (60초 단위로 오디오를 분할하여 발음 정확도를 분석하고 평균을 계산 - (STT 변환 텍스트 & Scirpt 일치도))
+            low_accuracies, wpms, average_accuracy = analyze_low_accuracy(audio_file_path, script_text, chunk_size=60)
 
-        for time_str, accuracy in low_accuracies:
-            logger.debug(f"{time_str} 구간의 발음 정확도: {accuracy:.2f}")
+            for time_str, accuracy in low_accuracies:
+                logger.debug(f"{time_str} 구간의 발음 정확도: {accuracy:.2f}")
 
-        logger.debug("\n- 구간별 WPM -")
-        for time_str, wpm in wpms:
-            logger.debug(f"{time_str}구간의 WPM: {wpm:.2f}")
+            logger.debug("\n- 구간별 WPM -")
+            for time_str, wpm in wpms:
+                logger.debug(f"{time_str}구간의 WPM: {wpm:.2f}")
 
-        # Step 7: 오디오 유사도 계산 (발표자 음성 - stt -> tts 변환 음성 유사도 비교)
-        audio_similarity = compare_audio_similarity(audio_file_path, tts_file_path)
-        if audio_similarity is None:
-            logger.error("오디오 유사도 비교에 실패했습니다.")
-            return None
+            # Step 7: 오디오 유사도 계산 (발표자 음성 - stt -> tts 변환 음성 유사도 비교)
+            audio_similarity = compare_audio_similarity(audio_file_path, tts_file_path)
+            if audio_similarity is None:
+                logger.error("오디오 유사도 비교에 실패했습니다.", extra={
+                    "errorType": "AudioSimilarityError",
+                    "error_message": "오디오 유사도 비교가 실패했습니다."
+                }, exc_info=True)
+                raise AudioProcessingError("오디오 유사도 비교에 실패했습니다.")
 
-        # Step 8: 대본 텍스트와 일치도 (발표자 음성 -> stt - script 일치도 비교 (script 없으면 llm 보정))
-        pronunciation_accuracy = analyze_pronunciation_accuracy(stt_text, script_text)
-        if pronunciation_accuracy is None:
-            logger.error("대본 텍스트와 일치도 분석에 실패했습니다.")
-            return None
+            # Step 8: 대본 텍스트와 일치도 (발표자 음성 -> stt - script 일치도 비교 (script 없으면 llm 보정))
+            pronunciation_accuracy = analyze_pronunciation_accuracy(stt_text, script_text)
+            if pronunciation_accuracy is None:
+                logger.error("대본 텍스트와 일치도 분석에 실패했습니다.", extra={
+                    "errorType": "PronunciationAccuracyError",
+                    "error_message": "대본 텍스트와 일치도 분석이 실패했습니다."
+                }, exc_info=True)
+                raise AudioProcessingError("대본 텍스트와 일치도 분석에 실패했습니다.")
+        except Exception as pron_accuracy_error:
+            logger.error(f"대본 텍스트와 일치도 분석 중 오류 발생: {pron_accuracy_error}", extra={
+                "errorType": type(pron_accuracy_error).__name__,
+                "error_message": str(pron_accuracy_error)
+            }, exc_info=True)
+            raise AudioProcessingError("대본 텍스트와 일치도 분석 중 오류가 발생했습니다.") from pron_accuracy_error
 
         # --- pronunciation_scores 및 wpm_scores 추가 ---
         pronunciation_scores = [
@@ -148,7 +181,9 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
             "pronunciation_scores": pronunciation_scores,  # 추가
             "wpm_scores": wpm_scores  # 추가
         }
-
     except Exception as e:
-        logger.error(f"발표 점수 계산 중 오류 발생: {e}")
-        return None
+        logger.error(f"발표 점수 계산 중 오류 발생: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": str(e)
+        }, exc_info=True)
+        raise AudioProcessingError("발표 점수 계산 중 예기치 않은 오류가 발생했습니다.") from e

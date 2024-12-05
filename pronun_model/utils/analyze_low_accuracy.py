@@ -64,38 +64,59 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
                 segment_text = STT(temp_audio_path)
                 
                 if not segment_text:
-                    logger.error(f"Segment {i} STT 변환에 실패했습니다.")
-                    continue
-            
+                    logger.error( f"Segment {i} STT 변환에 실패했습니다.", extra={
+                        "errorType": "STTConversionError",
+                        "error_message": f"Segment {i}에서 STT 변환이 실패했습니다."
+                    }, exc_info=True)
+                    raise AudioProcessingError(f"Segment {i}에서 STT 변환이 실패했습니다.")
+
+            except AudioProcessingError as ape:
+                # 이미 AudioProcessingError를 raise했기 때문에 여기서 다시 raise
+                raise ape    
             except Exception as file_error:
-                logger.error(f"임시 파일 처리 중 오류 발생: {file_error}")
-                logger.error(traceback.format_exc())
-                continue
+                logger.error(f"임시 파일 처리 중 오류 발생: {file_error}", extra={
+                    "errorType": type(file_error).__name__,
+                    "error_message": str(file_error)
+                }, exc_info=True)
+                raise AudioProcessingError(f"임시 파일 처리 중 오류 발생: {file_error}") from file_error
 
-            # 구간별 정확도 계산
-            accuracy = analyze_pronunciation_accuracy(segment_text, script_text)
+            try:
+                # 구간별 정확도 계산
+                accuracy = analyze_pronunciation_accuracy(segment_text, script_text)
 
-            # 구간별 WPM 계산
-            word_count = count_words(segment_text)  # 해당 구간의 단어 수 계산
-            wpm = word_count / (chunk_size / 60)  # 분당 단어 수 계산
+                # 구간별 WPM 계산
+                word_count = count_words(segment_text)  # 해당 구간의 단어 수 계산
+                wpm = word_count / (chunk_size / 60)  # 분당 단어 수 계산
 
-            # 시간 표시
-            start_min = i // 60
-            start_sec = i % 60
-            end_min = (i + chunk_size) // 60
-            end_sec = (i + chunk_size) % 60
-            time_str = f"{start_min}분 {start_sec}초 - {end_min}분 {end_sec}초"
+                # 시간 표시
+                start_min = i // 60
+                start_sec = i % 60
+                end_min = (i + chunk_size) // 60
+                end_sec = (i + chunk_size) % 60
+                time_str = f"{start_min}분 {start_sec}초 - {end_min}분 {end_sec}초"
 
-            # 결과 저장
-            accuracies.append((time_str, accuracy))
-            wpms.append((time_str, wpm))
+                # 결과 저장
+                accuracies.append((time_str, accuracy))
+                wpms.append((time_str, wpm))
 
-            logger.debug(f"Segment {time_str}: Accuracy={accuracy:.2f}, WPM={wpm:.2f}")
+                logger.debug(f"Segment {time_str}: Accuracy={accuracy:.2f}, WPM={wpm:.2f}")
+        
+            except Exception as analysis_error:
+                logger.error(f"발음 정확도 및 WPM 분석 중 오류 발생: {analysis_error}", extra={
+                    "errorType": type(analysis_error).__name__,
+                    "error_message": str(analysis_error)
+                },exc_info=True)
+                raise AudioProcessingError(f"발음 정확도 및 WPM 분석 중 오류 발생: {analysis_error}") from analysis_error
 
+    except AudioProcessingError as ape:
+        # AudioProcessingError는 이미 로깅됨
+        raise ape
     except Exception as e:
-        logger.error(f"정확도 및 WPM 분석 오류: {e}")
-        logger.error(traceback.format_exc())
-        return [], [], 0.0
+        logger.error(f"정확도 및 WPM 분석 오류: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": str(e)
+        }, exc_info=True)
+        raise AudioProcessingError(f"예기치 않은 변환 오류가 발생했습니다.") from e
 
     finally:
         # 임시 디렉토리 및 모든 파일 삭제
@@ -104,8 +125,11 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
                 shutil.rmtree(temp_dir)  # 디렉토리와 내부 파일 모두 삭제
                 logger.debug(f"Temporary directory {temp_dir} deleted.")
         except Exception as delete_error:
-            logger.error(f"Failed to delete temporary directory {temp_dir}: {delete_error}")
-            logger.debug(traceback.format_exc())
+            logger.error(f"Temporary directory 삭제 실패: {temp_dir}: {delete_error}", extra={
+                "errorType": type(delete_error).__name__,
+                "error_message": str(delete_error)
+            }, exc_info=True)
+            raise AudioProcessingError(f"Temporary directory를 삭제하는데 실패 했습니다.") from delete_error
 
         # 평균 발음 정확도 계산
         if accuracies:
@@ -115,4 +139,4 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
         
         logger.info(f"Average pronunciation accuracy: {average_accuracy:.2f}")
 
-        return accuracies, wpms, average_accuracy
+    return accuracies, wpms, average_accuracy

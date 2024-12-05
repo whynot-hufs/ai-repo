@@ -49,7 +49,10 @@ def get_hwp_text(filename):
             try:
                 unpacked_data = zlib.decompress(data, -15) if is_compressed else data
             except zlib.error as e:
-                logger.error(f"Decompression error: {e}")
+                logger.error(f"Decompression error in section {section}: {e}", extra={
+                    "errorType": "DecompressionError",
+                    "error_message": f"Decompression error in section {section}: {e}"
+                }, exc_info=True)
                 continue
 
             section_text = ""
@@ -69,8 +72,10 @@ def get_hwp_text(filename):
                         cleaned_text = re.sub(r'[^\uAC00-\uD7A3a-zA-Z0-9\s]', '', decoded_text)
                         section_text += cleaned_text + "\n"
                     except UnicodeDecodeError as e:
-                        logger.error(f"Decoding error at position {i}: {e}")
-
+                        logger.error(f"Decoding error at position {i} in section {section}: {e}", extra={
+                            "errorType": "DecodingError",
+                            "error_message": f"Decoding error at position {i} in section {section}: {e}"
+                        }, exc_info=True)
                 i += 4 + rec_len
 
             text += section_text
@@ -79,9 +84,18 @@ def get_hwp_text(filename):
         logger.info(f"Extracted text from HWP file {filename}")
         return text
 
+    except olefile.OleFileError as e:
+        logger.error(f"HWP 파일을 열 수 없습니다: {filename}, 오류: {e}", extra={
+            "errorType": "OleFileError",
+            "error_message": f"HWP 파일을 열 수 없습니다: {filename}, 오류: {e}"
+        }, exc_info=True)
+        raise DocumentProcessingError(f"HWP 파일을 열 수 없습니다: {filename}, 오류: {e}") from e
     except Exception as e:
-        logger.error(f"Error extracting text from HWP file {filename}: {e}", exc_info=True)
-        raise DocumentProcessingError(f"Error extracting text from HWP file: {e}")
+        logger.error(f"HWP 파일에서 텍스트 추출 중 오류 발생: {filename}, 오류: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": f"HWP 파일에서 텍스트 추출 중 오류 발생: {e}"
+        }, exc_info=True)
+        raise DocumentProcessingError(f"HWP 파일에서 텍스트 추출 중 오류 발생: {e}") from e
 
 def get_hwpx_text(filename):
     """
@@ -99,8 +113,11 @@ def get_hwpx_text(filename):
         logger.info(f"Extracted text from HWPX file {filename}")
         return cleaned_text
     except Exception as e:
-        logger.error(f"HWPX 파일 읽기 오류: {e}")
-        return None
+        logger.error(f"HWPX 파일 읽기 오류: {filename}, 오류: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": f"HWPX 파일 읽기 오류: {filename}, 오류: {e}"
+        }, exc_info=True)
+        raise DocumentProcessingError(f"HWPX 파일 읽기 오류: {filename}, 오류: {e}") from e
 
 def get_docx_text(filename):
     """
@@ -118,8 +135,11 @@ def get_docx_text(filename):
         logger.info(f"Extracted text from DOCX file {filename}")
         return text
     except Exception as e:
-        logger.error(f"Error extracting text from DOCX file {filename}: {e}", exc_info=True)
-        return None
+        logger.error(f"DOCX 파일에서 텍스트 추출 오류: {filename}, 오류: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": f"DOCX 파일에서 텍스트 추출 오류: {e}"
+        }, exc_info=True)
+        raise DocumentProcessingError(f"DOCX 파일에서 텍스트 추출 오류: {e}") from e
 
 def get_txt_text(filename):
     """
@@ -137,8 +157,11 @@ def get_txt_text(filename):
         logger.info(f"Extracted text from TXT file {filename}")
         return text
     except Exception as e:
-        logger.error(f"Error extracting text from TXT file {filename}: {e}", exc_info=True)
-        return None
+        logger.error(f"TXT 파일에서 텍스트 추출 오류: {filename}, 오류: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": f"TXT 파일에서 텍스트 추출 오류: {e}"
+        }, exc_info=True)
+        raise DocumentProcessingError(f"TXT 파일에서 텍스트 추출 오류: {e}") from e
 
 def get_pdf_text(filename):
     """
@@ -160,8 +183,11 @@ def get_pdf_text(filename):
         logger.info(f"Extracted text from PDF file {filename}")
         return text
     except Exception as e:
-        logger.error(f"Error extracting text from PDF file {filename}: {e}", exc_info=True)
-        return None
+        logger.error(f"PDF 파일에서 텍스트 추출 오류: {filename}, 오류: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": f"PDF 파일에서 텍스트 추출 오류: {e}"
+        }, exc_info=True)
+        raise DocumentProcessingError(f"PDF 파일에서 텍스트 추출 오류: {e}") from e
 
 def extract_text(file_path):
     """
@@ -190,8 +216,14 @@ def extract_text(file_path):
         elif extension == 'hwpx':
             return get_hwpx_text(file_path)
         else:
-            logger.error(f"Unsupported file type for text extraction: {extension}")
-        return None
-    except DocumentProcessingError as dpe:
-        logger.error(f"Error extracting text from {file_path}: {dpe.message}")
-        return None
+            logger.error(f"지원되지 않는 파일 형식으로 텍스트 추출을 시도했습니다: {extension}", extra={
+                "errorType": "UnsupportedFileTypeError",
+                "error_message": f"지원되지 않는 파일 형식입니다: {extension}"
+            }, exc_info=True)
+            raise DocumentProcessingError(f"지원되지 않는 파일 형식입니다: {extension}")
+    except Exception as e:
+        logger.error(f"파일에서 텍스트 추출 중 예상치 못한 오류 발생: {file_path}, 오류: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": f"파일에서 텍스트 추출 중 오류 발생: {e}"
+        }, exc_info=True)
+        raise DocumentProcessingError(f"파일에서 텍스트 추출 중 오류 발생: {e}") from e
