@@ -39,7 +39,7 @@ def STT(audio_file_path: str) -> Optional[str]:
         }, exc_info=True)
         raise HTTPException(status_code=502, detail="OpenAI API 통신 오류.") from e
     except Exception as e:
-        logger.error(ff"STT 변환 오류: {e}", extra={
+        logger.error(f"STT 변환 오류: {e}", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
         }, exc_info=True)
