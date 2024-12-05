@@ -68,7 +68,7 @@ async def upload_video_with_optional_script(
             "errorType": "UnsupportedFileType",
             "error_message": f"지원하지 않는 비디오 파일 형식: {file_extension}"
         }, exc_info=True)
-        raise HTTPException(status_code=400, detail=f"지원하지 않는 영상 파일 형식입니다. 허용된 형식: {', '.join(ALLOWED_EXTENSIONS)}")
+        raise HTTPException(status_code=415, detail=f"지원하지 않는 영상 파일 형식입니다. 허용된 형식: {', '.join(ALLOWED_EXTENSIONS)}")
 
     # 지원하는 스크립트 파일 형식 확인
     ALLOWED_SCRIPT_EXTENSIONS: Set[str] = {"docx", "txt", "pdf", "hwp", "hwpx"}
@@ -82,7 +82,7 @@ async def upload_video_with_optional_script(
                 "errorType": "UnsupportedScriptFileType",
                 "error_message": f"지원하지 않는 스크립트 파일 형식: {script_extension}"
             }, exc_info=True)
-            raise HTTPException(status_code=400, detail=f"지원하지 않는 스크립트 파일 형식입니다. 허용된 형식: {', '.join(ALLOWED_SCRIPT_EXTENSIONS)}")
+            raise HTTPException(status_code=415, detail=f"지원하지 않는 스크립트 파일 형식입니다. 허용된 형식: {', '.join(ALLOWED_SCRIPT_EXTENSIONS)}")
 
     # 고유한 video_id 생성
     video_id = uuid.uuid4().hex

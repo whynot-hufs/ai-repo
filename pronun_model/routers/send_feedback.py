@@ -61,7 +61,7 @@ async def send_feedback(video_id: str, response: Response):
                 break
 
         if not script_found:
-            logger.warning(f"스크립트 파일이 없거나 텍스트 추출에 실패했습니다. {video_id} 파일은 STT 및 LLM을 사용합니다.")
+            logger.warning(f"스크립트 파일이 없거나 텍스트 추출에 실패했습니다. {video_id} 파일은 LLM을 이용해 문법을 보정한 텍스트를 사용합니다.")
 
         # 발표 점수 계산 (script_text가 존재하면 전달, 아니면 None 전달)
         results = calculate_presentation_score(mp3_path, script_text=script_text)
@@ -125,7 +125,7 @@ async def send_feedback(video_id: str, response: Response):
             "errorType": "KeyError",
             "error_message": f"결과 데이터 키 누락: {e}"
         }, exc_info=True)
-        raise HTTPException(status_code=500, detail="결과 데이터 키가 누락되었습니다.") from e
+        raise HTTPException(status_code=400, detail="결과 데이터 키가 누락되었습니다.") from e
 
     except Exception as e:
         logger.error(f"알 수 없는 오류 발생: {e}", extra={
