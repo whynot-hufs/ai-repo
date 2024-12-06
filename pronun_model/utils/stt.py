@@ -1,9 +1,14 @@
 # utils/stt.py
 
+from fastapi import HTTPException
 from openai import OpenAI
-from ..config import OPENAI_API_KEY
+from ..openai_config import OPENAI_API_KEY
 from .convert_to_mp3 import convert_to_mp3
 from typing import Optional
+import logging
+
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__) 
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
@@ -27,6 +32,15 @@ def STT(audio_file_path: str) -> Optional[str]:
             )
         transcript = response.text
         return transcript
+    except client.error.OpenAIError as e:
+        logger.error(f"STT 변환중 OpenAI 오류 발생.: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": str(e)
+        }, exc_info=True)
+        raise HTTPException(status_code=502, detail="OpenAI API 통신 오류.") from e
     except Exception as e:
-        print(f"STT 변환 오류: {e}")
-        return None
+        logger.error(f"STT 변환 오류: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": str(e)
+        }, exc_info=True)
+        raise HTTPException(status_code=500, detail="STT 변환 중 오류 발생") from e

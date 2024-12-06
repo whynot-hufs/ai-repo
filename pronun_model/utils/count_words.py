@@ -1,5 +1,11 @@
 # utils/count_words.py
 
+import logging
+from pronun_model.exceptions import AudioProcessingError
+
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__) 
+
 def count_words(text):
     """
     텍스트의 단어 수를 계산합니다.
@@ -14,5 +20,8 @@ def count_words(text):
         words = text.split()
         return len(words)
     except Exception as e:
-        print(f"단어 수 계산 오류: {e}")
-        return 0
+        logger.error(f"텍스트 전처리 오류: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": str(e)
+        }, exc_info=True)
+        raise AudioProcessingError("텍스트 전처리 중 오류가 발생했습니다.") from e

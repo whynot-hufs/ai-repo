@@ -1,6 +1,11 @@
 # utils/preprocess_text.py
 
 import re
+import logging
+from pronun_model.exceptions import AudioProcessingError
+
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__) 
 
 def preprocess_text(text):
     """
@@ -18,5 +23,5 @@ def preprocess_text(text):
         text = re.sub(r'[^\w\s가-힣]', '', text)
         return text
     except Exception as e:
-        print(f"텍스트 전처리 오류: {e}")
+        logger.error(f"텍스트 전처리 오류: {e}")
         return text

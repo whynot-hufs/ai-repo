@@ -1,7 +1,12 @@
 # utils/analyze_pronunciation_accuracy.py
 
+from pronun_model.exceptions import AudioProcessingError
 from .preprocess_text import preprocess_text
 from fuzzywuzzy import fuzz
+import logging
+
+# 모듈별 로거 생성
+logger = logging.getLogger(__name__) 
 
 def analyze_pronunciation_accuracy(stt_text, reference_text):
     """
@@ -20,9 +25,18 @@ def analyze_pronunciation_accuracy(stt_text, reference_text):
         stt_text_processed = preprocess_text(stt_text)
         reference_text_processed = preprocess_text(reference_text)
 
+        if not stt_text_processed or not reference_text_processed:
+            logger.warning("One or both texts are empty after preprocessing.")
+            return 0.0
+
         # 유사도 계산: 텍스트 간 단어 집합 비교를 통한 유사도 산출
         accuracy = fuzz.token_set_ratio(stt_text_processed, reference_text_processed) / 100.0
+        logger.debug(f"accuracy score: {accuracy:.2f}")
         return accuracy
+        
     except Exception as e:
-        print(f"일치도 계산 오류: {e}")
-        return None
+        logger.error(f"일치도 계산 오류: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": str(e)
+        }, exc_info=True)
+        raise AudioProcessingError("텍스트 일치도 계산 오류가 발생했습니다.") from e

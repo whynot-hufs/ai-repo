@@ -8,8 +8,8 @@ from fastapi import Response
 
 from pronun_model.routers.upload_video import router as upload_video_router
 from pronun_model.routers.send_feedback import router as send_feedback_router
-from pronun_model.config import ENABLE_PLOTTING
-from pronun_model.utils import ensure_directories 
+from pronun_model.config import UPLOAD_DIR, CONVERT_MP3_DIR, CONVERT_TTS_DIR, SCRIPTS_DIR, ENABLE_PLOTTING
+from pronun_model.exceptions import DocumentProcessingError, AudioProcessingError, AudioImportingError
 
 if ENABLE_PLOTTING:
     from pronun_model.plotting.plot_waveform import plot_waveform
@@ -19,6 +19,16 @@ import json
 import uvicorn
 import logging
 import logging.config
+import uuid
+import traceback
+
+# Context variables import
+from pronun_model.context_var import request_id_ctx_var, client_ip_ctx_var
+
+# ASGI types import
+from starlette.types import ASGIApp, Receive, Scope, Send
+
+app = FastAPI()
 
 # JSON 기반 로깅 설정 적용
 logging_config_path = Path(__file__).resolve().parent / "logging_config.json"  # 프로젝트 루트에 위치한 파일 경로
@@ -26,9 +36,7 @@ with open(logging_config_path, "r") as f:
     logging_config = json.load(f)
 
 logging.config.dictConfig(logging_config)
-logger = logging.getLogger("main_logger")
-
-app = FastAPI()
+logger = logging.getLogger("pronun_model")
 
 # 모든 출처를 허용하는 CORS 설정 (자격 증명 포함 불가)
 app.add_middleware(
@@ -39,36 +47,133 @@ app.add_middleware(
     allow_credentials=False,  # credentials를 반드시 False로 설정
 )
 
+# Request ID 미들웨어: 각 요청에 고유한 ID와 클라이언트 IP를 설정
+class RequestIDMiddleware:
+    def __init__(self, app: ASGIApp):
+        self.app = app
+
+    async def __call__(self, scope: Scope, receive: Receive, send: Send):
+        if scope["type"] == "http":
+            request = Request(scope, receive=receive)
+            request_id = str(uuid.uuid4())
+            client_ip = request.client.host if request.client else "unknown"
+            request_id_ctx_var.set(request_id)
+            client_ip_ctx_var.set(client_ip)
+        await self.app(scope, receive, send)
+
+# Request ID 미들웨어 추가
+app.add_middleware(RequestIDMiddleware)
+
 # 라우터 포함
 app.include_router(upload_video_router, prefix="/api/pronun", tags=["Video Upload & Script"])
 app.include_router(send_feedback_router, prefix="/api/pronun", tags=["Feedback Retrieval"])
 
-@app.on_event("startup")
-async def startup_event():
-    """
-    FastAPI 서버 시작 시 초기화 작업 수행.
-    """
-    logger.info("FastAPI pronun API Router Start")
-    ensure_directories()  # 디렉토리 확인 및 생성
-
 # 루트 엔드포인트 (선택 사항)
 @app.get("/")
 def read_root():
-    logger = logging.getLogger(__name__)
     logger.info("Root endpoint accessed")
     return {"message": "Hello, Selina!"}
 
-# 요청 로깅 미들웨어
+# 요청 로깅 미들웨어: 모든 요청과 응답을 로깅
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
-    logger.info(f"Request: {request.method} {request.url}")
+    logger.debug("Request received")
     try:
         response = await call_next(request)
-        logger.info(f"Response status: {response.status_code}")
+        # responseTime 계산: 요청 처리 시간
+        # FastAPI 자체적으로 responseTime을 제공하지 않으므로, 직접 측정 필요
+        # 여기서는 단순 예시로 timestamp 차이를 사용
+        # 실제로는 start_time을 기록하고 response 후에 차이를 계산해야 함
+        response_time = response.headers.get("X-Response-Time", "unknown")  # 필요 시 설정
+        logger.info("Response sent", extra={
+            "errorType": "",
+            "error_message": ""
+        })
         return response
     except Exception as e:
-        logger.error(f"Error processing request: {e}")
+        # 예외 발생 위치 추출
+        tb = traceback.extract_tb(e.__traceback__)
+        if tb:
+            filename, lineno, func, text = tb[-1]  # 가장 마지막 스택 프레임
+        else:
+            filename, lineno, func, text = "unknown", 0, "unknown", "unknown"
+        
+        logger.error("Error processing request", extra={
+            "errorType": type(e).__name__,
+            "error_message": str(e)
+        }, exc_info=True)
         raise e
+
+# 예외 처리 핸들러: DocumentProcessingError 발생 시
+@app.exception_handler(DocumentProcessingError)
+async def document_processing_exception_handler(request: Request, exc: DocumentProcessingError):
+    """
+    DocumentProcessingError 발생 시 500 Internal Server Error 응답을 반환합니다.
+    """
+    logger.error("Document exception", extra={
+        "errorType": type(exc).__name__,
+        "error_message": str(exc)
+    }, exc_info=True)
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "script를 처리하는중 오류가 발생했습니다."},
+    )
+
+# 예외 처리 핸들러: AudioImportingError 발생 시
+@app.exception_handler(AudioImportingError)
+async def audio_importing_exception_handler(request: Request, exc: AudioImportingError):
+    """
+    AudioImportingError 발생 시 400 Bad Request 응답을 반환합니다.
+    이는 클라이언트가 업로드한 오디오 파일이 유효하지 않음을 의미합니다.
+    """
+    logger.error("audio importing exception", extra={
+        "errorType": type(exc).__name__,
+        "error_message": str(exc)
+    }, exc_info=True)
+    return JSONResponse(
+        status_code=400,
+        content={"detail": "음성을 가져와서 변환하는중 오류가 발생했습니다."},
+    )
+
+# 예외 처리 핸들러: AudioProcessingError 발생 시
+@app.exception_handler(AudioProcessingError)
+async def audio_processing_exception_handler(request: Request, exc: AudioProcessingError):
+    """
+    AudioProcessingError 발생 시 400 Bad Request 응답을 반환합니다.
+    이는 클라이언트가 업로드한 오디오 파일 처리 중 오류가 발생했음을 의미합니다.
+    """
+    logger.error("audio processing exception", extra={
+        "errorType": type(exc).__name__,
+        "error_message": str(exc)
+    }, exc_info=True)
+    return JSONResponse(
+        status_code=400,
+        content={"detail": "음성을 가져와서 처리하는중 오류가 발생했습니다."},
+    )
+
+# 예외 처리 핸들러: 일반 예외 발생 시
+@app.exception_handler(Exception)
+async def general_exception_handler(request: Request, exc: Exception):
+    """
+    예상치 못한 예외 발생 시 500 Internal Server Error 응답을 반환합니다.
+    """
+    logger.error("Unhandled exception", extra={
+        "errorType": type(exc).__name__,
+        "error_message": str(exc)
+    }, exc_info=True)
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "서버 내부 오류가 발생했습니다."},
+    )
+
+# 테스트 엔드포인트 추가
+@app.get("/test-logging")
+def test_logging():
+    logger.debug("디버그 레벨 로그 테스트")
+    logger.info("정보 레벨 로그 테스트")
+    logger.warning("경고 레벨 로그 테스트")
+    logger.error("오류 레벨 로그 테스트")
+    return {"message": "로깅 테스트 완료"}
 
 # 서버 실행 (uvicorn.run()에서 log_config 지정)
 if __name__ == "__main__":
