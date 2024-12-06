@@ -67,11 +67,10 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
         # Step 5: TTS 생성 및 오디오 유사도 계산
         try:
             if script_source == "Script":
-                logger.info("스크립트를 사용하여 TTS를 생성합니다.")
+                logger.info("스크립트를 사용하여 TTS를 생성하고 오디오 유사도를 비교합니다.")
             else:
-                logger.info("LLM을 사용하여 TTS를 생성합니다.")
+                logger.info("LLM을 사용하여 TTS를 생성하고 오디오 유사도를 비교합니다.")
             
-            logger.info("TTS를 생성하고 오디오 유사도를 비교합니다.")
             tts_file_path = TTS(script_text, speed=tts_speed_ratio)  # TTS 생성
             if not tts_file_path:
                 logger.error("TTS 변환에 실패했습니다.", extra={

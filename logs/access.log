@@ -38,3 +38,91 @@
     "class": "uvicorn.access",
     "method": "send"
 }
+{
+    "@timestamp": "2024-12-06 19:59:28,966",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 19:59:32,766",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 19:59:32,993",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 19:59:36,451",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 19:59:37,266",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 19:59:42,495",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 19:59:43,755",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 20:00:49,182",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 20:03:07,253",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 20:06:00,000",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 20:09:05,358",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}

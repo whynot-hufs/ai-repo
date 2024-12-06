@@ -47,7 +47,7 @@ async def send_feedback(video_id: str, response: Response):
         for ext in ALLOWED_SCRIPT_EXTENSIONS:
             script_path = os.path.join(SCRIPTS_DIR, f"{video_id}.{ext}")
             if os.path.exists(script_path):
-                logger.debug(f"스크립트 파일을 발견했습니다: {script_path}")
+                logger.info(f"스크립트 파일을 발견했습니다: {script_path}")
                 extracted_text = extract_text(script_path)
                 if extracted_text:
                     script_text = extracted_text

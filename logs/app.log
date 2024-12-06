@@ -208,3 +208,1767 @@
     "class": "uvicorn.error",
     "method": "shutdown"
 }
+{
+    "@timestamp": "2024-12-06 19:59:23,716",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "__init__"
+}
+{
+    "@timestamp": "2024-12-06 19:59:23,716",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "bind_socket"
+}
+{
+    "@timestamp": "2024-12-06 19:59:23,716",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 19:59:24,217",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 19:59:24,217",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 19:59:24,217",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 19:59:24,217",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 19:59:24,217",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 19:59:24,302",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 19:59:25,632",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 19:59:25,722",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "serve"
+}
+{
+    "@timestamp": "2024-12-06 19:59:25,723",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 19:59:25,723",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 19:59:25,996",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 19:59:28,964",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "read_root"
+}
+{
+    "@timestamp": "2024-12-06 19:59:28,966",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "log_requests"
+}
+{
+    "@timestamp": "2024-12-06 19:59:32,766",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "log_requests"
+}
+{
+    "@timestamp": "2024-12-06 19:59:32,993",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "log_requests"
+}
+{
+    "@timestamp": "2024-12-06 19:59:36,450",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "read_root"
+}
+{
+    "@timestamp": "2024-12-06 19:59:36,450",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "log_requests"
+}
+{
+    "@timestamp": "2024-12-06 19:59:37,265",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "read_root"
+}
+{
+    "@timestamp": "2024-12-06 19:59:37,265",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "log_requests"
+}
+{
+    "@timestamp": "2024-12-06 19:59:42,493",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "test_logging"
+}
+{
+    "@timestamp": "2024-12-06 19:59:42,493",
+    "level": "ERROR",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "test_logging",
+    "error_type": "N/A",
+    "message": "N/A"
+}
+{
+    "@timestamp": "2024-12-06 19:59:42,494",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "log_requests"
+}
+{
+    "@timestamp": "2024-12-06 19:59:43,752",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "test_logging"
+}
+{
+    "@timestamp": "2024-12-06 19:59:43,753",
+    "level": "ERROR",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "test_logging",
+    "error_type": "N/A",
+    "message": "N/A"
+}
+{
+    "@timestamp": "2024-12-06 19:59:43,754",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "log_requests"
+}
+{
+    "@timestamp": "2024-12-06 20:00:44,308",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.upload_video",
+    "method": "upload_video_with_optional_script"
+}
+{
+    "@timestamp": "2024-12-06 20:00:44,309",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.upload_video",
+    "method": "upload_video_with_optional_script"
+}
+{
+    "@timestamp": "2024-12-06 20:00:44,314",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.upload_video",
+    "method": "upload_video_with_optional_script"
+}
+{
+    "@timestamp": "2024-12-06 20:00:44,389",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:00:45,184",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:00:49,177",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.convert_to_mp3",
+    "method": "convert_to_mp3"
+}
+{
+    "@timestamp": "2024-12-06 20:00:49,179",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.upload_video",
+    "method": "upload_video_with_optional_script"
+}
+{
+    "@timestamp": "2024-12-06 20:00:49,180",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.upload_video",
+    "method": "upload_video_with_optional_script"
+}
+{
+    "@timestamp": "2024-12-06 20:00:49,182",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "log_requests"
+}
+{
+    "@timestamp": "2024-12-06 20:00:49,234",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:00:57,826",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.send_feedback",
+    "method": "send_feedback"
+}
+{
+    "@timestamp": "2024-12-06 20:00:57,850",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.text_extraction",
+    "method": "get_hwpx_text"
+}
+{
+    "@timestamp": "2024-12-06 20:00:57,850",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.send_feedback",
+    "method": "send_feedback"
+}
+{
+    "@timestamp": "2024-12-06 20:01:19,589",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:01:19,597",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.calculate_presentation_score",
+    "method": "calculate_presentation_score"
+}
+{
+    "@timestamp": "2024-12-06 20:01:20,464",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.calculate_audio_duration",
+    "method": "calculate_audio_duration"
+}
+{
+    "@timestamp": "2024-12-06 20:01:21,453",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.calculate_audio_duration",
+    "method": "calculate_audio_duration"
+}
+{
+    "@timestamp": "2024-12-06 20:01:21,454",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.calculate_speed",
+    "method": "calculate_speed"
+}
+{
+    "@timestamp": "2024-12-06 20:01:21,454",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.calculate_presentation_score",
+    "method": "calculate_presentation_score"
+}
+{
+    "@timestamp": "2024-12-06 20:01:21,454",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.calculate_presentation_score",
+    "method": "calculate_presentation_score"
+}
+{
+    "@timestamp": "2024-12-06 20:01:23,207",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:02:18,601",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "TTS"
+}
+{
+    "@timestamp": "2024-12-06 20:02:18,684",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:02:19,342",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.adjust_audio_length",
+    "method": "adjust_audio_length"
+}
+{
+    "@timestamp": "2024-12-06 20:02:19,431",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:02:21,288",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.adjust_audio_length",
+    "method": "adjust_audio_length"
+}
+{
+    "@timestamp": "2024-12-06 20:02:21,350",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:02:29,660",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:02:34,191",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:02:40,277",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:02:44,570",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:02:47,831",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:02:51,540",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:02:55,118",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:02:59,526",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:03:04,467",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:03:04,471",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.analyze_low_accuracy",
+    "method": "analyze_low_accuracy"
+}
+{
+    "@timestamp": "2024-12-06 20:03:07,248",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.send_feedback",
+    "method": "send_feedback"
+}
+{
+    "@timestamp": "2024-12-06 20:03:07,253",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "log_requests"
+}
+{
+    "@timestamp": "2024-12-06 20:04:31,036",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:04:31,040",
+    "level": "WARNING",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "run"
+}
+{
+    "@timestamp": "2024-12-06 20:04:31,093",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:04:31,198",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:04:31,199",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:04:31,200",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "serve"
+}
+{
+    "@timestamp": "2024-12-06 20:04:32,075",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:04:32,267",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:04:32,268",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:04:32,268",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:04:32,268",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:04:32,269",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:04:33,500",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "serve"
+}
+{
+    "@timestamp": "2024-12-06 20:04:33,500",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 20:04:33,500",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 20:04:33,581",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:04:43,220",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:04:43,221",
+    "level": "WARNING",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "run"
+}
+{
+    "@timestamp": "2024-12-06 20:04:43,315",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:04:43,416",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:04:43,417",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:04:43,417",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "serve"
+}
+{
+    "@timestamp": "2024-12-06 20:04:44,079",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:04:44,209",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:04:44,209",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:04:44,209",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:04:44,209",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:04:44,210",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:04:45,396",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "serve"
+}
+{
+    "@timestamp": "2024-12-06 20:04:45,396",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 20:04:45,396",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 20:04:45,478",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:23,372",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:23,373",
+    "level": "WARNING",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "run"
+}
+{
+    "@timestamp": "2024-12-06 20:05:23,407",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:05:23,509",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:05:23,510",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:05:23,510",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "serve"
+}
+{
+    "@timestamp": "2024-12-06 20:05:24,163",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:24,386",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:24,387",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:24,387",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:24,387",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:24,387",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:24,527",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:25,689",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "serve"
+}
+{
+    "@timestamp": "2024-12-06 20:05:25,689",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 20:05:25,689",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 20:05:25,760",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:29,377",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:29,378",
+    "level": "WARNING",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "run"
+}
+{
+    "@timestamp": "2024-12-06 20:05:29,432",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:05:29,533",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:05:29,534",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:05:29,534",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "serve"
+}
+{
+    "@timestamp": "2024-12-06 20:05:30,196",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:30,327",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:30,327",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:30,327",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:30,327",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:30,328",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:30,559",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:31,390",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "serve"
+}
+{
+    "@timestamp": "2024-12-06 20:05:31,391",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 20:05:31,391",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 20:05:31,467",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:43,164",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:43,165",
+    "level": "WARNING",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "run"
+}
+{
+    "@timestamp": "2024-12-06 20:05:43,221",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:05:43,322",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:05:43,322",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:05:43,323",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "serve"
+}
+{
+    "@timestamp": "2024-12-06 20:05:43,982",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:44,119",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:44,120",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:44,120",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:44,120",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:44,120",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:05:45,380",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:45,450",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "serve"
+}
+{
+    "@timestamp": "2024-12-06 20:05:45,450",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 20:05:45,451",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 20:05:45,744",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:55,158",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.upload_video",
+    "method": "upload_video_with_optional_script"
+}
+{
+    "@timestamp": "2024-12-06 20:05:55,158",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.upload_video",
+    "method": "upload_video_with_optional_script"
+}
+{
+    "@timestamp": "2024-12-06 20:05:55,161",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.upload_video",
+    "method": "upload_video_with_optional_script"
+}
+{
+    "@timestamp": "2024-12-06 20:05:55,223",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:55,961",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:05:59,998",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.upload_video",
+    "method": "upload_video_with_optional_script"
+}
+{
+    "@timestamp": "2024-12-06 20:05:59,998",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.upload_video",
+    "method": "upload_video_with_optional_script"
+}
+{
+    "@timestamp": "2024-12-06 20:06:00,000",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "log_requests"
+}
+{
+    "@timestamp": "2024-12-06 20:06:00,072",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:06:11,051",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.send_feedback",
+    "method": "send_feedback"
+}
+{
+    "@timestamp": "2024-12-06 20:06:11,052",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.send_feedback",
+    "method": "send_feedback"
+}
+{
+    "@timestamp": "2024-12-06 20:06:36,452",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:06:36,461",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.calculate_presentation_score",
+    "method": "calculate_presentation_score"
+}
+{
+    "@timestamp": "2024-12-06 20:06:59,502",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:06:59,613",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.correct_text_with_llm",
+    "method": "correct_text_with_llm"
+}
+{
+    "@timestamp": "2024-12-06 20:07:00,387",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.calculate_audio_duration",
+    "method": "calculate_audio_duration"
+}
+{
+    "@timestamp": "2024-12-06 20:07:01,061",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.calculate_audio_duration",
+    "method": "calculate_audio_duration"
+}
+{
+    "@timestamp": "2024-12-06 20:07:01,063",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.calculate_presentation_score",
+    "method": "calculate_presentation_score"
+}
+{
+    "@timestamp": "2024-12-06 20:07:01,063",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.calculate_presentation_score",
+    "method": "calculate_presentation_score"
+}
+{
+    "@timestamp": "2024-12-06 20:07:03,074",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:08:15,261",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "TTS"
+}
+{
+    "@timestamp": "2024-12-06 20:08:15,355",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:08:15,847",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.adjust_audio_length",
+    "method": "adjust_audio_length"
+}
+{
+    "@timestamp": "2024-12-06 20:08:15,995",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:08:17,617",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.adjust_audio_length",
+    "method": "adjust_audio_length"
+}
+{
+    "@timestamp": "2024-12-06 20:08:17,711",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:08:26,336",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:08:29,769",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:08:32,840",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:08:37,450",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:08:43,353",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:08:48,028",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:08:54,741",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:08:58,409",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:09:02,428",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "httpx",
+    "method": "_send_single_request"
+}
+{
+    "@timestamp": "2024-12-06 20:09:02,433",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "utils.analyze_low_accuracy",
+    "method": "analyze_low_accuracy"
+}
+{
+    "@timestamp": "2024-12-06 20:09:05,356",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "routers.send_feedback",
+    "method": "send_feedback"
+}
+{
+    "@timestamp": "2024-12-06 20:09:05,358",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "log_requests"
+}
+{
+    "@timestamp": "2024-12-06 20:09:12,595",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:09:12,598",
+    "level": "WARNING",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "run"
+}
+{
+    "@timestamp": "2024-12-06 20:09:12,636",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:09:12,739",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:09:12,741",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:09:12,742",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "serve"
+}
+{
+    "@timestamp": "2024-12-06 20:09:13,608",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:09:13,773",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:09:13,774",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:09:13,774",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:09:13,774",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:09:13,774",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:09:14,631",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:09:14,632",
+    "level": "WARNING",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "run"
+}
+{
+    "@timestamp": "2024-12-06 20:09:14,999",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:09:15,033",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:09:15,034",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:09:15,034",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:09:15,034",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:09:15,034",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "config",
+    "method": "<module>"
+}
+{
+    "@timestamp": "2024-12-06 20:09:16,125",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:09:16,208",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "serve"
+}
+{
+    "@timestamp": "2024-12-06 20:09:16,208",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 20:09:16,209",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "startup"
+}
+{
+    "@timestamp": "2024-12-06 20:09:16,489",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:09:22,146",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "watchfiles.main",
+    "method": "_log_changes"
+}
+{
+    "@timestamp": "2024-12-06 20:09:22,147",
+    "level": "WARNING",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "run"
+}
+{
+    "@timestamp": "2024-12-06 20:09:22,173",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:09:22,274",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:09:22,275",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}
+{
+    "@timestamp": "2024-12-06 20:09:22,275",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "serve"
+}
+{
+    "@timestamp": "2024-12-06 20:09:22,909",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.error",
+    "method": "shutdown"
+}

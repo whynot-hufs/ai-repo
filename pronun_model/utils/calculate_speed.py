@@ -36,7 +36,7 @@ def calculate_speed(audio_file_path, text):
         else:
             wpm = 0
 
-        logger.info(f"Calculated speaking speed: {wpm:.2f} WPM")
+        logger.debug(f"Calculated speaking speed: {wpm:.2f} WPM")
         return wpm
 
     except AudioProcessingError as ape:

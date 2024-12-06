@@ -21,7 +21,7 @@ def adjust_audio_length(audio_path, target_duration):
     try:   
         audio = AudioSegment.from_file(audio_path)
         current_duration = len(audio) / 1000  # 밀리초 단위에서 초 단위로 변환
-        logger.info(f"Original audio duration: {current_duration}")
+        logger.debug(f"Original audio duration: {current_duration}")
 
         if current_duration < target_duration:
             # 길이가 짧으면 침묵 추가

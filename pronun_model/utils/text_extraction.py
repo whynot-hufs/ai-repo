@@ -180,7 +180,7 @@ def get_pdf_text(filename):
             page_text = page.extract_text()
             if page_text:
                 text += page_text + "\n"
-        logger.info(f"Extracted text from PDF file {filename}")
+        logger.debug(f"Extracted text from PDF file {filename}")
         return text
     except Exception as e:
         logger.error(f"PDF 파일에서 텍스트 추출 오류: {filename}, 오류: {e}", extra={

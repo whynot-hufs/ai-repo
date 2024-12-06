@@ -51,7 +51,7 @@ def convert_to_mp3(file_path: str, video_id: str) -> str:
         # MP3 파일로 변환 및 저장
         try:
             audio.export(mp3_file_path, format="mp3")
-            logger.info(f"MP3 변환 완료: {mp3_file_path}")
+            logger.debug(f"MP3 변환 완료: {mp3_file_path}")
         except Exception as export_error:
             logger.error(f"MP3 변환 및 저장 실패: {export_error}", extra={
                 "errorType": type(export_error).__name__,
