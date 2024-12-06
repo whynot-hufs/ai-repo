@@ -54,14 +54,14 @@ async def send_feedback(video_id: str, response: Response):
                     logger.info("스크립트 텍스트 추출 성공")
                     script_found = True
                 else:
-                    logger.warning("스크립트 텍스트 추출 실패", extra={
+                    logger.info("스크립트 텍스트 추출 실패", extra={
                         "errorType": "TextExtractionFailed",
                         "error_message": "스크립트 텍스트 추출 실패"
                     })
                 break
 
         if not script_found:
-            logger.warning(f"스크립트 파일이 없거나 텍스트 추출에 실패했습니다. {video_id} 파일은 LLM을 이용해 문법을 보정한 텍스트를 사용합니다.")
+            logger.info(f"스크립트 파일이 없거나 텍스트 추출에 실패했습니다. {video_id} 파일은 LLM을 이용해 문법을 보정한 텍스트를 사용합니다.")
 
         # 발표 점수 계산 (script_text가 존재하면 전달, 아니면 None 전달)
         results = calculate_presentation_score(mp3_path, script_text=script_text)

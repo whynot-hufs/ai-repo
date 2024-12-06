@@ -1,0 +1,40 @@
+{
+    "@timestamp": "2024-12-06 19:57:08,617",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 19:57:11,298",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 19:57:11,502",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 19:57:17,094",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 19:57:26,758",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}

@@ -26,7 +26,7 @@ def analyze_pronunciation_accuracy(stt_text, reference_text):
         reference_text_processed = preprocess_text(reference_text)
 
         if not stt_text_processed or not reference_text_processed:
-            logger.warning("One or both texts are empty after preprocessing.")
+            logger.info("One or both texts are empty after preprocessing.")
             return 0.0
 
         # 유사도 계산: 텍스트 간 단어 집합 비교를 통한 유사도 산출
