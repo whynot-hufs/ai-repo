@@ -39,7 +39,7 @@ def convert_to_mp3(file_path: str, video_id: str) -> str:
             logger.error(f"지원되지 않는 파일 형식입니다: {file_extension}", extra={
                 "errorType": "UnsupportedFormatError",
                 "error_message": f"지원되지 않는 파일 형식입니다: {file_extension}"
-            }, exc_info=True)
+            })
             raise AudioImportingError(f"지원되지 않는 파일 형식입니다: {file_extension}")
 
         # 오디오 파일을 읽어서 MP3로 변환
@@ -56,7 +56,7 @@ def convert_to_mp3(file_path: str, video_id: str) -> str:
             logger.error(f"MP3 변환 및 저장 실패: {export_error}", extra={
                 "errorType": type(export_error).__name__,
                 "error_message": str(export_error)
-            }, exc_info=True)
+            })
             raise AudioImportingError(f"MP3 변환 및 저장 실패: {export_error}") from export_error
 
         return str(mp3_file_path.resolve())
@@ -68,5 +68,5 @@ def convert_to_mp3(file_path: str, video_id: str) -> str:
         logger.error(f"MP3 변환 오류: {e}", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
-        }, exc_info=True)
+        })
         raise AudioImportingError("MP3 변환 오류가 발생했습니다.") from e

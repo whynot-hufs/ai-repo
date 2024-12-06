@@ -57,5 +57,5 @@ def compare_audio_similarity(file1, file2):
         logger.error(f"오디오 유사도 비교 오류: {e}", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
-        }, exc_info=True)
+        })
         raise AudioProcessingError("오디오 유사도 비교 중 오류가 발생했습니다.") from e

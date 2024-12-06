@@ -43,11 +43,11 @@ def correct_text_with_llm(text):
         logger.error(f"문법 보정 중 OpenAI API랑 통신오류가 발생했습니다.: {e}", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
-        }, exc_info=True)
+        })
         raise HTTPException(status_code=502, detail="문법 보정 중 OpenAI 오류 발생.") from e
     except Exception as e:
         logger.error(f"문법 보정 오류 발생: {e}", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
-        }, exc_info=True)
+        })
         raise HTTPException(status_code=500, detail="문법 보정 처리 중 오류가 발생.") from e

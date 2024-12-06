@@ -67,7 +67,7 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
                     logger.error( f"Segment {i} STT 변환에 실패했습니다.", extra={
                         "errorType": "STTConversionError",
                         "error_message": f"Segment {i}에서 STT 변환이 실패했습니다."
-                    }, exc_info=True)
+                    })
                     raise AudioProcessingError(f"Segment {i}에서 STT 변환이 실패했습니다.")
 
             except AudioProcessingError as ape:
@@ -77,7 +77,7 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
                 logger.error(f"임시 파일 처리 중 오류 발생: {file_error}", extra={
                     "errorType": type(file_error).__name__,
                     "error_message": str(file_error)
-                }, exc_info=True)
+                })
                 raise AudioProcessingError(f"임시 파일 처리 중 오류 발생: {file_error}") from file_error
 
             try:
@@ -105,7 +105,7 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
                 logger.error(f"발음 정확도 및 WPM 분석 중 오류 발생: {analysis_error}", extra={
                     "errorType": type(analysis_error).__name__,
                     "error_message": str(analysis_error)
-                },exc_info=True)
+                })
                 raise AudioProcessingError(f"발음 정확도 및 WPM 분석 중 오류 발생: {analysis_error}") from analysis_error
 
     except AudioProcessingError as ape:
@@ -115,7 +115,7 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
         logger.error(f"정확도 및 WPM 분석 오류: {e}", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
-        }, exc_info=True)
+        })
         raise AudioProcessingError(f"예기치 않은 변환 오류가 발생했습니다.") from e
 
     finally:
@@ -128,7 +128,7 @@ def analyze_low_accuracy(audio_file_path, script_text, chunk_size=60):
             logger.error(f"Temporary directory 삭제 실패: {temp_dir}: {delete_error}", extra={
                 "errorType": type(delete_error).__name__,
                 "error_message": str(delete_error)
-            }, exc_info=True)
+            })
             raise AudioProcessingError(f"Temporary directory를 삭제하는데 실패 했습니다.") from delete_error
 
         # 평균 발음 정확도 계산

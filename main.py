@@ -23,7 +23,7 @@ import uuid
 import traceback
 
 # Context variables import
-from pronun_model.context_var import request_id_ctx_var, client_ip_ctx_var
+from pronun_model.context_var import request_id_ctx_var
 
 # ASGI types import
 from starlette.types import ASGIApp, Receive, Scope, Send
@@ -55,10 +55,8 @@ class RequestIDMiddleware:
     async def __call__(self, scope: Scope, receive: Receive, send: Send):
         if scope["type"] == "http":
             request = Request(scope, receive=receive)
-            request_id = str(uuid.uuid4())
-            client_ip = request.client.host if request.client else "unknown"
+            request_id = request.headers.get("X-User-ID", "unknown")
             request_id_ctx_var.set(request_id)
-            client_ip_ctx_var.set(client_ip)
         await self.app(scope, receive, send)
 
 # Request ID 미들웨어 추가
@@ -101,7 +99,7 @@ async def log_requests(request: Request, call_next):
         logger.error("Error processing request", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
-        }, exc_info=True)
+        })
         raise e
 
 # 예외 처리 핸들러: DocumentProcessingError 발생 시
@@ -113,7 +111,7 @@ async def document_processing_exception_handler(request: Request, exc: DocumentP
     logger.error("Document exception", extra={
         "errorType": type(exc).__name__,
         "error_message": str(exc)
-    }, exc_info=True)
+    })
     return JSONResponse(
         status_code=500,
         content={"detail": "script를 처리하는중 오류가 발생했습니다."},
@@ -129,7 +127,7 @@ async def audio_importing_exception_handler(request: Request, exc: AudioImportin
     logger.error("audio importing exception", extra={
         "errorType": type(exc).__name__,
         "error_message": str(exc)
-    }, exc_info=True)
+    })
     return JSONResponse(
         status_code=400,
         content={"detail": "음성을 가져와서 변환하는중 오류가 발생했습니다."},
@@ -145,7 +143,7 @@ async def audio_processing_exception_handler(request: Request, exc: AudioProcess
     logger.error("audio processing exception", extra={
         "errorType": type(exc).__name__,
         "error_message": str(exc)
-    }, exc_info=True)
+    })
     return JSONResponse(
         status_code=400,
         content={"detail": "음성을 가져와서 처리하는중 오류가 발생했습니다."},
@@ -160,7 +158,7 @@ async def general_exception_handler(request: Request, exc: Exception):
     logger.error("Unhandled exception", extra={
         "errorType": type(exc).__name__,
         "error_message": str(exc)
-    }, exc_info=True)
+    })
     return JSONResponse(
         status_code=500,
         content={"detail": "서버 내부 오류가 발생했습니다."},
@@ -171,7 +169,6 @@ async def general_exception_handler(request: Request, exc: Exception):
 def test_logging():
     logger.debug("디버그 레벨 로그 테스트")
     logger.info("정보 레벨 로그 테스트")
-    logger.warning("경고 레벨 로그 테스트")
     logger.error("오류 레벨 로그 테스트")
     return {"message": "로깅 테스트 완료"}
 

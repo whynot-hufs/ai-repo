@@ -44,7 +44,7 @@ async def upload_video_with_optional_script(
             logger.error("스크립트 파일 형식이 올바르지 않습니다.", extra={
                 "errorType": "InvalidScriptFormat",
                 "error_message": "스크립트 파일 형식이 올바르지 않습니다."
-            }, exc_info=True)
+            })
             raise HTTPException(status_code=400, detail="스크립트 파일 형식이 올바르지 않습니다.")
 
     # script 필드 처리
@@ -67,7 +67,7 @@ async def upload_video_with_optional_script(
         logger.error(f"지원하지 않는 비디오 파일 형식: {file_extension}. 파일명: {video.filename}", extra={
             "errorType": "UnsupportedFileType",
             "error_message": f"지원하지 않는 비디오 파일 형식: {file_extension}"
-        }, exc_info=True)
+        })
         raise HTTPException(status_code=415, detail=f"지원하지 않는 영상 파일 형식입니다. 허용된 형식: {', '.join(ALLOWED_EXTENSIONS)}")
 
     # 지원하는 스크립트 파일 형식 확인
@@ -81,7 +81,7 @@ async def upload_video_with_optional_script(
             logger.error(f"지원하지 않는 스크립트 파일 형식: {script_extension}. 파일명: {script.filename}", extra={
                 "errorType": "UnsupportedScriptFileType",
                 "error_message": f"지원하지 않는 스크립트 파일 형식: {script_extension}"
-            }, exc_info=True)
+            })
             raise HTTPException(status_code=415, detail=f"지원하지 않는 스크립트 파일 형식입니다. 허용된 형식: {', '.join(ALLOWED_SCRIPT_EXTENSIONS)}")
 
     # 고유한 video_id 생성
@@ -101,7 +101,7 @@ async def upload_video_with_optional_script(
             logger.error(f"비디오 파일이 저장되지 않았습니다: {video_path}", extra={
                 "errorType": "FileSaveError",
                 "error_message": "비디오 파일 저장 실패"
-            }, exc_info=True)
+            })
             raise HTTPException(status_code=500, detail="비디오 파일 저장 실패")
 
         # MP3 변환
@@ -111,14 +111,14 @@ async def upload_video_with_optional_script(
                 logger.error(f"MP3 변환 실패: video_path={video_path}, video_id={video_id}", extra={
                     "errorType": "MP3ConversionError",
                     "error_message": "MP3 변환 실패: 파일 생성에 실패했습니다."
-                }, exc_info=True)
+                })
                 raise AudioImportingError("MP3 변환 실패: 파일 생성에 실패했습니다.")
             logger.info(f"MP3 변환이 성공했습니다: {mp3_path}")
         except Exception as e:
             logger.error(f"MP3 변환 중 오류 발생: {e}. video_path={video_path}, video_id={video_id}", extra={
                 "errorType": type(e).__name__,
                 "error_message": str(e)
-            }, exc_info=True)
+            })
             raise AudioImportingError("MP3 변환 중 알 수 없는 오류가 발생했습니다.") from e
 
         # 스크립트 저장 (선택적, File 형태로만 처리)
@@ -132,7 +132,7 @@ async def upload_video_with_optional_script(
                 logger.error(f"스크립트 파일 저장 중 오류 발생. 경로: {script_path}, 오류: {e}", extra={
                     "errorType": type(e).__name__,
                     "error_message": str(e)
-                }, exc_info=True)
+                })
                 raise HTTPException(status_code=500, detail="스크립트 파일 저장 실패") from e
         else:
             logger.info("스크립트 파일이 제공되지 않았습니다. STT 및 LLM을 사용하여 스크립트를 생성합니다.") # 선택사항이라 warning이 아닌 Info로 level 설정
@@ -150,5 +150,5 @@ async def upload_video_with_optional_script(
         logger.error(f"알 수 없는 오류 발생: {e}", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
-        }, exc_info=True)
+        })
         raise HTTPException(status_code=500, detail="파일 처리 중 예기치 않은 오류 발생") from e

@@ -23,5 +23,8 @@ def preprocess_text(text):
         text = re.sub(r'[^\w\s가-힣]', '', text)
         return text
     except Exception as e:
-        logger.error(f"텍스트 전처리 오류: {e}")
-        return text
+        logger.error(f"텍스트 전처리 오류: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": str(e)
+        })
+        raise AudioProcessingError("오디오 유사도 비교 중 오류가 발생했습니다.") from e

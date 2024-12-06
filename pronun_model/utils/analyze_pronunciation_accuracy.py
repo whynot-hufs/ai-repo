@@ -38,5 +38,5 @@ def analyze_pronunciation_accuracy(stt_text, reference_text):
         logger.error(f"일치도 계산 오류: {e}", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
-        }, exc_info=True)
+        })
         raise AudioProcessingError("텍스트 일치도 계산 오류가 발생했습니다.") from e

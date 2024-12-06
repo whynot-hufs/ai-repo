@@ -23,5 +23,5 @@ def count_words(text):
         logger.error(f"텍스트 전처리 오류: {e}", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
-        }, exc_info=True)
+        })
         raise AudioProcessingError("텍스트 전처리 중 오류가 발생했습니다.") from e

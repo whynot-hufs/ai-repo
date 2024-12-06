@@ -42,8 +42,8 @@ except Exception as e:
     logger.error(f"환경 감지 중 오류 발생: {e}", extra={
         "errorType": "EnvironmentDetectionError",
         "error_message": str(e)
-    }, exc_info=True)
-    raise HTTPException(status_code=500, detail="환경 감지 중 오류 발생")
+    })
+    raise HTTPException(status_code=500, detail="환경 감지 중 오류 발생") from e
 
 # 저장 디렉토리 설정
 UPLOAD_DIR = BASE_DIR / os.getenv("UPLOAD_DIR", "storage/input_video")
@@ -61,5 +61,5 @@ except Exception as e:
     logger.error(f"디렉토리 생성 실패: {e}", extra={
         "errorType": "DirectoryCreationError",
         "error_message": str(e)
-    }, exc_info=True)
-    raise HTTPException(status_code=500, detail="디렉토리 생성 실패")
+    })
+    raise HTTPException(status_code=500, detail="디렉토리 생성 실패") from e

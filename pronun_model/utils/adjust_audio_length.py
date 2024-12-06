@@ -42,5 +42,5 @@ def adjust_audio_length(audio_path, target_duration):
         logger.error(f"오디오 길이 측정 오류: {audio_path}: {e}", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
-        }, exc_info=True)
+        })
         raise AudioProcessingError(f"오디오 길이 측정에 실패했습니다. {e}") from e
