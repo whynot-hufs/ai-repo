@@ -1,0 +1,30 @@
+{
+    "@timestamp": "2024-12-06 19:57:26,756",
+    "level": "ERROR",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "test_logging",
+    "error_type": "N/A",
+    "message": "N/A"
+}
+{
+    "@timestamp": "2024-12-06 19:59:42,493",
+    "level": "ERROR",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "test_logging",
+    "error_type": "N/A",
+    "message": "N/A"
+}
+{
+    "@timestamp": "2024-12-06 19:59:43,753",
+    "level": "ERROR",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "root",
+    "method": "test_logging",
+    "error_type": "N/A",
+    "message": "N/A"
+}

@@ -36,7 +36,7 @@ async def send_feedback(video_id: str, response: Response):
         logger.error("MP3 파일을 찾을 수 없습니다.", extra={
             "errorType": "FileNotFoundError",
             "error_message": "MP3 파일을 찾을 수 없습니다."
-        }, exc_info=True)
+        })
         raise AudioProcessingError("MP3 파일을 찾을 수 없습니다.")
 
     try:
@@ -47,21 +47,21 @@ async def send_feedback(video_id: str, response: Response):
         for ext in ALLOWED_SCRIPT_EXTENSIONS:
             script_path = os.path.join(SCRIPTS_DIR, f"{video_id}.{ext}")
             if os.path.exists(script_path):
-                logger.debug(f"스크립트 파일을 발견했습니다: {script_path}")
+                logger.info(f"스크립트 파일을 발견했습니다: {script_path}")
                 extracted_text = extract_text(script_path)
                 if extracted_text:
                     script_text = extracted_text
                     logger.info("스크립트 텍스트 추출 성공")
                     script_found = True
                 else:
-                    logger.warning("스크립트 텍스트 추출 실패", extra={
+                    logger.info("스크립트 텍스트 추출 실패", extra={
                         "errorType": "TextExtractionFailed",
                         "error_message": "스크립트 텍스트 추출 실패"
                     })
                 break
 
         if not script_found:
-            logger.warning(f"스크립트 파일이 없거나 텍스트 추출에 실패했습니다. {video_id} 파일은 LLM을 이용해 문법을 보정한 텍스트를 사용합니다.")
+            logger.info(f"스크립트 파일이 없거나 텍스트 추출에 실패했습니다. {video_id} 파일은 LLM을 이용해 문법을 보정한 텍스트를 사용합니다.")
 
         # 발표 점수 계산 (script_text가 존재하면 전달, 아니면 None 전달)
         results = calculate_presentation_score(mp3_path, script_text=script_text)
@@ -70,7 +70,7 @@ async def send_feedback(video_id: str, response: Response):
             logger.error(f"비디오 ID {video_id}에 대한 분석이 실패했습니다.", extra={
                 "errorType": "AnalysisFailed",
                 "error_message": "비디오 ID에 대한 분석 실패"
-            }, exc_info=True)
+            })
             raise HTTPException(status_code=500, detail="비디오 분석에 실패했습니다.")
 
         # 'pronunciation_scores' 키 존재 여부 확인
@@ -78,7 +78,7 @@ async def send_feedback(video_id: str, response: Response):
             logger.error(f"'pronunciation_scores' 키가 결과에 없습니다: {results}", extra={
                 "errorType": "KeyError",
                 "error_message": "'pronunciation_scores' 데이터가 누락되었습니다."
-            }, exc_info=True)
+            })
             raise AudioProcessingError("'pronunciation_scores' 데이터가 누락되었습니다.")
 
         # 결과 변환 (스키마 매핑)
@@ -117,19 +117,19 @@ async def send_feedback(video_id: str, response: Response):
         logger.error(f"파일 관련 오류: {e}", extra={
             "errorType": "FileNotFoundError",
             "error_message": f"파일 관련 오류 발생: {e}"
-        }, exc_info=True)
+        })
         raise HTTPException(status_code=404, detail="파일 관련 오류 발생") from e
 
     except KeyError as e:
         logger.error(f"결과 데이터 키 누락: {e}", extra={
             "errorType": "KeyError",
             "error_message": f"결과 데이터 키 누락: {e}"
-        }, exc_info=True)
+        })
         raise HTTPException(status_code=400, detail="결과 데이터 키가 누락되었습니다.") from e
 
     except Exception as e:
         logger.error(f"알 수 없는 오류 발생: {e}", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
-        }, exc_info=True)
+        })
         raise HTTPException(status_code=500, detail="예기치 않은 오류 발생") from e

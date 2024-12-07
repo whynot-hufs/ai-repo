@@ -1,4 +1,4 @@
-# vlm_model/openai_config.py
+# pronun_model/openai_config.py
 
 from dotenv import load_dotenv
 from pathlib import Path

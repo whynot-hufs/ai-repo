@@ -84,11 +84,11 @@ def TTS(script, output_path=None, speed=1.0):
         logger.error(f"TTS 변환중 OpenAI 오류 발생: {e}", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
-        }, exc_info=True)
+        })
         raise HTTPException(status_code=502, detail="OpenAI API 통신 오류.") from e
     except Exception as e:
         logger.error(f"TTS 변환 오류: {e}", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
-        }, exc_info=True)
+        })
         raise HTTPException(status_code=500, detail="TTS 변환 중 오류 발생.") from e

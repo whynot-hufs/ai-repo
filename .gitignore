@@ -13,4 +13,4 @@ pronun_model/routers/__pycache__/
 pronun_model/utils/__pycache__/
 
 # Ignore logs directory
-logs/
+*.log

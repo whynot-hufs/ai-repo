@@ -1,108 +1,128 @@
 {
-    "asctime": "2024-12-05 21:33:42,738",
-    "levelname": "INFO",
+    "@timestamp": "2024-12-06 19:57:08,617",
+    "level": "INFO",
     "service": "PRONUN_API",
     "request_id": "unknown",
-    "class_name": "uvicorn.access",
-    "method_name": "send",
-    "client_ip": "unknown",
-    "errorType": "",
-    "error_message": "",
-    "taskName": "Task-3"
+    "class": "uvicorn.access",
+    "method": "send"
 }
 {
-    "asctime": "2024-12-05 21:33:45,120",
-    "levelname": "INFO",
+    "@timestamp": "2024-12-06 19:57:11,298",
+    "level": "INFO",
     "service": "PRONUN_API",
     "request_id": "unknown",
-    "class_name": "uvicorn.access",
-    "method_name": "send",
-    "client_ip": "unknown",
-    "errorType": "",
-    "error_message": "",
-    "taskName": "Task-6"
+    "class": "uvicorn.access",
+    "method": "send"
 }
 {
-    "asctime": "2024-12-05 21:33:45,339",
-    "levelname": "INFO",
+    "@timestamp": "2024-12-06 19:57:11,502",
+    "level": "INFO",
     "service": "PRONUN_API",
     "request_id": "unknown",
-    "class_name": "uvicorn.access",
-    "method_name": "send",
-    "client_ip": "unknown",
-    "errorType": "",
-    "error_message": "",
-    "taskName": "Task-9"
+    "class": "uvicorn.access",
+    "method": "send"
 }
 {
-    "asctime": "2024-12-05 21:33:50,140",
-    "levelname": "INFO",
+    "@timestamp": "2024-12-06 19:57:17,094",
+    "level": "INFO",
     "service": "PRONUN_API",
     "request_id": "unknown",
-    "class_name": "uvicorn.access",
-    "method_name": "send",
-    "client_ip": "unknown",
-    "errorType": "",
-    "error_message": "",
-    "taskName": "Task-12"
+    "class": "uvicorn.access",
+    "method": "send"
 }
 {
-    "asctime": "2024-12-05 21:33:51,942",
-    "levelname": "INFO",
+    "@timestamp": "2024-12-06 19:57:26,758",
+    "level": "INFO",
     "service": "PRONUN_API",
     "request_id": "unknown",
-    "class_name": "uvicorn.access",
-    "method_name": "send",
-    "client_ip": "unknown",
-    "errorType": "",
-    "error_message": "",
-    "taskName": "Task-15"
+    "class": "uvicorn.access",
+    "method": "send"
 }
 {
-    "asctime": "2024-12-05 21:34:22,324",
-    "levelname": "INFO",
+    "@timestamp": "2024-12-06 19:59:28,966",
+    "level": "INFO",
     "service": "PRONUN_API",
     "request_id": "unknown",
-    "class_name": "uvicorn.access",
-    "method_name": "send",
-    "client_ip": "unknown",
-    "errorType": "",
-    "error_message": "",
-    "taskName": "Task-18"
+    "class": "uvicorn.access",
+    "method": "send"
 }
 {
-    "asctime": "2024-12-05 21:37:32,924",
-    "levelname": "INFO",
+    "@timestamp": "2024-12-06 19:59:32,766",
+    "level": "INFO",
     "service": "PRONUN_API",
     "request_id": "unknown",
-    "class_name": "uvicorn.access",
-    "method_name": "send",
-    "client_ip": "unknown",
-    "errorType": "",
-    "error_message": "",
-    "taskName": "Task-59"
+    "class": "uvicorn.access",
+    "method": "send"
 }
 {
-    "asctime": "2024-12-05 21:38:48,292",
-    "levelname": "INFO",
+    "@timestamp": "2024-12-06 19:59:32,993",
+    "level": "INFO",
     "service": "PRONUN_API",
     "request_id": "unknown",
-    "class_name": "uvicorn.access",
-    "method_name": "send",
-    "client_ip": "unknown",
-    "errorType": "",
-    "error_message": "",
-    "taskName": "Task-62"
+    "class": "uvicorn.access",
+    "method": "send"
 }
 {
-    "asctime": "2024-12-05 21:41:10,609",
-    "levelname": "INFO",
+    "@timestamp": "2024-12-06 19:59:36,451",
+    "level": "INFO",
     "service": "PRONUN_API",
     "request_id": "unknown",
-    "class_name": "uvicorn.access",
-    "method_name": "send",
-    "client_ip": "unknown",
-    "errorType": "",
-    "error_message": "",
-    "taskName": "Task-101"
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 19:59:37,266",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 19:59:42,495",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 19:59:43,755",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 20:00:49,182",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 20:03:07,253",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 20:06:00,000",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
+}
+{
+    "@timestamp": "2024-12-06 20:09:05,358",
+    "level": "INFO",
+    "service": "PRONUN_API",
+    "request_id": "unknown",
+    "class": "uvicorn.access",
+    "method": "send"
 }

@@ -36,19 +36,19 @@ def calculate_speed(audio_file_path, text):
         else:
             wpm = 0
 
-        logger.info(f"Calculated speaking speed: {wpm:.2f} WPM")
+        logger.debug(f"Calculated speaking speed: {wpm:.2f} WPM")
         return wpm
 
     except AudioProcessingError as ape:
         logger.error(f"Audio processing error during speed calculation: {ape}", extra={
             "errorType": type(ape).__name__,
             "error_message": str(ape)
-            }, exc_info=True)
+            })
         raise AudioProcessingError("오디오 처리 중 오류가 발생했습니다.") from ape
 
     except Exception as e:
         logger.error(f"Error calculating speaking speed: {e}", extra={
             "errorType": type(e).__name__,
             "error_message": str(e)
-        }, exc_info=True)
+        })
         raise AudioProcessingError("말하기 속도 계산 중 오류가 발생했습니다.") from e
