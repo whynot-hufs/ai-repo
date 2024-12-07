@@ -94,6 +94,7 @@
   "@timestamp": "2024-12-04T10:15:30.123Z",
   "level": "ERROR",
   "service": "SPRING_API",
+  "request_id": "req-789",
   "class": "com.example.UserController",
   "method": "getUser",
   "error_type": "EntityNotFoundException",
@@ -106,6 +107,7 @@
 - **`@timestamp`**: 오류가 발생한 시각을 나타냅니다.
 - **`level`**: 로그의 심각도를 나타내며, 여기서는 `ERROR` 레벨입니다.
 - **`service`**: 로그를 생성한 서비스의 이름으로, 예시에서는 `SPRING_API`입니다.
+- **`request_id`**: 관련된 요청 ID입니다.
 - **`class`**: 로그를 생성한 클래스의 이름입니다.
 - **`method`**: 로그를 생성한 메서드의 이름입니다.
 - **`error_type`**: 발생한 오류의 유형을 명시합니다. 예시에서는 `EntityNotFoundException`입니다.

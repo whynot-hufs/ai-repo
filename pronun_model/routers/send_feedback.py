@@ -15,7 +15,7 @@ router = APIRouter()
 
 logger = logging.getLogger(__name__)  # 'pronun_model.routers.send_feedback' 로거 사용
 
-ALLOWED_SCRIPT_EXTENSIONS = {"docx", "txt", "pdf", "hwp", "hwpx"}
+ALLOWED_SCRIPT_EXTENSIONS = {"docx", "txt", "pdf", "hwpx"}
 
 @router.get("/send-feedback/{video_id}", response_model=AnalysisResponse)
 async def send_feedback(video_id: str, response: Response):
@@ -109,6 +109,7 @@ async def send_feedback(video_id: str, response: Response):
 
         logger.info(f"비디오 ID {video_id}에 대한 분석이 성공적으로 완료되었습니다.")
         return AnalysisResponse(
+            video_id=video_id,
             message="Analysis completed successfully",
             analysis_result=analysis_result
         )

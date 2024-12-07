@@ -25,6 +25,7 @@ class AudioAnalysisResult(BaseModel):
     wpm_scores: List[WPMScore]  # 구간별 WPM 점수
 
 class AnalysisResponse(BaseModel):
+    video_id: str # video_id
     message: str  # 처리 상태 메시지
     analysis_result: Optional[AudioAnalysisResult] = None  # 분석 결과
     problem: Optional[str] = None  # 분석 중 발생한 문제 (없을 경우 None)
