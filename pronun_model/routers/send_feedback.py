@@ -109,6 +109,7 @@ async def send_feedback(video_id: str, response: Response):
 
         logger.info(f"비디오 ID {video_id}에 대한 분석이 성공적으로 완료되었습니다.")
         return AnalysisResponse(
+            video_id=video_id
             message="Analysis completed successfully",
             analysis_result=analysis_result
         )
