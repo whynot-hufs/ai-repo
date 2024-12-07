@@ -15,13 +15,14 @@ logger = logging.getLogger(__name__)
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-def TTS(script, output_path=None, speed=1.0):
+def TTS(script,  video_id: str, output_path=None, speed=1.0):
     """
     텍스트를 음성으로 변환(TTS)합니다. 스크립트가 4000자 이상일 경우, 분할하여 여러 개의 음성 파일을 생성한 후 결합합니다.
 
     Args:
         script (str): 입력 텍스트.
         output_path (str): 생성될 음성 파일 경로.
+        video_id (str): video_id 
         speed (float): 음성 속도 조절 (0.5 ~ 4.0).
 
     Returns:
@@ -31,7 +32,7 @@ def TTS(script, output_path=None, speed=1.0):
     try:
         if output_path is None:
             # 고유한 파일 이름 생성
-            filename = f"TTS_{uuid.uuid4()}.mp3"
+            filename = f"{video_id}_TTS_{uuid.uuid4()}.mp3"
             output_path = CONVERT_TTS_DIR / filename
         else:
             output_path = Path(output_path)
@@ -53,7 +54,7 @@ def TTS(script, output_path=None, speed=1.0):
             tts_files = []
             for i in range(num):
                 segment = script[4000 * i : 4000 * (i + 1)]
-                segment_filename = f"TTS_{i}_{uuid.uuid4()}.mp3"
+                segment_filename = f"{video_id}_TTS_{i}_{uuid.uuid4()}.mp3"
                 tts_segment_path = CONVERT_TTS_DIR / segment_filename
 
                 response = client.audio.speech.create(

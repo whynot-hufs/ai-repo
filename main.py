@@ -8,6 +8,7 @@ from fastapi import Response
 
 from pronun_model.routers.upload_video import router as upload_video_router
 from pronun_model.routers.send_feedback import router as send_feedback_router
+from pronun_model.routers.delete_files import router as delete_files_router 
 from pronun_model.config import UPLOAD_DIR, CONVERT_MP3_DIR, CONVERT_TTS_DIR, SCRIPTS_DIR, ENABLE_PLOTTING
 from pronun_model.exceptions import DocumentProcessingError, AudioProcessingError, AudioImportingError
 
@@ -65,6 +66,7 @@ app.add_middleware(RequestIDMiddleware)
 # 라우터 포함
 app.include_router(upload_video_router, prefix="/api/pronun", tags=["Video Upload & Script"])
 app.include_router(send_feedback_router, prefix="/api/pronun", tags=["Feedback Retrieval"])
+app.include_router(delete_files_router, prefix="/api/pronun", tags=["File Deletion"])
 
 # 루트 엔드포인트 (선택 사항)
 @app.get("/")

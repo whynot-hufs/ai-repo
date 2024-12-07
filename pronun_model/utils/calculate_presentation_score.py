@@ -17,7 +17,7 @@ import logging
 # 모듈별 로거 생성
 logger = logging.getLogger(__name__)
 
-def calculate_presentation_score(audio_file_path: str, script_text: Optional[str] = None) -> Optional[Dict[str, Any]]:
+def calculate_presentation_score(audio_file_path: str, video_id: str, script_text: Optional[str] = None) -> Optional[Dict[str, Any]]:
     """
     프레젠테이션 음성을 분석하여 점수를 계산합니다.
 
@@ -71,7 +71,7 @@ def calculate_presentation_score(audio_file_path: str, script_text: Optional[str
             else:
                 logger.info("LLM을 사용하여 TTS를 생성하고 오디오 유사도를 비교합니다.")
             
-            tts_file_path = TTS(script_text, speed=tts_speed_ratio)  # TTS 생성
+            tts_file_path = TTS(script_text, video_id, speed=tts_speed_ratio)  # TTS 생성
             if not tts_file_path:
                 logger.error("TTS 변환에 실패했습니다.", extra={
                     "errorType": "TTSConversionError",

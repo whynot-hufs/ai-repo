@@ -29,3 +29,6 @@ class AnalysisResponse(BaseModel):
     analysis_result: Optional[AudioAnalysisResult] = None  # 분석 결과
     problem: Optional[str] = None  # 분석 중 발생한 문제 (없을 경우 None)
 
+class DeleteResponse(BaseModel):
+    video_id: str
+    message: str
