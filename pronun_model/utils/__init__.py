@@ -17,7 +17,6 @@ from .analyze_low_accuracy import analyze_low_accuracy
 from .calculate_presentation_score import calculate_presentation_score
 from .text_cleaning import clean_extracted_text
 from .text_extraction import (
-    get_hwp_text,
     get_hwpx_text,
     get_docx_text,
     get_pdf_text,
@@ -39,7 +38,6 @@ __all__ = [
     "correct_text_with_llm",
     "analyze_low_accuracy",
     "calculate_presentation_score",
-    "get_hwp_text",
     "get_hwpx_text",
     "get_docx_text",
     "get_pdf_text",

@@ -18,7 +18,7 @@ ALLOWED_EXTENSIONS: Set[str] = {
 }
 
 # 지원하는 스크립트 파일 형식 정의
-ALLOWED_SCRIPT_EXTENSIONS: Set[str] = {"docx", "txt", "pdf", "hwp", "hwpx"}
+ALLOWED_SCRIPT_EXTENSIONS: Set[str] = {"docx", "txt", "pdf", "hwpx"}
 
 @router.delete("/delete_files/{video_id}", response_class=JSONResponse)
 async def delete_files(video_id: str):
@@ -82,7 +82,7 @@ async def delete_files(video_id: str):
         logger.info(f"{video_id}와 관련된 파일 삭제 성공.")
         return DeleteResponse(
             video_id=video_id,
-            message=f"{video_id}와 관련된 파일 삭제에 성공했습니다.",
+            message=f"{video_id} video_id와 관련된 파일 삭제에 성공했습니다.",
         )
 
     except Exception as e:
