@@ -211,9 +211,9 @@ if __name__ == "__main__":
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
-        port=8000,
+        port=8001,
         reload=True,
         log_config="logging_config.json"  # 로깅 설정 파일 지정
     )
 
-# uvicorn main:app --host 0.0.0.0 --port 8000 --reload --log-config logging_config.json
+# uvicorn main:app --host 0.0.0.0 --port 8001 --reload --log-config logging_config.json
