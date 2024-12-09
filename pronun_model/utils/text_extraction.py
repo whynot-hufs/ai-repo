@@ -4,6 +4,7 @@ from .document_extract.hwpx_text_extraction import get_hwpx_text
 from .document_extract.docx_text_extraction import get_docx_text
 from .document_extract.txt_text_extraction import get_txt_text
 from .document_extract.pdf_text_extraction import get_pdf_text
+from .document_extract.rtf_text_extraction import get_rtf_text
 from pronun_model.exceptions import DocumentProcessingError
 
 import logging
@@ -31,6 +32,8 @@ def extract_text(file_path):
             return get_pdf_text(file_path)
         elif extension == 'hwpx':
             return get_hwpx_text(file_path)
+        elif extension == 'rtf':
+            return get_rtf_text(file_path)
         else:
             logger.error(f"지원되지 않는 파일 형식으로 텍스트 추출을 시도했습니다: {extension}", extra={
                 "errorType": "UnsupportedFileTypeError",
