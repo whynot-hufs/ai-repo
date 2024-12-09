@@ -1,9 +1,9 @@
 # utils/text_extraction.py
 
-from .hwpx_text_extraction import get_hwpx_text
-from .docx_text_extraction import get_docx_text
-from .txt_text_extraction import get_txt_text
-from .pdf_text_extraction import get_pdf_text
+from .document_extract.hwpx_text_extraction import get_hwpx_text
+from .document_extract.docx_text_extraction import get_docx_text
+from .document_extract.txt_text_extraction import get_txt_text
+from .document_extract.pdf_text_extraction import get_pdf_text
 from pronun_model.exceptions import DocumentProcessingError
 
 import logging

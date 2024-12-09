@@ -1,7 +1,7 @@
 # utils/hwpx_text_extraction.py
 
 import gethwp
-from .text_cleaning import clean_extracted_text
+from ..text_cleaning import clean_extracted_text
 from pronun_model.exceptions import DocumentProcessingError
 import logging
 
