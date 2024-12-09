@@ -16,3 +16,4 @@ gethwp
 python-multipart
 python-json-logger
 colorlog
+striprtf

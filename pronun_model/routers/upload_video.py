@@ -71,7 +71,7 @@ async def upload_video_with_optional_script(
         raise HTTPException(status_code=415, detail=f"지원하지 않는 영상 파일 형식입니다. 허용된 형식: {', '.join(ALLOWED_EXTENSIONS)}")
 
     # 지원하는 스크립트 파일 형식 확인
-    ALLOWED_SCRIPT_EXTENSIONS: Set[str] = {"docx", "txt", "pdf", "hwpx"}
+    ALLOWED_SCRIPT_EXTENSIONS: Set[str] = {"docx", "txt", "pdf", "hwpx", "rtf"}
     if script:
         if '.' in script.filename:
             script_extension = script.filename.rsplit(".", 1)[-1].lower()
