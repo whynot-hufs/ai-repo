@@ -17,6 +17,7 @@ pronun_model/__pycache__/
 pronun_model/schemas/__pycache__/
 pronun_model/routers/__pycache__/
 pronun_model/utils/__pycache__/
+pronun_model/utils/document_extract/__pycache__/
 
 # Ignore all log files within logs/ directory
 logs/*.log
