@@ -6,7 +6,6 @@ openai
 librosa
 soundfile
 scikit-learn
-matplotlib
 fastapi
 uvicorn
 olefile

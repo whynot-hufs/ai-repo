@@ -2,11 +2,7 @@
 
 import logging
 from pronun_model.utils import calculate_presentation_score, ensure_directories
-from pronun_model.config import ENABLE_PLOTTING
 import os
-
-if ENABLE_PLOTTING:
-    from pronun_model.plotting.plot_waveform import plot_waveform  # 정확한 경로로 수정
 
 def main():
     # 디렉토리 생성 확인
