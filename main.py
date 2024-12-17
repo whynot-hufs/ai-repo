@@ -12,7 +12,6 @@ from pronun_model.routers.delete_files import router as delete_files_router
 from pronun_model.config import UPLOAD_DIR, CONVERT_MP3_DIR, CONVERT_TTS_DIR, SCRIPTS_DIR
 from pronun_model.exceptions import DocumentProcessingError, AudioProcessingError, AudioImportingError
 
-
 from pathlib import Path
 from dotenv import load_dotenv 
 import json
