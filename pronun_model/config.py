@@ -16,9 +16,6 @@ load_dotenv()
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", 60))  # 기본값 60초
 AVERAGE_WPM = int(os.getenv("AVERAGE_WPM", 100))  # 기본값 100 WPM
 
-# 플롯 기능 활성화 여부
-ENABLE_PLOTTING = os.getenv("ENABLE_PLOTTING", "False").lower() in ["true", "1", "yes"]
-
 # Docker 환경 감지 및 경로 설정
 try:
     with open('/proc/1/cgroup', 'rt') as f:

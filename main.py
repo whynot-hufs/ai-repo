@@ -9,11 +9,9 @@ from fastapi import Response
 from pronun_model.routers.upload_video import router as upload_video_router
 from pronun_model.routers.send_feedback import router as send_feedback_router
 from pronun_model.routers.delete_files import router as delete_files_router 
-from pronun_model.config import UPLOAD_DIR, CONVERT_MP3_DIR, CONVERT_TTS_DIR, SCRIPTS_DIR, ENABLE_PLOTTING
+from pronun_model.config import UPLOAD_DIR, CONVERT_MP3_DIR, CONVERT_TTS_DIR, SCRIPTS_DIR
 from pronun_model.exceptions import DocumentProcessingError, AudioProcessingError, AudioImportingError
 
-if ENABLE_PLOTTING:
-    from pronun_model.plotting.plot_waveform import plot_waveform
 
 from pathlib import Path
 from dotenv import load_dotenv 
