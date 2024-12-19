@@ -5,7 +5,6 @@ import logging.config
 import json
 from pathlib import Path
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException, Response, Request
-from pronun_model.utils.convert_to_mp3 import convert_to_mp3
 from pronun_model.utils.text_cleaning import clean_extracted_text
 from pronun_model.schemas.feedback import UploadResponse
 from pronun_model.config import UPLOAD_DIR, CONVERT_MP3_DIR, SCRIPTS_DIR
@@ -17,7 +16,7 @@ import shutil
 
 router = APIRouter()
 
-logger = logging.getLogger(__name__)  # 'pronun_model.routers.upload_video' 로거 사용
+logger = logging.getLogger(__name__)  
 
 @router.post("/upload-video-with-script/", response_model=UploadResponse)
 async def upload_video_with_optional_script(
@@ -103,23 +102,6 @@ async def upload_video_with_optional_script(
                 "error_message": "비디오 파일 저장 실패"
             })
             raise HTTPException(status_code=500, detail="비디오 파일 저장 실패")
-
-        # MP3 변환
-        try:
-            mp3_path = convert_to_mp3(str(video_path), video_id)
-            if not mp3_path or not os.path.exists(mp3_path):
-                logger.error(f"MP3 변환 실패: video_path={video_path}, video_id={video_id}", extra={
-                    "errorType": "MP3ConversionError",
-                    "error_message": "MP3 변환 실패: 파일 생성에 실패했습니다."
-                })
-                raise AudioImportingError("MP3 변환 실패: 파일 생성에 실패했습니다.")
-            logger.info(f"MP3 변환이 성공했습니다: {mp3_path}")
-        except Exception as e:
-            logger.error(f"MP3 변환 중 오류 발생: {e}. video_path={video_path}, video_id={video_id}", extra={
-                "errorType": type(e).__name__,
-                "error_message": str(e)
-            })
-            raise AudioImportingError("MP3 변환 중 알 수 없는 오류가 발생했습니다.") from e
 
         # 스크립트 저장 (선택적, File 형태로만 처리)
         if script:
