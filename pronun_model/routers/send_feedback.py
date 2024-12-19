@@ -5,7 +5,7 @@ from pronun_model.utils.convert_to_mp3 import convert_to_mp3
 from pronun_model.utils import calculate_presentation_score, extract_text
 from pronun_model.schemas.feedback import AnalysisResponse, AudioAnalysisResult, PronunciationScore, WPMScore
 from pronun_model.exceptions import AudioProcessingError
-from pronun_model.config import CONVERT_MP3_DIR, SCRIPTS_DIR
+from pronun_model.config import UPLOAD_DIR, CONVERT_MP3_DIR, SCRIPTS_DIR
 import os
 import logging
 import logging.config
