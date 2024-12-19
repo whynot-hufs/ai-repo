@@ -1,6 +1,7 @@
 # pronun_model/routers/send_feedback.py
 
 from fastapi import APIRouter, HTTPException, BackgroundTasks, Response
+from pronun_model.utils.convert_to_mp3 import convert_to_mp3
 from pronun_model.utils import calculate_presentation_score, extract_text
 from pronun_model.schemas.feedback import AnalysisResponse, AudioAnalysisResult, PronunciationScore, WPMScore
 from pronun_model.exceptions import AudioProcessingError
@@ -20,7 +21,7 @@ ALLOWED_SCRIPT_EXTENSIONS = {"docx", "txt", "pdf", "hwpx", "rtf"}
 @router.get("/send-feedback/{video_id}", response_model=AnalysisResponse)
 async def send_feedback(video_id: str, response: Response):
     """
-    주어진 video_id에 대해 오디오 분석 결과를 반환합니다 (3분 정도 소요).
+    주어진 video_id에 대해 오디오 분석 결과를 반환합니다 (5분 정도 소요).
     """
     # 응답 헤더 설정
     response.headers["Access-Control-Allow-Origin"] = "*"
@@ -31,9 +32,45 @@ async def send_feedback(video_id: str, response: Response):
     # MP3 파일 경로 설정
     mp3_path = CONVERT_MP3_DIR / f"{video_id}.mp3"
 
-    # MP3 파일 존재 여부 확인
+    # MP3 파일 존재 여부 확인 및 변환 수행
     if not mp3_path.exists():
-        logger.error("MP3 파일을 찾을 수 없습니다.", extra={
+        logger.info(f"MP3 파일이 존재하지 않아 변환을 시작합니다: {mp3_path}")
+        # 원본 비디오 파일 찾기
+        original_video = None
+        for ext in ["webm", "mov", "avi", "mkv", "flac", "m4a",
+                    "mp3", "mp4", "mpeg", "mpga", "oga", "ogg", "wav"]:
+            potential_path = UPLOAD_DIR / f"{video_id}.{ext}"
+            if os.path.exists(potential_path):
+                original_video = potential_path
+                break
+
+        if not original_video:
+            logger.error(f"원본 비디오 파일을 찾을 수 없습니다: video_id={video_id}", extra={
+                "errorType": "FileNotFoundError",
+                "error_message": f"video_id={video_id}"
+            })
+            raise HTTPException(status_code=404, detail="원본 비디오 파일을 찾을 수 없습니다.")
+
+        # MP3 변환 수행
+        try:
+            mp3_path_generated = convert_to_mp3(str(original_video), video_id)
+            if not mp3_path_generated or not os.path.exists(mp3_path_generated):
+                logger.error(f"MP3 변환 실패: original_video={original_video}, video_id={video_id}", extra={
+                    "errorType": "MP3ConversionError",
+                    "error_message": "MP3 변환 실패: 파일 생성에 실패했습니다."
+                })
+                raise AudioProcessingError("MP3 변환 실패: 파일 생성에 실패했습니다.")
+            logger.info(f"MP3 변환이 성공적으로 완료되었습니다: {mp3_path_generated}")
+        except Exception as e:
+            logger.error(f"MP3 변환 중 오류 발생: {e}. original_video={original_video}, video_id={video_id}", extra={
+                "errorType": type(e).__name__,
+                "error_message": str(e)
+            })
+            raise HTTPException(status_code=500, detail="MP3 변환 중 오류가 발생했습니다.") from e
+
+    # MP3 파일이 존재하는지 다시 한번 확인
+    if not mp3_path.exists():
+        logger.error(f"MP3 파일을 찾을 수 없습니다: {mp3_path}", extra={
             "errorType": "FileNotFoundError",
             "error_message": "MP3 파일을 찾을 수 없습니다."
         })
