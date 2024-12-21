@@ -17,3 +17,7 @@ python-json-logger
 colorlog
 striprtf
 sentry-sdk[fastapi]
+pytest
+pytest-cov
+pytest-mock
+httpx

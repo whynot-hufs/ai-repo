@@ -1,4 +1,4 @@
-# utils/text_extract/docs_text_extraction.py
+# utils/text_extract/docx_text_extraction.py
 
 from docx import Document
 from pronun_model.exceptions import DocumentProcessingError
