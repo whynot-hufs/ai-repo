@@ -190,6 +190,7 @@ async def general_exception_handler(request: Request, exc: Exception):
 # Sentry 테스트 엔드포인트 추가
 @app.get("/sentry-debug")
 async def trigger_error():
+    logger.debug("Sentry endpoint test 입니다.")
     division_by_zero = 1 / 0
 
 # 테스트 엔드포인트 추가
