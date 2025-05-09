@@ -8,3 +8,10 @@ python-multipart
 python-json-logger
 colorlog
 ffmpeg-python
+langchain-openai
+langchain-community
+pymongo
+pytz
+langchain-mongodb
+faiss-cpu
+pymongo
