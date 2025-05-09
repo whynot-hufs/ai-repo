@@ -47,7 +47,9 @@ async def ask_question_with_audio(
             question = raw_text
 
         # 5) Q&A
-        answer = ask_question(question)
+        result = ask_question(question)
+        answer = result["answer"]  # 답변 텍스트
+        hospitals = result.get("hospitals", [])  # 병원 목록
 
         # 6) TTS 생성
         tts_path = TTS(answer, request_id)
@@ -63,6 +65,7 @@ async def ask_question_with_audio(
             video_id=request_id,
             question=question,
             answer=answer,
+            hospitals=hospitals,  # 새로 추가된 필드
             audio_url=audio_url
         )
 
