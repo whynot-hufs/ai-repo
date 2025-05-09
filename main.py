@@ -2,10 +2,10 @@ from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from pronun_model.routers.upload_video import router as upload_video_router
 from pronun_model.routers.ask_question import router as ask_question_router
 from pronun_model.routers.delete_files import router as delete_files_router
 
+from openai import OpenAI
 from pathlib import Path
 from dotenv import load_dotenv
 import json
@@ -23,12 +23,6 @@ logging_config_path = Path(__file__).resolve().parent / "logging_config.json"
 with open(logging_config_path, "r") as f:
     logging_config = json.load(f)
 
-# Remove any Sentry handlers
-if logging_config.get("handlers") and "sentry" in logging_config["handlers"]:
-    del logging_config["handlers"]["sentry"]
-    for lg in logging_config.get("loggers", {}).values():
-        if "sentry" in lg.get("handlers", []):
-            lg["handlers"].remove("sentry")
 
 logging.config.dictConfig(logging_config)
 logger = logging.getLogger("pronun_model")
@@ -46,9 +40,10 @@ app.add_middleware(
 )
 
 # Include routers
-app.include_router(upload_video_router, prefix="/api/pronun", tags=["Upload"])
 app.include_router(ask_question_router, prefix="/api/pronun", tags=["Q&A"])
 app.include_router(delete_files_router, prefix="/api/pronun", tags=["Delete"])
+
+logging.getLogger("watchfiles.main").setLevel(logging.WARNING)
 
 # Root endpoint
 @app.get("/")
