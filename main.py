@@ -1,9 +1,11 @@
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 
 from pronun_model.routers.ask_question import router as ask_question_router
 from pronun_model.routers.delete_files import router as delete_files_router
+from pronun_model.config import CONVERT_TTS_DIR
 
 from openai import OpenAI
 from pathlib import Path
@@ -42,6 +44,8 @@ app.add_middleware(
 # Include routers
 app.include_router(ask_question_router, prefix="/api/pronun", tags=["Q&A"])
 app.include_router(delete_files_router, prefix="/api/pronun", tags=["Delete"])
+
+app.mount("/tts", StaticFiles(directory=str(CONVERT_TTS_DIR)), name="tts")
 
 logging.getLogger("watchfiles.main").setLevel(logging.WARNING)
 

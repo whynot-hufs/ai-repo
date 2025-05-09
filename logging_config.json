@@ -67,6 +67,11 @@
       "handlers": ["console", "file", "error_file"],
       "level": "INFO",
       "propagate": false
+    },
+    "watchfiles.main": {
+      "handlers": ["console"],
+      "level": "WARNING",
+      "propagate": false
     }
   },
 
