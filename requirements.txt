@@ -7,3 +7,4 @@ openai
 python-multipart
 python-json-logger
 colorlog
+ffmpeg-python
