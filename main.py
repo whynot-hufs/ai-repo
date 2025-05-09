@@ -51,6 +51,10 @@ def read_root():
     logger.info("Root endpoint accessed")
     return {"message": "Hello, Selina!"}
 
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
+
 # Request logging middleware
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
