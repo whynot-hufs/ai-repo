@@ -1,12 +1,7 @@
-# pronun_model/schemas/__init__.py
-
-from .feedback import UploadResponse, PronunciationScore, WPMScore, AudioAnalysisResult, AnalysisResponse, DeleteResponse
+from .feedback import UploadResponse, AnswerResponse, DeleteResponse
 
 __all__ = [
     "UploadResponse",
-    "PronunciationScore",
-    "WPMScore",
-    "AudioAnalysisResult",
-    "AnalysisResponse",
-    "DeleteResponse"
+    "AnswerResponse",
+    "DeleteResponse",
 ]
