@@ -3,6 +3,9 @@
 from openai import OpenAI
 from ..openai_config import OPENAI_API_KEY
 from fastapi import HTTPException
+import logging
+
+logger = logging.getLogger(__name__)
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
@@ -24,4 +27,8 @@ def ask_question(transcript: str, question: str) -> str:
         )
         return resp.choices[0].message.content.strip()
     except Exception as e:
+        logger.error(f"STT 변환 오류: {e}", extra={
+            "errorType": type(e).__name__,
+            "error_message": str(e)
+        })
         raise HTTPException(status_code=500, detail=f"LLM 질의 중 오류 발생: {e}")
